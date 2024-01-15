@@ -12,6 +12,22 @@ class TakeTestScreen extends StatefulWidget {
 class _TakeTestScreenState extends State<TakeTestScreen> {
   String maintitle = 'Test';
   late double screenHeight, screenWidth;
+  String selectedGender = "Gender";
+  List<String> genderlist = [
+    "Gender",
+    "Male",
+    "Female",
+  ];
+
+  String selectedAge = "Age";
+  List<String> agelist = [
+    "Age",
+    "4 - 6",
+    "7 - 9",
+  ];
+
+  final TextEditingController _childnameEditingController =
+      TextEditingController();
 
   @override
   void initState() {
@@ -47,7 +63,7 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
         children: [
           Container(
             child: Padding(
-              padding: EdgeInsets.fromLTRB(24, 80, 24, 24),
+              padding: EdgeInsets.fromLTRB(24, 60, 24, 24),
               child: Column(
                 children: [
                   Padding(
@@ -55,7 +71,7 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                     child: Text(
                       "Dyslexia Assessment and Screening Test",
                       style: TextStyle(
-                        fontSize: screenWidth / 12,
+                        fontSize: screenWidth / 13,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
                       ),
@@ -86,15 +102,95 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                   ),
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(8, 0, 8, 0),
-                    child: TextField(),
+                    child: TextField(
+                      textInputAction: TextInputAction.next,
+                      controller: _childnameEditingController,
+                      keyboardType: TextInputType.text,
+                      decoration: const InputDecoration(
+                        labelText: 'Child Name',
+                        alignLabelWithHint: true,
+                        labelStyle: TextStyle(),
+                        // focusedBorder: OutlineInputBorder(
+                        //   borderSide: BorderSide(width: 2.0),
+                        // ),
+                      ),
+                    ),
                   ),
-                  Row(),
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(8, 0, 8, 10),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: DropdownButton(
+                            itemHeight: 60,
+                            value: selectedGender,
+                            onChanged: (newValue) {
+                              setState(() {
+                                selectedGender = newValue.toString();
+                              });
+                            },
+                            items: genderlist.map((selectedGender) {
+                              return DropdownMenuItem(
+                                child: Text(
+                                  selectedGender,
+                                  style: TextStyle(
+                                    fontSize: screenWidth / 32,
+                                    fontWeight: FontWeight.normal,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                                value: selectedGender,
+                              );
+                            }).toList(),
+                          ),
+                        ),
+                        const SizedBox(width: 9),
+
+                        //Dropdown for Age
+                        Expanded(
+                          child: DropdownButton(
+                            itemHeight: 60,
+                            value: selectedAge,
+                            onChanged: (newValue) {
+                              setState(() {
+                                selectedAge = newValue.toString();
+                              });
+                            },
+                            items: agelist.map((selectedAge) {
+                              return DropdownMenuItem(
+                                child: Text(
+                                  selectedAge,
+                                  style: TextStyle(
+                                    fontSize: screenWidth / 32,
+                                    fontWeight: FontWeight.normal,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                                value: selectedAge,
+                              );
+                            }).toList(),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(8, 0, 8, 0),
                     child: ElevatedButton(
                         onPressed: () {
                           insertDialog();
                         },
+                        style: ElevatedButton.styleFrom(
+                          foregroundColor: Colors.black,
+                          backgroundColor: Colors
+                              .white, // Set text color to black (you can adjust as needed)
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(
+                                20.0), // Set border radius to a circular value
+                          ),
+                          minimumSize: Size(double.infinity,
+                              50), // Set button width to fill available space
+                        ),
                         child: const Text("Start Test")),
                   ),
                 ],

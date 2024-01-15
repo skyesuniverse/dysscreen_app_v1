@@ -11,13 +11,11 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-     title: 'BarterIt',
+      title: 'BarterIt',
       theme: ThemeData(
-        primarySwatch: Colors.teal,
+        primarySwatch: Colors.lightBlue,
       ),
       home: const SplashScreen(),
     );
   }
 }
-
-

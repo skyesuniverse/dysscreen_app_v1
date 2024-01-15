@@ -182,7 +182,7 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
                 width: double.infinity,
                 height: screenHeight / 2.9,
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 118, 80, 80),
+                  color: Colors.white,
                 ),
 
                 ///List View item
