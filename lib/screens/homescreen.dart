@@ -1,3 +1,4 @@
+import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/introofdyslexia.dart';
 import 'package:dysscreen_app_v1/screens/taketestscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -186,6 +187,7 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
                 ),
 
                 ///List View item
+                ///List View item
                 child: ListView(
                     padding: EdgeInsets.fromLTRB(
                       16,
@@ -196,39 +198,47 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
                     scrollDirection: Axis.horizontal,
                     children: [
                       ////card 1
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 16),
-                        child: Container(
-                          width: 260,
-                          height: 0,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            boxShadow: [
-                              BoxShadow(
-                                blurRadius: 4,
-                                color: Color(0x33000000),
-                                offset: Offset(0, 2),
-                              )
-                            ],
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Expanded(
-                                child: Container(
+
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      IntroOfDyslexiaScreen()));
+                        },
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 16),
+                          child: Container(
+                            width: 260,
+                            height: 0,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              boxShadow: [
+                                BoxShadow(
+                                  blurRadius: 4,
+                                  color: Color(0x33000000),
+                                  offset: Offset(0, 2),
+                                )
+                              ],
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Container(
                                   width: double.infinity,
-                                  height: 120,
+                                  height: 150,
                                   decoration: BoxDecoration(
                                     // color: Colors.blueGrey,
                                     borderRadius: BorderRadius.circular(8),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsets.all(2),
+                                    padding: EdgeInsets.all(6),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(6),
                                       child: Image.network(
-                                        'https://picsum.photos/seed/505/600',
+                                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRURjumQMmLb5ybNldAsJhRD_QdkETjksSVzw&usqp=CAU',
                                         width: 100,
                                         height: 100,
                                         fit: BoxFit.cover,
@@ -236,27 +246,64 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
                                     ),
                                   ),
                                 ),
-                              ),
-                              Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Align(
-                                    alignment: AlignmentDirectional(-1, 0),
-                                    child: Padding(
-                                      padding: EdgeInsets.all(10),
-                                      child: Text(
-                                        'Hello World Hello World Hello World Hello World Hello World',
-                                        // style: FlutterFlowTheme.of(context)
-                                        //     .bodyMedium,
-                                      ),
+                                Expanded(
+                                  child: Container(
+                                    height:
+                                        60, // Set the fixed height for the text container
+                                    child: Column(
+                                      children: [
+                                        Align(
+                                          alignment:
+                                              AlignmentDirectional(-1, 0),
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    10, 5, 10, 5),
+                                            child: Text(
+                                              'Introduction of Dyslexia',
+                                              style: TextStyle(
+                                                // fontSize: screenWidth / 33,
+                                                fontWeight: FontWeight.w500,
+                                                color: Colors.black,
+                                              ),
+                                              maxLines:
+                                                  1, // Maximum lines to display
+                                              overflow: TextOverflow
+                                                  .ellipsis, // Show ellipsis when overflow
+                                            ),
+                                          ),
+                                        ),
+                                        Align(
+                                          alignment:
+                                              AlignmentDirectional(-1, 0),
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    10, 0, 10, 0),
+                                            child: Text(
+                                              'Dyslexia is a type of specific learning difficulty (SLD) in which the person has difficulties with language and words. The term dyslexia, although still used by some, is generally felt to be too narrow and SLD is often used to describe these learning difficulties. ',
+                                              style: TextStyle(
+                                                fontSize: screenWidth / 32,
+                                                color: Colors.black54,
+                                              ),
+                                              maxLines:
+                                                  2, // Maximum lines to display
+                                              overflow: TextOverflow
+                                                  .ellipsis, // Show ellipsis when overflow
+                                            ),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
-                                ],
-                              ),
-                            ],
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
+
+                      SizedBox(width: screenWidth * 0.02),
 
                       ////card 2
                       Padding(
@@ -278,57 +325,90 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              Expanded(
-                                child: Container(
-                                  width: double.infinity,
-                                  height: 120,
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(8),
-                                  ),
-                                  child: Padding(
-                                    padding: EdgeInsets.all(2),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(6),
-                                      child: Image.network(
-                                        'https://picsum.photos/seed/505/600',
-                                        width: 100,
-                                        height: 100,
-                                        fit: BoxFit.cover,
-                                      ),
+                              Container(
+                                width: double.infinity,
+                                height: 150,
+                                decoration: BoxDecoration(
+                                  // color: Colors.blueGrey,
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsets.all(6),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(6),
+                                    child: Image.network(
+                                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjVVgAnRYY4ybzZvgGdtZlRucvcBoCfh9efWL1vxk2UW2vlDYZI3paW1k0Io_y0v_i9VQ&usqp=CAU',
+                                      width: 100,
+                                      height: 100,
+                                      fit: BoxFit.cover,
                                     ),
                                   ),
                                 ),
                               ),
-                              Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Align(
-                                    alignment: AlignmentDirectional(-1, 0),
-                                    child: Padding(
-                                      padding: EdgeInsets.all(10),
-                                      child: Text(
-                                        'Hello World Hello World Hello World Hello World Hello World',
-                                        // style: FlutterFlowTheme.of(context)
-                                        //     .bodyMedium,
+                              Expanded(
+                                child: Container(
+                                  height:
+                                      60, // Set the fixed height for the text container
+                                  child: Column(
+                                    children: [
+                                      Align(
+                                        alignment: AlignmentDirectional(-1, 0),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  10, 5, 10, 5),
+                                          child: Text(
+                                            'Common Signs and Symptoms',
+                                            style: TextStyle(
+                                              // fontSize: screenWidth / 33,
+                                              fontWeight: FontWeight.w500,
+                                              color: Colors.black,
+                                            ),
+                                            maxLines:
+                                                1, // Maximum lines to display
+                                            overflow: TextOverflow
+                                                .ellipsis, // Show ellipsis when overflow
+                                          ),
+                                        ),
                                       ),
-                                    ),
+                                      Align(
+                                        alignment: AlignmentDirectional(-1, 0),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  10, 0, 10, 0),
+                                          child: Text(
+                                            'Some of the symptoms of dyslexia or SLD in a preschooler could include...',
+                                            style: TextStyle(
+                                              fontSize: screenWidth / 32,
+                                              color: Colors.black54,
+                                            ),
+                                            maxLines:
+                                                2, // Maximum lines to display
+                                            overflow: TextOverflow
+                                                .ellipsis, // Show ellipsis when overflow
+                                          ),
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                ],
+                                ),
                               ),
                             ],
                           ),
                         ),
                       ),
 
+                      SizedBox(width: screenWidth * 0.02),
+
                       ////card 3
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 16),
                         child: Container(
                           width: 260,
+                          height: 0,
                           decoration: BoxDecoration(
-                            // color:
-                            //     FlutterFlowTheme.of(context).secondaryBackground,
+                            color: Colors.white,
                             boxShadow: [
                               BoxShadow(
                                 blurRadius: 4,
@@ -337,6 +417,80 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
                               )
                             ],
                             borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Container(
+                                width: double.infinity,
+                                height: 150,
+                                decoration: BoxDecoration(
+                                  // color: Colors.blueGrey,
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsets.all(6),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(6),
+                                    child: Image.network(
+                                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwJz94Im5Dz27eF_8r6a3JEUQ5xsNz8YqfTZN5AqT1T3DYsg3MbcYGG5lOOL1D5jgXXh0&usqp=CAU',
+                                      width: 100,
+                                      height: 100,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                child: Container(
+                                  height:
+                                      60, // Set the fixed height for the text container
+                                  child: Column(
+                                    children: [
+                                      Align(
+                                        alignment: AlignmentDirectional(-1, 0),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  10, 5, 10, 5),
+                                          child: Text(
+                                            'Myths and Facts about Dyslexia',
+                                            style: TextStyle(
+                                              // fontSize: screenWidth / 33,
+                                              fontWeight: FontWeight.w500,
+                                              color: Colors.black,
+                                            ),
+                                            maxLines:
+                                                1, // Maximum lines to display
+                                            overflow: TextOverflow
+                                                .ellipsis, // Show ellipsis when overflow
+                                          ),
+                                        ),
+                                      ),
+                                      Align(
+                                        alignment: AlignmentDirectional(-1, 0),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  10, 0, 10, 0),
+                                          child: Text(
+                                            'Let\'s debunk seven common myths surrounding dyslexia and help pave the way for a more inclusive future',
+                                            style: TextStyle(
+                                              fontSize: screenWidth / 32,
+                                              color: Colors.black54,
+                                            ),
+                                            maxLines:
+                                                2, // Maximum lines to display
+                                            overflow: TextOverflow
+                                                .ellipsis, // Show ellipsis when overflow
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
