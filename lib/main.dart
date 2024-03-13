@@ -13,7 +13,9 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       title: 'BarterIt',
       theme: ThemeData(
-        primarySwatch: Colors.lightBlue,
+        // primarySwatch: Color(0xFF03A9F4),
+        colorSchemeSeed: const Color(0xFF03A9F4),
+        useMaterial3: true,
       ),
       home: const SplashScreen(),
     );

@@ -1,6 +1,7 @@
 import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/introofdyslexia.dart';
 import 'package:dysscreen_app_v1/screens/taketestscreen.dart';
 import 'package:dysscreen_app_v1/widgets/aboutCard_Widget.dart';
+import 'package:dysscreen_app_v1/widgets/language_Widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -35,6 +36,24 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
     screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: null, // Remove the leading icon
+        actions: [
+          IconButton(
+            onPressed: () {
+              // Add your functionality here
+              selectLanguage();
+            },
+            icon: const Icon(
+              Icons.language_rounded,
+              color: Colors.white,
+            ),
+          ),
+        ],
+      ),
+      extendBodyBehindAppBar: true,
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
@@ -118,26 +137,22 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
                 mainAxisSize: MainAxisSize.max,
                 // crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    padding: EdgeInsets.fromLTRB(
-                      25,
-                      16,
-                      16,
-                      16,
-                    ),
+                  SizedBox(height: screenHeight * 0.03),
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
                         textAlign: TextAlign.left,
                         "About Dyslexia",
-                        style: TextStyle(
-                          fontSize: screenWidth / 17,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
-                        ),
+                        style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                            fontWeight: FontWeight.bold,
+                            // height: 1.25,
+                            color: Color.fromARGB(255, 0, 0, 0)),
                       ),
                     ),
                   ),
+                  SizedBox(height: screenHeight * 0.01),
                   AspectRatio(
                     aspectRatio: 16 / 10,
                     child: Container(
@@ -239,6 +254,70 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
         ),
       ),
     );
+  }
+
+  void selectLanguage() {
+    showModalBottomSheet(
+        isScrollControlled: true,
+        context: context,
+        //enableDrag: true,
+        barrierColor: Colors.black54,
+        builder: (context) => DraggableScrollableSheet(
+            initialChildSize: 0.4,
+            minChildSize: 0.2,
+            maxChildSize: 0.75,
+            expand: false,
+            builder: (_, controller) => SizedBox(
+                  height: screenHeight * 40 / 100,
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        SizedBox(
+                          height: screenHeight * 0.05,
+                        ),
+                        Text(
+                          'Language',
+                          style:
+                              Theme.of(context).textTheme.titleMedium!.copyWith(
+                                  fontWeight: FontWeight.bold,
+                                  // height: 1.25,
+                                  color: Color.fromARGB(255, 0, 0, 0)),
+                        ),
+                        SizedBox(
+                          height: screenHeight * 0.025,
+                        ),
+                        Expanded(child: LanguageSelectionBottomSheet()),
+                      ],
+                    ),
+                  ),
+                )));
+    // return SizedBox(
+    //   height: screenHeight * 40 / 100,
+    //   child: Center(
+    //     child: Column(
+    //       mainAxisAlignment: MainAxisAlignment.center,
+    //       mainAxisSize: MainAxisSize.min,
+    //       children: <Widget>[
+    //         SizedBox(
+    //           height: screenHeight * 0.05,
+    //         ),
+    //         Text(
+    //           'Language',
+    //           style: Theme.of(context).textTheme.titleMedium!.copyWith(
+    //               fontWeight: FontWeight.bold,
+    //               // height: 1.25,
+    //               color: Color.fromARGB(255, 0, 0, 0)),
+    //         ),
+    //         SizedBox(
+    //           height: screenHeight * 0.025,
+    //         ),
+    //         SingleChildScrollView(child: LanguageSelectionBottomSheet()),
+    //       ],
+    //     ),
+    //   ),
+    // );
   }
 }
 

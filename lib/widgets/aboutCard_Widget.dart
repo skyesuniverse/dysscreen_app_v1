@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -60,10 +59,10 @@ class AboutCard extends StatelessWidget {
               ),
               Text(
                 description,
-                style: TextStyle(
-                  fontSize: screenWidth / 32,
-                  color: Colors.black54,
-                ),
+                style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                    // fontWeight: FontWeight.bold,
+                    // height: 1.25,
+                    color: Color.fromARGB(255, 0, 0, 0)),
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
               ),
