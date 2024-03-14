@@ -1,3 +1,4 @@
+import 'package:dysscreen_app_v1/screens/testquestionscreen.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const TakeTestScreen());
@@ -13,16 +14,16 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
   String maintitle = 'Test';
   final _formKey = GlobalKey<FormState>();
   late double screenHeight, screenWidth;
-  String selectedGender = "Gender";
+  String selectedGender = "*Gender";
   List<String> genderlist = [
-    "Gender",
+    "*Gender",
     "Male",
     "Female",
   ];
 
-  String selectedAge = "Age";
+  String selectedAge = "*Age";
   List<String> agelist = [
-    "Age",
+    "*Age",
     "4 - 6",
     "7 - 9",
   ];
@@ -110,11 +111,17 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                       child: Column(
                         children: [
                           TextFormField(
+                            style: TextStyle(color: Colors.white70),
                             textInputAction: TextInputAction.next,
+                            validator: (val) => val!.isEmpty
+                                ? "Please enter a valid name"
+                                : null,
+                            onFieldSubmitted: (v) {},
+                            // maxLines: 2,
                             controller: _childnameEditingController,
                             keyboardType: TextInputType.text,
                             decoration: const InputDecoration(
-                              labelText: 'Child Name',
+                              labelText: '*Child Name',
                               alignLabelWithHint: true,
                               labelStyle: TextStyle(color: Colors.white70),
                               // focusedBorder: OutlineInputBorder(
@@ -141,6 +148,14 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                                   ),
                                   itemHeight: 60,
                                   value: selectedGender,
+                                  validator: (value) {
+                                    if (value == null ||
+                                        value.isEmpty ||
+                                        value == "*Gender") {
+                                      return 'Please select a gender';
+                                    }
+                                    return null;
+                                  },
                                   onChanged: (newValue) {
                                     setState(() {
                                       selectedGender = newValue.toString();
@@ -185,6 +200,14 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                                   // Color.fromARGB(255, 21, 46, 70),
                                   itemHeight: 60,
                                   value: selectedAge,
+                                  validator: (value) {
+                                    if (value == null ||
+                                        value.isEmpty ||
+                                        value == "*Age") {
+                                      return 'Please select the age';
+                                    }
+                                    return null;
+                                  },
                                   onChanged: (newValue) {
                                     setState(() {
                                       selectedAge = newValue.toString();
@@ -258,5 +281,56 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
     ));
   }
 
-  void insertDialog() {}
+  void insertDialog() {
+    if (!_formKey.currentState!.validate()) {
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+        content: Text(
+          "Please complete the form",
+          style: TextStyle(color: Colors.black),
+        ),
+        backgroundColor: Colors.white70,
+      ));
+      return;
+    }
+
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (content) => TestQuestionScreen()));
+  }
+
+  // showDialog(
+  //   context: context,
+  //   builder: (BuildContext context) {
+  //     return AlertDialog(
+  //       shape: const RoundedRectangleBorder(
+  //           borderRadius: BorderRadius.all(Radius.circular(10.0))),
+  //       title: const Text(
+  //         "Update your catch?",
+  //         style: TextStyle(),
+  //       ),
+  //       content: const Text("Are you sure?", style: TextStyle()),
+  //       actions: <Widget>[
+  //         TextButton(
+  //           child: const Text(
+  //             "Yes",
+  //             style: TextStyle(),
+  //           ),
+  //           onPressed: () {
+  //             Navigator.of(context).pop();
+  //             // updateCatch();
+  //             //registerUser();
+  //           },
+  //         ),
+  //         TextButton(
+  //           child: const Text(
+  //             "No",
+  //             style: TextStyle(),
+  //           ),
+  //           onPressed: () {
+  //             Navigator.of(context).pop();
+  //           },
+  //         ),
+  //       ],
+  //     );
+  //   },
+  // );
 }
