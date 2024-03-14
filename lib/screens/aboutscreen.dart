@@ -38,7 +38,7 @@ class _AboutScreenState extends State<AboutScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(20, 60, 0, 0),
+            padding: EdgeInsetsDirectional.fromSTEB(20, 60, 0, 15),
             child: Text(
               "About Dyslexia",
               style: TextStyle(

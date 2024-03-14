@@ -95,9 +95,9 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                       ),
                     ),
                     Text(
-                      'Please enter your child\'s details below to begin the assessment.',
+                      '**Please enter your child\'s details below to begin the assessment.',
                       style: TextStyle(
-                        fontSize: screenWidth / 32,
+                        // fontSize: screenWidth / 30,
                         fontWeight: FontWeight.normal,
                         fontStyle: FontStyle.italic, // Set text to italic
 
@@ -109,117 +109,125 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                       key: _formKey,
                       child: Column(
                         children: [
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(8, 0, 8, 0),
-                            child: TextFormField(
-                              textInputAction: TextInputAction.next,
-                              controller: _childnameEditingController,
-                              keyboardType: TextInputType.text,
-                              decoration: const InputDecoration(
-                                labelText: 'Child Name',
-                                alignLabelWithHint: true,
-                                labelStyle: TextStyle(color: Colors.white),
-                                // focusedBorder: OutlineInputBorder(
-                                //   borderSide: BorderSide(width: 2.0),
-                                // ),
-                                enabledBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Colors
-                                        .white, // Set the original line color to white
-                                  ),
+                          TextFormField(
+                            textInputAction: TextInputAction.next,
+                            controller: _childnameEditingController,
+                            keyboardType: TextInputType.text,
+                            decoration: const InputDecoration(
+                              labelText: 'Child Name',
+                              alignLabelWithHint: true,
+                              labelStyle: TextStyle(color: Colors.white70),
+                              // focusedBorder: OutlineInputBorder(
+                              //   borderSide: BorderSide(width: 2.0),
+                              // ),
+                              enabledBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Colors
+                                      .white70, // Set the original line color to white
                                 ),
                               ),
                             ),
                           ),
-                          Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(8, 0, 8, 10),
-                            child: Row(
-                              children: [
-                                Expanded(
-                                  child: DropdownButtonFormField(
-                                    itemHeight: 60,
-                                    value: selectedGender,
-                                    onChanged: (newValue) {
-                                      setState(() {
-                                        selectedGender = newValue.toString();
-                                      });
-                                    },
-                                    items: genderlist.map((selectedGender) {
-                                      return DropdownMenuItem(
-                                        value: selectedGender,
-                                        child: Text(
-                                          selectedGender,
-                                          style: TextStyle(
-                                            // fontSize: screenWidth / 32,
-                                            fontWeight: FontWeight.normal,
-                                            color: Colors.white,
-                                          ),
+                          Row(
+                            children: [
+                              Expanded(
+                                //Drop down for Gender
+                                child: DropdownButtonFormField(
+                                  iconEnabledColor: Colors.white70,
+                                  dropdownColor:
+                                      Color.fromARGB(255, 29, 64, 97),
+                                  hint: Text(
+                                    'Select',
+                                  ),
+                                  itemHeight: 60,
+                                  value: selectedGender,
+                                  onChanged: (newValue) {
+                                    setState(() {
+                                      selectedGender = newValue.toString();
+                                    });
+                                  },
+                                  items: genderlist.map((selectedGender) {
+                                    return DropdownMenuItem(
+                                      value: selectedGender,
+                                      child: Text(
+                                        selectedGender,
+                                        style: TextStyle(
+                                          // fontSize: screenWidth / 32,
+                                          fontWeight: FontWeight.normal,
+                                          color: Colors.white70,
                                         ),
-                                      );
-                                    }).toList(),
-                                    decoration: InputDecoration(
-                                      //labelText: 'Gender', // Set label text
-                                      labelStyle: TextStyle(
-                                        color: Colors
-                                            .white, // Set label text color to white
                                       ),
-                                      enabledBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: Colors
-                                              .white, // Set border color to white
-                                        ),
+                                    );
+                                  }).toList(),
+                                  decoration: InputDecoration(
+                                    //labelText: 'Gender', // Set label text
+                                    labelStyle: TextStyle(
+                                      color: Colors
+                                          .white, // Set label text color to white
+                                    ),
+                                    enabledBorder: UnderlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Colors
+                                            .white70, // Set border color to white
                                       ),
                                     ),
                                   ),
                                 ),
-                                const SizedBox(width: 9),
+                              ),
+                              const SizedBox(width: 10),
 
-                                //Dropdown for Age
-                                Expanded(
-                                  child: DropdownButtonFormField(
-                                    itemHeight: 60,
-                                    value: selectedAge,
-                                    onChanged: (newValue) {
-                                      setState(() {
-                                        selectedAge = newValue.toString();
-                                      });
-                                    },
-                                    items: agelist.map((selectedAge) {
-                                      return DropdownMenuItem(
-                                        value: selectedAge,
-                                        child: Text(
-                                          selectedAge,
-                                          style: TextStyle(
-                                            // fontSize: screenWidth / 32,
-                                            fontWeight: FontWeight.normal,
-                                            color: Colors.white,
-                                          ),
+                              //Dropdown for Age
+                              Expanded(
+                                child: DropdownButtonFormField(
+                                  iconEnabledColor: Colors.white70,
+                                  dropdownColor:
+                                      Color.fromARGB(255, 29, 64, 97),
+                                  // Color.fromARGB(255, 21, 46, 70),
+                                  itemHeight: 60,
+                                  value: selectedAge,
+                                  onChanged: (newValue) {
+                                    setState(() {
+                                      selectedAge = newValue.toString();
+                                    });
+                                  },
+                                  items: agelist.map((selectedAge) {
+                                    return DropdownMenuItem(
+                                      value: selectedAge,
+                                      child: Text(
+                                        selectedAge,
+                                        style: TextStyle(
+                                          // fontSize: screenWidth / 32,
+                                          fontWeight: FontWeight.normal,
+                                          color: Colors.white70,
                                         ),
-                                      );
-                                    }).toList(),
-                                    decoration: InputDecoration(
-                                      //labelText: 'Gender', // Set label text
-                                      labelStyle: TextStyle(
-                                        color: Colors
-                                            .white, // Set label text color to white
                                       ),
-                                      enabledBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: Colors
-                                              .white, // Set border color to white
-                                        ),
+                                    );
+                                  }).toList(),
+                                  decoration: InputDecoration(
+                                    //labelText: 'Gender', // Set label text
+                                    labelStyle: TextStyle(
+                                      color: Colors
+                                          .white, // Set label text color to white
+                                    ),
+                                    enabledBorder: UnderlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Colors
+                                            .white70, // Set border color to white
                                       ),
                                     ),
                                   ),
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: screenHeight * 0.05,
                           ),
 
                           //"Start Test" Button
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 0),
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(10, 10, 10, 0),
                             child: ElevatedButton(
                                 onPressed: () {
                                   insertDialog();

@@ -55,13 +55,14 @@ class AboutCard extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: screenHeight * 0.005,
+                height: screenHeight * 0.003,
               ),
               Text(
                 description,
                 style: Theme.of(context).textTheme.bodySmall!.copyWith(
                     // fontWeight: FontWeight.bold,
                     // height: 1.25,
+                    fontSize: screenWidth / 32,
                     color: Color.fromARGB(255, 0, 0, 0)),
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
