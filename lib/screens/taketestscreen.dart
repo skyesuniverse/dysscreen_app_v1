@@ -14,16 +14,16 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
   String maintitle = 'Test';
   final _formKey = GlobalKey<FormState>();
   late double screenHeight, screenWidth;
-  String selectedGender = "*Gender";
+  String selectedGender = "Gender *";
   List<String> genderlist = [
-    "*Gender",
+    "Gender *",
     "Male",
     "Female",
   ];
 
-  String selectedAge = "*Age";
+  String selectedAge = "Age *";
   List<String> agelist = [
-    "*Age",
+    "Age *",
     "4 - 6",
     "7 - 9",
   ];
@@ -111,7 +111,7 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                       child: Column(
                         children: [
                           TextFormField(
-                            style: TextStyle(color: Colors.white70),
+                            style: TextStyle(color: Colors.white),
                             textInputAction: TextInputAction.next,
                             validator: (val) => val!.isEmpty
                                 ? "Please enter a valid name"
@@ -121,18 +121,18 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                             controller: _childnameEditingController,
                             keyboardType: TextInputType.text,
                             decoration: const InputDecoration(
-                              labelText: '*Child Name',
+                              labelText: 'Child Name *',
                               alignLabelWithHint: true,
-                              labelStyle: TextStyle(color: Colors.white70),
+                              labelStyle: TextStyle(color: Colors.white),
                               // focusedBorder: OutlineInputBorder(
                               //   borderSide: BorderSide(width: 2.0),
                               // ),
-                              enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors
-                                      .white70, // Set the original line color to white
-                                ),
-                              ),
+                              // enabledBorder: UnderlineInputBorder(
+                              //   borderSide: BorderSide(
+                              //     color: Colors
+                              //         .white70, // Set the original line color to white
+                              //   ),
+                              // ),
                             ),
                           ),
                           Row(
@@ -140,7 +140,7 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                               Expanded(
                                 //Drop down for Gender
                                 child: DropdownButtonFormField(
-                                  iconEnabledColor: Colors.white70,
+                                  iconEnabledColor: Colors.white,
                                   dropdownColor:
                                       Color.fromARGB(255, 29, 64, 97),
                                   hint: Text(
@@ -151,7 +151,7 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                                   validator: (value) {
                                     if (value == null ||
                                         value.isEmpty ||
-                                        value == "*Gender") {
+                                        value == "Gender *") {
                                       return 'Please select a gender';
                                     }
                                     return null;
@@ -169,7 +169,7 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                                         style: TextStyle(
                                           // fontSize: screenWidth / 32,
                                           fontWeight: FontWeight.normal,
-                                          color: Colors.white70,
+                                          color: Colors.white,
                                         ),
                                       ),
                                     );
@@ -183,7 +183,7 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                                     enabledBorder: UnderlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Colors
-                                            .white70, // Set border color to white
+                                            .white, // Set border color to white
                                       ),
                                     ),
                                   ),
@@ -194,7 +194,7 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                               //Dropdown for Age
                               Expanded(
                                 child: DropdownButtonFormField(
-                                  iconEnabledColor: Colors.white70,
+                                  iconEnabledColor: Colors.white,
                                   dropdownColor:
                                       Color.fromARGB(255, 29, 64, 97),
                                   // Color.fromARGB(255, 21, 46, 70),
@@ -203,7 +203,7 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                                   validator: (value) {
                                     if (value == null ||
                                         value.isEmpty ||
-                                        value == "*Age") {
+                                        value == "Age *") {
                                       return 'Please select the age';
                                     }
                                     return null;
@@ -221,7 +221,7 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                                         style: TextStyle(
                                           // fontSize: screenWidth / 32,
                                           fontWeight: FontWeight.normal,
-                                          color: Colors.white70,
+                                          color: Colors.white,
                                         ),
                                       ),
                                     );
@@ -235,7 +235,7 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                                     enabledBorder: UnderlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Colors
-                                            .white70, // Set border color to white
+                                            .white, // Set border color to white
                                       ),
                                     ),
                                   ),
@@ -266,7 +266,10 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                                   minimumSize: Size(double.infinity,
                                       50), // Set button width to fill available space
                                 ),
-                                child: const Text("Start Test")),
+                                child: const Text(
+                                  "Start Test",
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                )),
                           ),
                         ],
                       ),
@@ -282,18 +285,18 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
   }
 
   void insertDialog() {
-    if (!_formKey.currentState!.validate()) {
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-        content: Text(
-          "Please complete the form",
-          style: TextStyle(color: Colors.black),
-        ),
-        backgroundColor: Colors.white70,
-      ));
-      return;
-    }
+    // if (!_formKey.currentState!.validate()) {
+    //   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+    //     content: Text(
+    //       "Please complete the form",
+    //       style: TextStyle(color: Colors.black),
+    //     ),
+    //     backgroundColor: Colors.white70,
+    //   ));
+    //   return;
+    // }
 
-    Navigator.pushReplacement(
+    Navigator.push(
         context, MaterialPageRoute(builder: (content) => TestQuestionScreen()));
   }
 
