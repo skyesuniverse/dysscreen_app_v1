@@ -7,10 +7,13 @@ import 'package:get/get.dart';
 
 class Question_Card extends StatelessWidget {
   const Question_Card({
-    required Key key,
+    Key? key,
     // it means we have to pass this
     required this.question,
     required this.screenHeight,
+    required void Function(int index) onPageChanged,
+    required PageController controller,
+    required int itemCount,
   }) : super(key: key);
 
   final double screenHeight;
@@ -60,7 +63,7 @@ class Question_Card extends StatelessWidget {
                 // Determine whether the answer is "Yes" or "No"
                 bool answeredYes = index == 0; // Assuming "Yes" is at index 0
                 _controller.checkAns(question, answeredYes);
-              }, 
+              },
             ),
           ),
         ],

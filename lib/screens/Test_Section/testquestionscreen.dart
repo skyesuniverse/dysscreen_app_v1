@@ -1,7 +1,9 @@
+import 'package:dysscreen_app_v1/controllers/question_controller.dart';
 import 'package:dysscreen_app_v1/models/Questions.dart';
 import 'package:dysscreen_app_v1/screens/Test_Section/Components/question_card.dart';
 import 'package:dysscreen_app_v1/screens/homescreen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class TestQuestionScreen extends StatefulWidget {
   const TestQuestionScreen({super.key});
@@ -16,6 +18,10 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
   Widget build(BuildContext context) {
     screenHeight = MediaQuery.of(context).size.height;
     screenWidth = MediaQuery.of(context).size.width;
+
+    // So that we have acccess our controller
+    QuestionController _questionController = Get.put(QuestionController());
+
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -51,7 +57,8 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
                     alignment: Alignment.center,
                     child: Text.rich(
                       TextSpan(
-                        text: "Question 1",
+                        text:
+                            "Question ${_questionController.questionNumber.value}",
                         style: Theme.of(context)
                             .textTheme
                             .headlineMedium!
@@ -59,7 +66,7 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
                                 color: Color.fromARGB(255, 255, 255, 255)),
                         children: [
                           TextSpan(
-                            text: "/10",
+                            text: "/${_questionController.questions.length}",
                             style: Theme.of(context)
                                 .textTheme
                                 .headlineSmall!
@@ -75,8 +82,15 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
                   ),
                   Expanded(
                     child: PageView.builder(
+                      // Block swipe to next qn
+                      physics: NeverScrollableScrollPhysics(),
+                      controller: _questionController.pageController,
+                      onPageChanged: _questionController.updateTheQnNum,
+                      itemCount: _questionController.questions.length,
+
                       itemBuilder: (context, index) => Question_Card(
-                        screenHeight: screenHeight,
+                      question: _questionController.questions[index]),
+
                       ),
                     ),
                   )

@@ -3,8 +3,7 @@ import 'package:dysscreen_app_v1/screens/result.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
-class QuestionController extends GetxController
-    with SingleGetTickerProviderMixin {
+class QuestionController extends GetxController {
   late PageController _pageController;
   PageController get pageController => this._pageController;
 
@@ -46,7 +45,6 @@ class QuestionController extends GetxController
 
   void checkAns(Question question, bool answeredYes) {
     _isAnswered = true;
-    
 
     if (answeredYes) {
       _yesCount++;
@@ -54,9 +52,9 @@ class QuestionController extends GetxController
       _noCount++;
     }
 
-    Future.delayed(Duration(seconds: 3), () {
-      nextQuestion();
-    });
+    // Future.delayed(Duration(seconds: 3), () {
+    //   nextQuestion();
+    // });
   }
 
   void nextQuestion() {
