@@ -61,7 +61,6 @@ class Question_Card extends StatelessWidget {
                 bool answeredYes = index == 0; // Assuming "Yes" is at index 0
                 _controller.recordAnswer(answeredYes);
               },
-
             ),
           ),
         ],

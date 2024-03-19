@@ -32,6 +32,9 @@ class QuestionController extends GetxController {
   RxInt _questionNumber = 1.obs;
   RxInt get questionNumber => this._questionNumber;
 
+  int _selectedOptionIndex = -1; // Initially no option is selected
+  int get selectedOptionIndex => this._selectedOptionIndex;
+
   @override
   void onInit() {
     _pageController = PageController();
@@ -46,6 +49,10 @@ class QuestionController extends GetxController {
 
   void recordAnswer(bool answeredYes) {
     print("QUESTION NO: $_questionNumber");
+    _isAnswered = true;
+    _selectedOptionIndex =
+        selectedOptionIndex; // Update the selected option index
+
     if (answeredYes) {
       _yesCount++;
     } else {
@@ -53,7 +60,7 @@ class QuestionController extends GetxController {
     }
 
     print("Yes count: $_yesCount, No count: $_noCount");
-    Future.delayed(Duration(seconds: 1), () {
+    Future.delayed(Duration(seconds: 3), () {
       nextQuestion();
     });
   }

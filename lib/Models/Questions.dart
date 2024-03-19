@@ -17,7 +17,7 @@ const List sample_data = [
     "question":
         "Flutter is an open-source UI software development kit created by ______",
     "instruction": "Let your children write somehitng",
-    "options": ['Yes', 'No', 'Not sure'],
+    "options": ['Yes', 'No'],
     "answer_index": 1,
   },
   {

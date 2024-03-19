@@ -13,7 +13,6 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-
       title: 'BarterIt',
       theme: ThemeData(
         // primarySwatch: Color(0xFF03A9F4),
