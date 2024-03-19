@@ -41,63 +41,59 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
           ),
         ],
       ),
-      body: Stack(
-        children: [
-          Container(
-              decoration: const BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('assets/images/splashscreen.png'),
-                      fit: BoxFit.cover))),
-          SafeArea(
-            child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                // mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Align(
-                    alignment: Alignment.center,
-                    child: Text.rich(
-                      TextSpan(
-                        text:
-                            "Question ${_questionController.questionNumber.value}",
-                        style: Theme.of(context)
-                            .textTheme
-                            .headlineMedium!
-                            .copyWith(
-                                color: Color.fromARGB(255, 255, 255, 255)),
-                        children: [
-                          TextSpan(
-                            text: "/${_questionController.questions.length}",
-                            style: Theme.of(context)
-                                .textTheme
-                                .headlineSmall!
-                                .copyWith(
-                                    color: Color.fromARGB(255, 255, 255, 255)),
-                          ),
-                        ],
-                      ),
+      body: Stack(children: [
+        Container(
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage('assets/images/splashscreen.png'),
+                    fit: BoxFit.cover))),
+        SafeArea(
+          child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              // mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Align(
+                  alignment: Alignment.center,
+                  child: Text.rich(
+                    TextSpan(
+                      text:
+                          "Question ${_questionController.questionNumber.value}",
+                      style: Theme.of(context)
+                          .textTheme
+                          .headlineMedium!
+                          .copyWith(color: Color.fromARGB(255, 255, 255, 255)),
+                      children: [
+                        TextSpan(
+                          text: "/${_questionController.questions.length}",
+                          style: Theme.of(context)
+                              .textTheme
+                              .headlineSmall!
+                              .copyWith(
+                                  color: Color.fromARGB(255, 255, 255, 255)),
+                        ),
+                      ],
                     ),
                   ),
-                  SizedBox(
-                    height: screenHeight * 0.02,
-                  ),
-                  Expanded(
-                    child: PageView.builder(
-                      // Block swipe to next qn
-                      physics: NeverScrollableScrollPhysics(),
-                      controller: _questionController.pageController,
-                      onPageChanged: _questionController.updateTheQnNum,
-                      itemCount: _questionController.questions.length,
-
-                      itemBuilder: (context, index) => Question_Card(
-                      question: _questionController.questions[index]),
-
-                      ),
+                ),
+                SizedBox(
+                  height: screenHeight * 0.02,
+                ),
+                Expanded(
+                  child: PageView.builder(
+                    // Block swipe to next qn
+                    physics: NeverScrollableScrollPhysics(),
+                    controller: _questionController.pageController,
+                    onPageChanged: _questionController.updateTheQnNum,
+                    itemCount: _questionController.questions.length,
+                    itemBuilder: (context, index) => Question_Card(
+                      question: _questionController.questions[index],
+                      screenHeight: screenHeight,
                     ),
-                  )
-                ]),
-          ),
-        ],
-      ),
+                  ),
+                ),
+              ]),
+        )
+      ]),
     );
   }
 

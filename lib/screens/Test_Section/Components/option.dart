@@ -12,12 +12,12 @@ class Option extends StatelessWidget {
 
   final String text;
   final int index;
-  final VoidCallback press;
+  final Function press;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: press,
+      onTap: press as void Function()?,
       child: Container(
         margin: EdgeInsets.only(top: 10),
         padding: EdgeInsets.all(15),

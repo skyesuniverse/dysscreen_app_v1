@@ -12,9 +12,9 @@ class QuestionController extends GetxController {
         (question) => Question(
             id: question['id'],
             question: question['question'],
+            instruction: question['instruction'],
             options: question['options'],
-            answer: question['answer_index'],
-            instruction: 'answer_index'),
+            answer: question['answer_index']),
       )
       .toList();
   List<Question> get questions => this._questions;
@@ -43,6 +43,18 @@ class QuestionController extends GetxController {
     _pageController.dispose();
   }
 
+  void recordAnswer(bool answeredYes) {
+    if (answeredYes) {
+      _yesCount++;
+    } else {
+      _noCount++;
+    }
+    print("Yes count: $_yesCount, No count: $_noCount");
+    Future.delayed(Duration(seconds: 1), () {
+      nextQuestion();
+    });
+  }
+
   void checkAns(Question question, bool answeredYes) {
     _isAnswered = true;
 
@@ -52,9 +64,9 @@ class QuestionController extends GetxController {
       _noCount++;
     }
 
-    // Future.delayed(Duration(seconds: 3), () {
-    //   nextQuestion();
-    // });
+    Future.delayed(Duration(seconds: 1), () {
+      nextQuestion();
+    });
   }
 
   void nextQuestion() {

@@ -57,9 +57,9 @@ class Body extends StatelessWidget {
                       screenHeight: screenHeight,
                       key: key,
                       question: _questionController.questions[index],
-                      controller: _questionController.pageController,
-                      onPageChanged: _questionController.updateTheQnNum,
-                      itemCount: _questionController.questions.length,
+                      // controller: _questionController.pageController,
+                      // onPageChanged: _questionController.updateTheQnNum,
+                      // itemCount: _questionController.questions.length,
                     ),
                   ),
                 )
