@@ -54,24 +54,27 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
               children: [
                 Align(
                   alignment: Alignment.center,
-                  child: Text.rich(
-                    TextSpan(
-                      text:
-                          "Question ${_questionController.questionNumber.value}",
-                      style: Theme.of(context)
-                          .textTheme
-                          .headlineMedium!
-                          .copyWith(color: Color.fromARGB(255, 255, 255, 255)),
-                      children: [
-                        TextSpan(
-                          text: "/${_questionController.questions.length}",
-                          style: Theme.of(context)
-                              .textTheme
-                              .headlineSmall!
-                              .copyWith(
-                                  color: Color.fromARGB(255, 255, 255, 255)),
-                        ),
-                      ],
+                  child: Obx(
+                    () => Text.rich(
+                      TextSpan(
+                        text:
+                            "Question ${_questionController.questionNumber.value}",
+                        style: Theme.of(context)
+                            .textTheme
+                            .headlineMedium!
+                            .copyWith(
+                                color: Color.fromARGB(255, 255, 255, 255)),
+                        children: [
+                          TextSpan(
+                            text: "/${_questionController.questions.length}",
+                            style: Theme.of(context)
+                                .textTheme
+                                .headlineSmall!
+                                .copyWith(
+                                    color: Color.fromARGB(255, 255, 255, 255)),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),

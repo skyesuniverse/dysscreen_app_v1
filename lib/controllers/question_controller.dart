@@ -1,5 +1,6 @@
 import 'package:dysscreen_app_v1/models/Questions.dart';
 import 'package:dysscreen_app_v1/screens/result.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
@@ -44,26 +45,14 @@ class QuestionController extends GetxController {
   }
 
   void recordAnswer(bool answeredYes) {
+    print("QUESTION NO: $_questionNumber");
     if (answeredYes) {
       _yesCount++;
     } else {
       _noCount++;
     }
+
     print("Yes count: $_yesCount, No count: $_noCount");
-    Future.delayed(Duration(seconds: 1), () {
-      nextQuestion();
-    });
-  }
-
-  void checkAns(Question question, bool answeredYes) {
-    _isAnswered = true;
-
-    if (answeredYes) {
-      _yesCount++;
-    } else {
-      _noCount++;
-    }
-
     Future.delayed(Duration(seconds: 1), () {
       nextQuestion();
     });
@@ -71,11 +60,14 @@ class QuestionController extends GetxController {
 
   void nextQuestion() {
     if (_questionNumber.value != _questions.length) {
-      _isAnswered = false;
       _pageController.nextPage(
           duration: Duration(milliseconds: 250), curve: Curves.ease);
     } else {
-      Get.to(MyApp());
+      Get.to(ResultScreen());
+
+/*[GETX] WARNING, consider using: "Get.to(() => Page())" instead of "Get.to(Page())".
+       Using a widget function instead of a widget fully guarantees that the widget and its controllers will be removed from memory when they are no longer used.
+[GETX] GOING TO ROUTE /ResultScreen */
     }
   }
 
