@@ -14,6 +14,9 @@ class TestQuestionScreen extends StatefulWidget {
 
 class _TestQuestionScreenState extends State<TestQuestionScreen> {
   late double screenHeight, screenWidth;
+  late PageController _pageController;
+  int _currentPageIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     screenHeight = MediaQuery.of(context).size.height;
@@ -91,8 +94,32 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
                     itemBuilder: (context, index) => Question_Card(
                       question: _questionController.questions[index],
                       screenHeight: screenHeight,
+                      questionNumber: index + 1,
                     ),
                   ),
+                ),
+                SizedBox(height: screenHeight * 0.02),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    IconButton(
+                      onPressed: _currentPageIndex > 0
+                          ? () => _pageController.previousPage(
+                              duration: Duration(milliseconds: 250),
+                              curve: Curves.ease)
+                          : null,
+                      icon: Icon(Icons.arrow_left_rounded),
+                    ),
+                    IconButton(
+                      onPressed: _currentPageIndex <
+                              _questionController.questions.length - 1
+                          ? () => _pageController.nextPage(
+                              duration: Duration(milliseconds: 250),
+                              curve: Curves.ease)
+                          : null,
+                      icon: Icon(Icons.arrow_right_rounded),
+                    ),
+                  ],
                 ),
               ]),
         )

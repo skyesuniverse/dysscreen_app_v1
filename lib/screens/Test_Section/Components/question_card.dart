@@ -1,3 +1,6 @@
+
+
+
 import 'package:dysscreen_app_v1/controllers/question_controller.dart';
 import 'package:dysscreen_app_v1/models/Questions.dart';
 import 'package:dysscreen_app_v1/screens/Test_Section/Components/option.dart';
@@ -11,10 +14,12 @@ class Question_Card extends StatelessWidget {
     // it means we have to pass this
     required this.question,
     required this.screenHeight,
+    required this.questionNumber,
   }) : super(key: key);
 
   final double screenHeight;
   final Question question;
+  final int questionNumber;
 
   @override
   Widget build(BuildContext context) {
@@ -56,11 +61,14 @@ class Question_Card extends StatelessWidget {
             (index) => Option(
               index: index,
               text: question.options[index],
-              press: () {
-                // Determine whether the answer is "Yes" or "No"
-                bool answeredYes = index == 0; // Assuming "Yes" is at index 0
-                _controller.recordAnswer(answeredYes);
-              },
+              questionNumber: questionNumber,
+
+              
+              // press: () {
+              //   // Determine whether the answer is "Yes" or "No"
+              //   bool answeredYes = index == 0; // Assuming "Yes" is at index 0
+              //   _controller.recordAnswer(answeredYes);
+              // },
             ),
           ),
         ],
