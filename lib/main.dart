@@ -1,4 +1,7 @@
 import 'package:dysscreen_app_v1/screens/Test_Section/testquestionscreen.dart';
+import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/intro.dart';
+import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/myths.dart';
+import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/sign.dart';
 import 'package:dysscreen_app_v1/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
@@ -19,7 +22,7 @@ class MainApp extends StatelessWidget {
         colorSchemeSeed: const Color(0xFF03A9F4),
         useMaterial3: true,
       ),
-      home: const TestQuestionScreen(),
+      home: const SplashScreen(),
     );
   }
 }

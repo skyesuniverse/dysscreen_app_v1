@@ -1,4 +1,6 @@
-import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/introofdyslexia.dart';
+import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/intro.dart';
+import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/myths.dart';
+import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/sign.dart';
 import 'package:flutter/material.dart';
 import 'package:dysscreen_app_v1/widgets/aboutCard_Widget.dart';
 
@@ -95,12 +97,11 @@ class _AboutScreenState extends State<AboutScreen> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) =>
-                                      IntroOfDyslexiaScreen()));
+                                  builder: (context) => SignAndSymtoms()));
                         },
                         child: AboutCard(
                             imageUrl:
-                                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjVVgAnRYY4ybzZvgGdtZlRucvcBoCfh9efWL1vxk2UW2vlDYZI3paW1k0Io_y0v_i9VQ&usqp=CAU',
+                                'https://www.readabilitytutor.com/wp-content/uploads/2022/11/How-AI-can-Support-Students-with-Dyslexia.jpg',
                             title: 'Common Signs and Symptoms',
                             description:
                                 'Some of the symptoms of dyslexia or SLD in a preschooler could include...',
@@ -115,12 +116,11 @@ class _AboutScreenState extends State<AboutScreen> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) =>
-                                      IntroOfDyslexiaScreen()));
+                                  builder: (context) => MythsAndFactScreen()));
                         },
                         child: AboutCard(
                             imageUrl:
-                                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwJz94Im5Dz27eF_8r6a3JEUQ5xsNz8YqfTZN5AqT1T3DYsg3MbcYGG5lOOL1D5jgXXh0&usqp=CAU',
+                                'https://upload.wikimedia.org/wikipedia/commons/3/3d/Dyslexia.jpg',
                             title: 'Myths and Facts about Dyslexia',
                             description:
                                 'Let\'s debunk seven common myths surrounding dyslexia and help pave the way for a more inclusive future.',
@@ -153,23 +153,23 @@ class _AboutScreenState extends State<AboutScreen> {
               //card 1 for Tips
               cardForTips(
                   context,
-                  'Tips for Home',
-                  'Identifying Dyslexia Signs in Home...',
+                  'Tips for Dyslexia',
+                  'Supporting Individuals at Home, Preschool, and Primary School',
                   'https://website-nessycdn.com/darkroom/1664/8ab33eeb84e92e50e9404d47dad73960:db0a460c62f888c712a019cbdb99abfb/ud-signs-of-dyslexia-preschool-genetic.jpg',
                   screenWidth),
 
               //card 2 for Tips
               cardForTips(
                   context,
-                  'Tips for PreSchool',
-                  'Identifying Dyslexia Signs in PreSchool...',
+                  'Diagnosis and Treatment',
+                  'Diagnosis and Treatment of Dyslexia: Understanding and Supporting Individuals',
                   'https://thumbs.dreamstime.com/z/dyslexic-boy-book-child-affected-dyslexia-reading-digital-illustration-87517954.jpg',
                   screenWidth),
 
               //card 3 for Tips
               cardForTips(
                   context,
-                  'Tips for Primary School',
+                  'FAQs',
                   'Identifying Dyslexia Signs in Primary School...',
                   'https://img1.wsimg.com/isteam/ip/5b541589-b200-4e1c-b9a8-96d7c1a19061/Screenshot%202023-04-28%20at%204.19.50%20PM.png',
                   screenWidth),
@@ -178,7 +178,7 @@ class _AboutScreenState extends State<AboutScreen> {
               cardForTips(
                   context,
                   'Resources and Support',
-                  'Dyslexia Support Organizations...',
+                  'Comprehensive List of Dyslexia Organizations: Malaysia and International',
                   'https://clipground.com/images/organization-clipart-2.jpg',
                   screenWidth),
             ],
@@ -242,6 +242,8 @@ Widget cardForTips(BuildContext context, String title, String description,
                       padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                       child: Text(
                         description,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           fontSize: screenWidth / 30,
                           color: Colors.black54,

@@ -1,4 +1,6 @@
-import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/introofdyslexia.dart';
+import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/intro.dart';
+import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/myths.dart';
+import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/sign.dart';
 import 'package:dysscreen_app_v1/screens/taketestscreen.dart';
 import 'package:dysscreen_app_v1/widgets/aboutCard_Widget.dart';
 import 'package:dysscreen_app_v1/widgets/language_Widget.dart';
@@ -132,7 +134,7 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
             Container(
               width: double.infinity,
               height: screenHeight * (45 / 100),
-              color: Colors.amber,
+              // color: Colors.amber,
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 // crossAxisAlignment: CrossAxisAlignment.start,
@@ -200,11 +202,11 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              IntroOfDyslexiaScreen()));
+                                              SignAndSymtoms()));
                                 },
                                 child: AboutCard(
                                     imageUrl:
-                                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjVVgAnRYY4ybzZvgGdtZlRucvcBoCfh9efWL1vxk2UW2vlDYZI3paW1k0Io_y0v_i9VQ&usqp=CAU',
+                                        'https://www.readabilitytutor.com/wp-content/uploads/2022/11/How-AI-can-Support-Students-with-Dyslexia.jpg',
                                     title: 'Common Signs and Symptoms',
                                     description:
                                         'Some of the symptoms of dyslexia or SLD in a preschooler could include...',
@@ -220,11 +222,11 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              IntroOfDyslexiaScreen()));
+                                              MythsAndFactScreen()));
                                 },
                                 child: AboutCard(
                                     imageUrl:
-                                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwJz94Im5Dz27eF_8r6a3JEUQ5xsNz8YqfTZN5AqT1T3DYsg3MbcYGG5lOOL1D5jgXXh0&usqp=CAU',
+                                        'https://upload.wikimedia.org/wikipedia/commons/3/3d/Dyslexia.jpg',
                                     title: 'Myths and Facts about Dyslexia',
                                     description:
                                         'Let\'s debunk seven common myths surrounding dyslexia and help pave the way for a more inclusive future.',
