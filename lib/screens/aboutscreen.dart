@@ -1,6 +1,10 @@
-import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/intro.dart';
-import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/myths.dart';
-import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/sign.dart';
+import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/About%20Dyslexia/intro.dart';
+import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/About%20Dyslexia/myths.dart';
+import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/About%20Dyslexia/sign.dart';
+import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/Tips%20of%20Dyslexia/dignosis.dart';
+import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/Tips%20of%20Dyslexia/faqs.dart';
+import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/Tips%20of%20Dyslexia/resources.dart';
+import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/Tips%20of%20Dyslexia/tips.dart';
 import 'package:flutter/material.dart';
 import 'package:dysscreen_app_v1/widgets/aboutCard_Widget.dart';
 
@@ -155,24 +159,30 @@ class _AboutScreenState extends State<AboutScreen> {
                   context,
                   'Tips for Dyslexia',
                   'Supporting Individuals at Home, Preschool, and Primary School',
-                  'https://website-nessycdn.com/darkroom/1664/8ab33eeb84e92e50e9404d47dad73960:db0a460c62f888c712a019cbdb99abfb/ud-signs-of-dyslexia-preschool-genetic.jpg',
-                  screenWidth),
+                  'assets/images/tips.png',
+                  screenWidth,
+                  () => TipsForDyslexia(),
+                  false),
 
               //card 2 for Tips
               cardForTips(
                   context,
                   'Diagnosis and Treatment',
                   'Diagnosis and Treatment of Dyslexia: Understanding and Supporting Individuals',
-                  'https://thumbs.dreamstime.com/z/dyslexic-boy-book-child-affected-dyslexia-reading-digital-illustration-87517954.jpg',
-                  screenWidth),
+                  'assets/images/diagnosisandtreatment.png',
+                  screenWidth,
+                  () => DiagnosisAndTreatment(),
+                  false),
 
               //card 3 for Tips
               cardForTips(
                   context,
                   'FAQs',
                   'Identifying Dyslexia Signs in Primary School...',
-                  'https://img1.wsimg.com/isteam/ip/5b541589-b200-4e1c-b9a8-96d7c1a19061/Screenshot%202023-04-28%20at%204.19.50%20PM.png',
-                  screenWidth),
+                  'assets/images/faqs.png',
+                  screenWidth,
+                  () => FaQs(),
+                  false),
 
               //card 4 for Tips
               cardForTips(
@@ -180,7 +190,9 @@ class _AboutScreenState extends State<AboutScreen> {
                   'Resources and Support',
                   'Comprehensive List of Dyslexia Organizations: Malaysia and International',
                   'https://clipground.com/images/organization-clipart-2.jpg',
-                  screenWidth),
+                  screenWidth,
+                  () => ResourcesAndSupport(),
+                  true),
             ],
           )
         ],
@@ -189,72 +201,91 @@ class _AboutScreenState extends State<AboutScreen> {
   }
 }
 
-Widget cardForTips(BuildContext context, String title, String description,
-    String imageUrl, screenWidth) {
-  return Padding(
-    padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 8),
-    child: Container(
-      width: double.infinity,
-      height: 100,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            blurRadius: 4,
-            color: Color(0x520E151B),
-            offset: Offset(0, 2),
-          )
-        ],
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: Padding(
-        padding: EdgeInsets.all(8),
-        child: Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(6),
-              child: Image.network(
-                imageUrl,
-                width: 80,
-                height: 80,
-                fit: BoxFit.cover,
-              ),
-            ),
-            Expanded(
-              child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      title,
-                      style: TextStyle(
-                        // fontSize: screenWidth / 33,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
+Widget cardForTips(
+    BuildContext context,
+    String title,
+    String description,
+    dynamic imageUrl,
+    screenWidth,
+    Widget Function() destinationScreen,
+    bool isNetworkImage) {
+  return InkWell(
+    onTap: () {
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => destinationScreen()));
+    },
+    child: Padding(
+      padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 8),
+      child: Container(
+        width: double.infinity,
+        height: 100,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 4,
+              color: Color(0x520E151B),
+              offset: Offset(0, 2),
+            )
+          ],
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Padding(
+          padding: EdgeInsets.all(8),
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(6),
+                child: isNetworkImage
+                    ? Image.network(
+                        imageUrl,
+                        width: 80,
+                        height: 80,
+                        fit: BoxFit.cover,
+                      )
+                    : Image.asset(
+                        imageUrl,
+                        width: 80,
+                        height: 80,
+                        fit: BoxFit.cover,
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
-                      child: Text(
-                        description,
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
+              ),
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        title,
                         style: TextStyle(
-                          fontSize: screenWidth / 30,
-                          color: Colors.black54,
+                          // fontSize: screenWidth / 33,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
                         ),
                       ),
-                    ),
-                  ],
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
+                        child: Text(
+                          description,
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontSize: screenWidth / 30,
+                            color: Colors.black54,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     ),
