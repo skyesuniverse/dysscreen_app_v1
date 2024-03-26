@@ -10,7 +10,7 @@ class BulletList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.centerLeft,
-      // padding: EdgeInsets.fromLTRB(16, 15, 16, 16),
+      padding: EdgeInsets.fromLTRB(16, 0, 0, 0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: strings.map((str) {
