@@ -1,6 +1,6 @@
-import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/About%20Dyslexia/intro.dart';
-import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/About%20Dyslexia/myths.dart';
-import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/About%20Dyslexia/sign.dart';
+import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/About%20Dyslexia%20Section/intro.dart';
+import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/About%20Dyslexia%20Section/myths.dart';
+import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/About%20Dyslexia%20Section/sign.dart';
 import 'package:dysscreen_app_v1/screens/taketestscreen.dart';
 import 'package:dysscreen_app_v1/widgets/aboutCard_Widget.dart';
 import 'package:dysscreen_app_v1/widgets/language_Widget.dart';

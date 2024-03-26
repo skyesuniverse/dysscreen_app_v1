@@ -32,17 +32,10 @@ class _SignAndSymtomsState extends State<SignAndSymtoms> {
         height: double.infinity,
         decoration: BoxDecoration(
           color: Colors.white,
-          // image: DecorationImage(
-          //   fit: BoxFit.cover,
-          //   image: Image.asset(
-          //     'assets/images/splashscreen.png',
-          //   ).image,
-          // ),
+
         ),
         child: Container(
-          // decoration: BoxDecoration(
-          //   color: Color.fromARGB(154, 232, 232, 232),
-          // ),
+
           child: SingleChildScrollView(
               child: Column(
             children: [
@@ -57,7 +50,7 @@ class _SignAndSymtomsState extends State<SignAndSymtoms> {
                           "Common Signs and Symptoms",
                           style: TextStyle(
                             fontSize: screenWidth / 15,
-                            // fontWeight: FontWeight.bold,
+
                             color: Colors.black,
                           ),
                         ),
@@ -181,3 +174,29 @@ class SymptomCategory extends StatelessWidget {
     );
   }
 }
+
+
+Widget buildListItem(String title, List<String> items) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          '• $title:',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        SizedBox(height: 8),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: items
+              .map((item) => Padding(
+                    padding: const EdgeInsets.only(left: 16.0),
+                    child: Text('• $item'),
+                  ))
+              .toList(),
+        ),
+      ],
+    );
+  }
+
