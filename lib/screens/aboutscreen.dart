@@ -189,7 +189,7 @@ class _AboutScreenState extends State<AboutScreen> {
                   context,
                   'Resources and Support',
                   'Comprehensive List of Dyslexia Organizations: Malaysia and International',
-                  'https://clipground.com/images/organization-clipart-2.jpg',
+                  'assets/images/resourcesandsupport.png',
                   screenWidth,
                   () => ResourcesAndSupport(),
                   true),

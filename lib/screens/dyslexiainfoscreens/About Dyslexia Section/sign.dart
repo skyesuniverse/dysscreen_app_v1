@@ -32,10 +32,8 @@ class _SignAndSymtomsState extends State<SignAndSymtoms> {
         height: double.infinity,
         decoration: BoxDecoration(
           color: Colors.white,
-
         ),
         child: Container(
-
           child: SingleChildScrollView(
               child: Column(
             children: [
@@ -50,7 +48,6 @@ class _SignAndSymtomsState extends State<SignAndSymtoms> {
                           "Common Signs and Symptoms",
                           style: TextStyle(
                             fontSize: screenWidth / 15,
-
                             color: Colors.black,
                           ),
                         ),
@@ -174,29 +171,3 @@ class SymptomCategory extends StatelessWidget {
     );
   }
 }
-
-
-Widget buildListItem(String title, List<String> items) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          '• $title:',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        SizedBox(height: 8),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: items
-              .map((item) => Padding(
-                    padding: const EdgeInsets.only(left: 16.0),
-                    child: Text('• $item'),
-                  ))
-              .toList(),
-        ),
-      ],
-    );
-  }
-

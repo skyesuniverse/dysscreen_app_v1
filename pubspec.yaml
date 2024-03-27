@@ -12,6 +12,7 @@ dependencies:
   
   # state management, intelligent dependency injection, and route management
   get: ^4.1.4
+  # url_launcher: ^6.2.5
 
 
 dev_dependencies:
