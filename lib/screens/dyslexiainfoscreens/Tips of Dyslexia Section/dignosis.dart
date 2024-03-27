@@ -54,7 +54,7 @@ class _DiagnosisAndTreatmentState extends State<DiagnosisAndTreatment> {
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 9, 0, 24),
                         child: Image.network(
-                          'https://www.readabilitytutor.com/wp-content/uploads/2022/11/How-AI-can-Support-Students-with-Dyslexia.jpg', // Replace with your image URL
+                          'https://www.rhodescollege.ca/wp-content/uploads/2019/07/counselling-skills.jpg', // Replace with your image URL
                           width: screenWidth, // Adjust width as needed
                           height: 200, // Adjust height as needed
                           fit: BoxFit.cover, // Adjust BoxFit as needed
@@ -107,6 +107,8 @@ class _DiagnosisAndTreatmentState extends State<DiagnosisAndTreatment> {
                         }).toList(),
                       ),
                       SizedBox(height: 40, child: Divider()),
+
+                      ////////////////Treatment section
                       Align(
                         alignment: Alignment.centerLeft,
                         child: Padding(
