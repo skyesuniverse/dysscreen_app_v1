@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:dysscreen_app_v1/screens/homescreen.dart';
 import 'package:dysscreen_app_v1/screens/mainscreen.dart';
+import 'package:dysscreen_app_v1/screens/result.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const SplashScreen());
@@ -20,8 +21,8 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Timer(
         const Duration(seconds: 1),
-        () => Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (content) => const MainScreen())));
+        () => Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (content) => ResultScreen())));
   }
 
   @override

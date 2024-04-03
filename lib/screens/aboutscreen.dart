@@ -205,7 +205,7 @@ Widget cardForTips(
     BuildContext context,
     String title,
     String description,
-    dynamic imageUrl,
+    String imageUrl,
     screenWidth,
     Widget Function() destinationScreen,
     bool isNetworkImage) {
@@ -238,19 +238,12 @@ Widget cardForTips(
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(6),
-                child: isNetworkImage
-                    ? Image.network(
-                        imageUrl,
-                        width: 80,
-                        height: 80,
-                        fit: BoxFit.cover,
-                      )
-                    : Image.asset(
-                        imageUrl,
-                        width: 80,
-                        height: 80,
-                        fit: BoxFit.cover,
-                      ),
+                child: Image.asset(
+                  imageUrl,
+                  width: 80,
+                  height: 80,
+                  fit: BoxFit.cover,
+                ),
               ),
               Expanded(
                 child: Padding(

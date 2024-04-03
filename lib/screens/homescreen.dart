@@ -41,16 +41,16 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        leading: null, // Remove the leading icon
+        leading: Icon(Icons.apps_rounded),
         actions: [
           IconButton(
             onPressed: () {
               // Add your functionality here
-              selectLanguage();
+              takeScreenshot();
             },
             icon: const Icon(
-              Icons.language_rounded,
-              color: Colors.white,
+              Icons.close_rounded,
+              // color: Colors.white,
             ),
           ),
         ],
@@ -321,6 +321,8 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
     //   ),
     // );
   }
+  
+  void takeScreenshot() {}
 }
 
 Widget buildCard(
