@@ -12,7 +12,10 @@ dependencies:
   
   # state management, intelligent dependency injection, and route management
   get: ^4.1.4
-  # url_launcher: ^6.2.5
+
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.17.0
 
 
 dev_dependencies:
@@ -21,6 +24,7 @@ dev_dependencies:
   flutter_lints: ^2.0.0
 
 flutter:
+  generate: true
   uses-material-design: true
   assets:
   - assets/images/

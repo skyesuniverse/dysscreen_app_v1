@@ -24,7 +24,7 @@ class _IntroOfDyslexiaScreenState extends State<IntroOfDyslexiaScreen> {
           ),
         ),
 
-        // foregroundColor: Theme.of(context).colorScheme.secondary,
+        
         elevation: 0,
       ),
       body: Container(
@@ -32,17 +32,9 @@ class _IntroOfDyslexiaScreenState extends State<IntroOfDyslexiaScreen> {
         height: double.infinity,
         decoration: BoxDecoration(
           color: Colors.white,
-          // image: DecorationImage(
-          //   fit: BoxFit.cover,
-          //   image: Image.asset(
-          //     'assets/images/splashscreen.png',
-          //   ).image,
-          // ),
+ 
         ),
         child: Container(
-          // decoration: BoxDecoration(
-          //   color: Color.fromARGB(154, 232, 232, 232),
-          // ),
           child: SingleChildScrollView(
               child: Column(
             children: [

@@ -1,11 +1,12 @@
-import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/About%20Dyslexia%20Section/intro.dart';
-import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/About%20Dyslexia%20Section/myths.dart';
-import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/About%20Dyslexia%20Section/sign.dart';
+import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/About_Dyslexia_Section/intro.dart';
+import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/About_Dyslexia_Section/myths.dart';
+import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/About_Dyslexia_Section/sign.dart';
 import 'package:dysscreen_app_v1/screens/taketestscreen.dart';
 import 'package:dysscreen_app_v1/widgets/aboutCard_Widget.dart';
 import 'package:dysscreen_app_v1/widgets/language_Widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() => runApp(const HomeTabScreen());
 
@@ -41,16 +42,16 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        leading: Icon(Icons.apps_rounded),
+        leading: null, // Remove the leading icon
         actions: [
           IconButton(
             onPressed: () {
               // Add your functionality here
-              takeScreenshot();
+              selectLanguage();
             },
             icon: const Icon(
-              Icons.close_rounded,
-              // color: Colors.white,
+              Icons.language_rounded,
+              color: Colors.white,
             ),
           ),
         ],
@@ -73,7 +74,7 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
                     'assets/images/splashscreen.png',
                   ).image,
                 ),
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   bottomLeft: Radius.circular(20),
                   bottomRight: Radius.circular(20),
                 ),
@@ -81,7 +82,7 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
               child: Container(
                 width: 100,
                 height: 660,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Color(0x9A1D2428),
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(20),
@@ -106,7 +107,8 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Welcome to DysScreen',
+                        // "dff",
+                        AppLocalizations.of(context)!.welcome,
                         style: TextStyle(
                           fontSize: screenWidth / 12,
                           fontWeight: FontWeight.bold,
@@ -116,7 +118,8 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
                       SizedBox(
                           height: MediaQuery.of(context).size.height * 0.02),
                       Text(
-                        'DysScreen, a user-friendly app crafted to assist parents and educators in the crucial task of assessing and screening for dyslexia in children.',
+                        "sss'",
+                        // AppLocalizations.of(context)!.app_intro,
                         textAlign: TextAlign.start,
                         style: TextStyle(
                           fontSize: screenWidth / 25,
@@ -146,6 +149,7 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
                       alignment: Alignment.centerLeft,
                       child: Text(
                         textAlign: TextAlign.left,
+                        // AppLocalizations.of(context)!.aboutDyslexia,
                         "About Dyslexia",
                         style: Theme.of(context).textTheme.titleLarge!.copyWith(
                             fontWeight: FontWeight.bold,
@@ -240,18 +244,6 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
                 ],
               ),
             ),
-
-            // Padding(
-            //   padding: EdgeInsetsDirectional.fromSTEB(20, 13, 0, 15),
-            //   child: Text(
-            //     "About Dyslexia",
-            //     style: TextStyle(
-            //       fontSize: screenWidth / 19,
-            //       fontWeight: FontWeight.bold,
-            //       color: Colors.black,
-            //     ),
-            //   ),
-            // ),
           ],
         ),
       ),
@@ -295,34 +287,7 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
                     ),
                   ),
                 )));
-    // return SizedBox(
-    //   height: screenHeight * 40 / 100,
-    //   child: Center(
-    //     child: Column(
-    //       mainAxisAlignment: MainAxisAlignment.center,
-    //       mainAxisSize: MainAxisSize.min,
-    //       children: <Widget>[
-    //         SizedBox(
-    //           height: screenHeight * 0.05,
-    //         ),
-    //         Text(
-    //           'Language',
-    //           style: Theme.of(context).textTheme.titleMedium!.copyWith(
-    //               fontWeight: FontWeight.bold,
-    //               // height: 1.25,
-    //               color: Color.fromARGB(255, 0, 0, 0)),
-    //         ),
-    //         SizedBox(
-    //           height: screenHeight * 0.025,
-    //         ),
-    //         SingleChildScrollView(child: LanguageSelectionBottomSheet()),
-    //       ],
-    //     ),
-    //   ),
-    // );
   }
-  
-  void takeScreenshot() {}
 }
 
 Widget buildCard(
@@ -338,7 +303,7 @@ Widget buildCard(
       width: MediaQuery.of(context).size.width * 0.7,
       decoration: BoxDecoration(
         color: Colors.white,
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             blurRadius: 4,
             color: Color(0x33000000),

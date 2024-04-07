@@ -1,3 +1,4 @@
+import 'package:dysscreen_app_v1/models/language.dart';
 import 'package:flutter/material.dart';
 
 class LanguageSelectionBottomSheet extends StatefulWidget {
@@ -9,12 +10,14 @@ class LanguageSelectionBottomSheet extends StatefulWidget {
 class _LanguageSelectionBottomSheetState
     extends State<LanguageSelectionBottomSheet> {
   late String selectedLanguage;
+  late List<Language> languages;
 
   @override
   void initState() {
     super.initState();
     selectedLanguage =
         'English'; // Set English as the default selected language
+    languages = Language.languageList();
   }
 
   @override
@@ -25,87 +28,37 @@ class _LanguageSelectionBottomSheetState
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ListTile(
-              title: Text(
-                'English',
-                style: TextStyle(
-                  color: selectedLanguage == 'English'
-                      ? Colors.blue // Selected language color
-                      : Colors.black, // Default color
+          children: languages.map((language) {
+            return Column(
+              children: [
+                ListTile(
+                  title: Text(
+                    language.name,
+                    style: TextStyle(
+                      color: selectedLanguage == language.name
+                          ? Colors.blue // Selected language color
+                          : Colors.black, // Default color
+                    ),
+                  ),
+                  trailing: selectedLanguage == language.name
+                      ? Icon(Icons.check,
+                          color:
+                              Colors.blue) // Check icon for selected language
+                      : null,
+                  onTap: () {
+                    setState(() {
+                      selectedLanguage = language.name;
+                    });
+                  },
                 ),
-              ),
-              trailing: selectedLanguage == 'English'
-                  ? Icon(Icons.check,
-                      color: Colors.blue) // Check icon for selected language
-                  : null,
-              onTap: () {
-                setState(() {
-                  selectedLanguage = 'English';
-                });
-              },
-            ),
-            Divider(
-              indent: 15,
-              endIndent: 15,
-              color: Colors.black12,
-            ),
-            ListTile(
-              title: Text(
-                'Malay',
-                style: TextStyle(
-                  color:
-                      selectedLanguage == 'Malay' ? Colors.blue : Colors.black,
+                Divider(
+                  indent: 15,
+                  endIndent: 15,
+                  color: Colors.black12,
                 ),
-              ),
-              trailing: selectedLanguage == 'Malay'
-                  ? Icon(Icons.check, color: Colors.blue)
-                  : null,
-              onTap: () {
-                setState(() {
-                  selectedLanguage = 'Malay';
-                });
-              },
-            ),
-            Divider(
-              indent: 15,
-              endIndent: 15,
-              color: Colors.black12,
-            ),
-            ListTile(
-              title: Text(
-                '中文', // Chinese
-                style: TextStyle(
-                  color: selectedLanguage == '中文' ? Colors.blue : Colors.black,
-                ),
-              ),
-              trailing: selectedLanguage == '中文'
-                  ? Icon(Icons.check, color: Colors.blue)
-                  : null,
-              onTap: () {
-                setState(() {
-                  selectedLanguage = '中文';
-                });
-              },
-            ),
-            ListTile(
-              title: Text(
-                'Malay',
-                style: TextStyle(
-                  color:
-                      selectedLanguage == 'Malay' ? Colors.blue : Colors.black,
-                ),
-              ),
-              trailing: selectedLanguage == 'Malay'
-                  ? Icon(Icons.check, color: Colors.blue)
-                  : null,
-              onTap: () {
-                setState(() {
-                  selectedLanguage = 'Malay';
-                });
-              },
-            ),
-          ],
+              ],
+            );
+          }).toList(),
         ),
       ),
     );
