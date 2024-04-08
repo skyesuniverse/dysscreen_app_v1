@@ -1,4 +1,6 @@
+import 'package:dysscreen_app_v1/main.dart';
 import 'package:dysscreen_app_v1/models/language.dart';
+import 'package:dysscreen_app_v1/models/language_constants.dart';
 import 'package:flutter/material.dart';
 
 class LanguageSelectionBottomSheet extends StatefulWidget {
@@ -45,10 +47,17 @@ class _LanguageSelectionBottomSheetState
                           color:
                               Colors.blue) // Check icon for selected language
                       : null,
-                  onTap: () {
-                    setState(() {
-                      selectedLanguage = language.name;
-                    });
+                  onTap: () async {
+                    if (language != null) {
+                      Locale _locale = await setLocale(language.languageCode);
+                      MyApp.setLocale(
+                          context, Locale(language.languageCode, ''));
+
+                      setState(() {
+                        selectedLanguage = language.name;
+                        // Navigator.pop(context); // Close the bottom sheet
+                      });
+                    }
                   },
                 ),
                 Divider(

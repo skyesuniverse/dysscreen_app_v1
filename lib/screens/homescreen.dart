@@ -1,3 +1,4 @@
+import 'package:dysscreen_app_v1/models/language_constants.dart';
 import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/About_Dyslexia_Section/intro.dart';
 import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/About_Dyslexia_Section/myths.dart';
 import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/About_Dyslexia_Section/sign.dart';
@@ -108,7 +109,8 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
                     children: [
                       Text(
                         // "dff",
-                        AppLocalizations.of(context)!.welcome,
+                        // AppLocalizations.of(context)!.welcome,
+                        translation(context).welcome,
                         style: TextStyle(
                           fontSize: screenWidth / 12,
                           fontWeight: FontWeight.bold,
@@ -118,8 +120,9 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
                       SizedBox(
                           height: MediaQuery.of(context).size.height * 0.02),
                       Text(
-                        "sss'",
+                        // "sss'",
                         // AppLocalizations.of(context)!.app_intro,
+                        translation(context).app_intro,
                         textAlign: TextAlign.start,
                         style: TextStyle(
                           fontSize: screenWidth / 25,
@@ -148,9 +151,11 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
+                        translation(context).about_Dyslexia,
                         textAlign: TextAlign.left,
-                        // AppLocalizations.of(context)!.aboutDyslexia,
-                        "About Dyslexia",
+                        // "About Dyslexia",
+                        // AppLocalizations.of(context)!.about_Dyslexia,
+
                         style: Theme.of(context).textTheme.titleLarge!.copyWith(
                             fontWeight: FontWeight.bold,
                             // height: 1.25,
@@ -190,7 +195,7 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
                                 child: AboutCard(
                                   imageUrl:
                                       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRURjumQMmLb5ybNldAsJhRD_QdkETjksSVzw&usqp=CAU',
-                                  title: 'Introduction of Dyslexia',
+                                  title: translation(context).introduction,
                                   description:
                                       'Dyslexia is a type of specific learning difficulty (SLD) in which the person has difficulties with language and words. The term dyslexia, although still used by some, is generally felt to be too narrow and SLD is often used to describe these learning difficulties.',
                                   screenWidth: screenWidth,

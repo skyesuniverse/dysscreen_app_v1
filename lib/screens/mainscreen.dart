@@ -1,3 +1,4 @@
+import 'package:dysscreen_app_v1/models/language_constants.dart';
 import 'package:dysscreen_app_v1/screens/aboutscreen.dart';
 import 'package:dysscreen_app_v1/screens/homescreen.dart';
 import 'package:dysscreen_app_v1/screens/taketestscreen.dart';
@@ -43,12 +44,12 @@ class _MainScreenState extends State<MainScreen> {
           onTap: onTabTapped,
           type: BottomNavigationBarType.fixed,
           currentIndex: _currentIndex,
-          items: const [
+          items: [
             BottomNavigationBarItem(
                 icon: Icon(
                   Icons.home_outlined,
                 ),
-                label: "Home"),
+                label: translation(context).homeLabel),
             BottomNavigationBarItem(
                 icon: Icon(
                   Icons.content_paste_search_sharp,

@@ -1,9 +1,0 @@
-{
-  "ms": [
-    "about_Dyslexia"
-  ],
-
-  "zh": [
-    "about_Dyslexia"
-  ]
-}
