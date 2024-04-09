@@ -1,12 +1,13 @@
 import 'package:dysscreen_app_v1/controllers/question_controller.dart';
-import 'package:dysscreen_app_v1/models/Questions.dart';
+import 'package:dysscreen_app_v1/models/Questions_46.dart';
 import 'package:dysscreen_app_v1/screens/Test_Section/Components/question_card.dart';
 import 'package:dysscreen_app_v1/screens/homescreen.dart';
+import 'package:dysscreen_app_v1/widgets/mainButton.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class TestQuestionScreen extends StatefulWidget {
-  const TestQuestionScreen({super.key});
+  const TestQuestionScreen({super.key, required String childName});
 
   @override
   State<TestQuestionScreen> createState() => _TestQuestionScreenState();
@@ -98,28 +99,35 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
                     ),
                   ),
                 ),
-                SizedBox(height: screenHeight * 0.02),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    IconButton(
-                      onPressed: _currentPageIndex > 0
-                          ? () => _pageController.previousPage(
-                              duration: Duration(milliseconds: 250),
-                              curve: Curves.ease)
-                          : null,
-                      icon: Icon(Icons.arrow_left_rounded),
+                ColoredBox(
+                  color: Colors.white,
+                  child: Padding(
+                    padding: EdgeInsets.all(20.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Expanded(
+                          // flex: 2,
+                          child: Visibility(
+                            child: Padding(
+                                padding: const EdgeInsets.only(right: 5.0),
+                                child: MainButton(
+                                  onTap: () {},
+                                  title: "Back",
+                                )),
+                          ),
+                        ),
+                        // Left arrow button
+                        Expanded(
+                          child: Visibility(
+                              child: MainButton(
+                            onTap: () {},
+                            title: "Complete",
+                          )),
+                        )
+                      ],
                     ),
-                    IconButton(
-                      onPressed: _currentPageIndex <
-                              _questionController.questions.length - 1
-                          ? () => _pageController.nextPage(
-                              duration: Duration(milliseconds: 250),
-                              curve: Curves.ease)
-                          : null,
-                      icon: Icon(Icons.arrow_right_rounded),
-                    ),
-                  ],
+                  ),
                 ),
               ]),
         )
@@ -166,4 +174,6 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
       },
     );
   }
+
+  void submitTest() {}
 }

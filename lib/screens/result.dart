@@ -1,4 +1,6 @@
+import 'package:dysscreen_app_v1/screens/homescreen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 
 class ResultScreen extends StatefulWidget {
   const ResultScreen({super.key});
@@ -22,7 +24,17 @@ class _ResultScreenState extends State<ResultScreen> {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
-          leading: Icon(Icons.home_outlined, color: Colors.white),
+          leading: IconButton(
+            icon: Icon(Icons.home_outlined, color: Colors.white),
+            onPressed: () {
+              // Add your functionality here when the leading icon is pressed
+              // For example, you can navigate to the home screen
+              // Get.to(HomeTabScreen());
+              // Get.offAll(HomeTabScreen());
+              // Navigator.pop(context); // Close the dialog
+              // Example: Go back to the previous screen
+            },
+          ),
           actions: [
             IconButton(
               color: Colors.white,

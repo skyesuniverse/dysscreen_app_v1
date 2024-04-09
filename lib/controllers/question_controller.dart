@@ -1,4 +1,4 @@
-import 'package:dysscreen_app_v1/models/Questions.dart';
+import 'package:dysscreen_app_v1/models/Questions_46.dart';
 import 'package:dysscreen_app_v1/screens/result.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -8,17 +8,18 @@ class QuestionController extends GetxController {
   late PageController _pageController;
   PageController get pageController => this._pageController;
 
-  List<Question> _questions = sample_data
+  List<Question_46> _questions = question_46_data
       .map(
-        (question) => Question(
+        (question) => Question_46(
             id: question['id'],
-            question: question['question'],
+            category: question['category'],
             instruction: question['instruction'],
+            question: question['question'],
             options: question['options'],
             answer: question['answer_index']),
       )
       .toList();
-  List<Question> get questions => this._questions;
+  List<Question_46> get questions => this._questions;
 
   bool _isAnswered = false;
   bool get isAnswered => this._isAnswered;
@@ -74,21 +75,57 @@ class QuestionController extends GetxController {
 
     print("Yes count: $_yesCount, No count: $_noCount");
 
-    nextQuestion();
+    // Instead of directly calling nextQuestion(), just remove this line
 
-    // Future.delayed(Duration(seconds: 1), () {
-    //   nextQuestion();
-    // });
+    // Notify GetX to update the UI when counts change
+    update(); // This will re-render the UI with updated counts
+    nextQuestion();
+  }
+
+  void previousQuestion() {
+    if (_questionNumber.value > 1) {
+      _pageController.previousPage(
+          duration: Duration(milliseconds: 500), curve: Curves.ease);
+      _questionNumber.value--;
+    }
   }
 
   void nextQuestion() {
-    if (_questionNumber.value != _questions.length) {
-      _pageController.nextPage(
+    int nextQuestionNumber = _questionNumber.value + 1;
+    while (nextQuestionNumber <= _questions.length &&
+        _selectedOptionIndices.containsKey(nextQuestionNumber)) {
+      nextQuestionNumber++;
+    }
+
+    if (nextQuestionNumber <= _questions.length) {
+      _pageController.animateToPage(nextQuestionNumber - 1,
           duration: Duration(milliseconds: 500), curve: Curves.ease);
+      _questionNumber.value = nextQuestionNumber;
     } else {
       Get.to(ResultScreen());
     }
   }
+
+  //  Rxn<Question> currentQuestion = Rxn<Question>();
+  // final questionIndex = 0.obs; //_curruntQuestionIndex
+
+  // bool get isFirstQuestion => questionIndex.value > 0;
+
+  // bool get islastQuestion => questionIndex.value >= allQuestions.length - 1;
+
+  // void nextQuestion() {
+  //   if (questionIndex.value >= allQuestions.length - 1) return;
+  //   questionIndex.value++;
+  //   currentQuestion.value = allQuestions[questionIndex.value];
+  // }
+
+  // void prevQuestion() {
+  //   if (questionIndex.value <= 0) {
+  //     return;
+  //   }
+  //   questionIndex.value--;
+  //   currentQuestion.value = allQuestions[questionIndex.value];
+  // }
 
   /*[GETX] WARNING, consider using: "Get.to(() => Page())" instead of "Get.to(Page())".
        Using a widget function instead of a widget fully guarantees that the widget and its controllers will be removed from memory when they are no longer used.

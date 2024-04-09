@@ -1,9 +1,9 @@
-class Question {
+class Question_79 {
   int id, answer;
   String question, instruction;
   List<String> options;
 
-  Question(
+  Question_79(
       {required this.id,
       required this.question,
       required this.instruction,
@@ -11,7 +11,7 @@ class Question {
       required this.answer});
 }
 
-const List sample_data = [
+const List question_79_data = [
   {
     "id": 1,
     "question":

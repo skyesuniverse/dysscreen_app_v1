@@ -28,6 +28,8 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
     "7 - 9",
   ];
 
+  String childName = ''; // Add this variable to store the child's name
+
   final TextEditingController _childnameEditingController =
       TextEditingController();
 
@@ -295,9 +297,17 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
     //   ));
     //   return;
     // }
-
+    // setState(() {
+    //   childName = _childnameEditingController.text; // Store child's name
+    // });
+    // print(childName);
     Navigator.push(
-        context, MaterialPageRoute(builder: (content) => TestQuestionScreen()));
+      context,
+      MaterialPageRoute(
+        builder: (content) => TestQuestionScreen(
+            childName: childName), // Pass child's name to the test screen
+      ),
+    );
   }
 
   // showDialog(
