@@ -1,4 +1,5 @@
 import 'package:dysscreen_app_v1/models/Questions_46.dart';
+import 'package:dysscreen_app_v1/models/Questions_79.dart';
 import 'package:dysscreen_app_v1/screens/result.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -8,18 +9,62 @@ class QuestionController extends GetxController {
   late PageController _pageController;
   PageController get pageController => this._pageController;
 
-  List<Question_46> _questions = question_46_data
-      .map(
-        (question) => Question_46(
-            id: question['id'],
-            category: question['category'],
-            instruction: question['instruction'],
-            question: question['question'],
-            options: question['options'],
-            answer: question['answer_index']),
-      )
-      .toList();
-  List<Question_46> get questions => this._questions;
+  late List<dynamic> _questions;
+
+  // List<Question_46> _questions = question_46_data
+  //     .map(
+  //       (question) => Question_46(
+  //           id: question['id'],
+  //           category: question['category'],
+  //           instruction: question['instruction'],
+  //           question: question['question'],
+  //           options: question['options'],
+  //           answer: question['answer_index']),
+  //     )
+  //     .toList();
+  // List<Question_46> get questions => this._questions;
+
+// Initialize the controller with the selected age
+  QuestionController(String selectedAge) {
+    _questions = _loadQuestions(selectedAge);
+  }
+
+  // Method to load questions based on the selected age
+  List<dynamic> _loadQuestions(String selectedAge) {
+    if (selectedAge == "4 - 6") {
+      return _loadQuestionsForAge46();
+    } else {
+      return _loadQuestionsForAge79();
+    }
+  }
+
+  List<Question_46> _loadQuestionsForAge46() {
+    // Parse the question data for age 46 into Question_46 objects
+    return question_46_data.map((data) {
+      return Question_46(
+        id: data['id'],
+        category: data['category'],
+        instruction: data['instruction'],
+        question: data['question'],
+        options: List<String>.from(data['options']),
+        answer: data['answer_index'],
+      );
+    }).toList();
+  }
+
+  List<Question_79> _loadQuestionsForAge79() {
+    // Parse the question data for age 79 into Question_79 objects
+    return question_79_data.map((data) {
+      return Question_79(
+        id: data['id'],
+        question: data['question'],
+        instruction: data['instruction'],
+        options: List<String>.from(data['options']),
+        answer: data['answer_index'],
+      );
+    }).toList();
+  }
+
 
   bool _isAnswered = false;
   bool get isAnswered => this._isAnswered;

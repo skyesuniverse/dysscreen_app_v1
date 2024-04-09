@@ -15,12 +15,12 @@ class Question_Card extends StatelessWidget {
   }) : super(key: key);
 
   final double screenHeight;
-  final Question_46 question;
+  final dynamic question; // Accepting dynamic type for the question
   final int questionNumber;
 
   @override
   Widget build(BuildContext context) {
-    QuestionController _controller = Get.put(QuestionController());
+    // QuestionController _controller = Get.put(QuestionController());
 
     return Container(
       width: double.infinity,

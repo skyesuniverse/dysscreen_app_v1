@@ -1,5 +1,6 @@
 import 'package:dysscreen_app_v1/controllers/question_controller.dart';
 import 'package:dysscreen_app_v1/models/Questions_46.dart';
+import 'package:dysscreen_app_v1/models/Questions_79.dart';
 import 'package:dysscreen_app_v1/screens/Test_Section/Components/question_card.dart';
 import 'package:dysscreen_app_v1/screens/homescreen.dart';
 import 'package:dysscreen_app_v1/widgets/mainButton.dart';
@@ -7,7 +8,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class TestQuestionScreen extends StatefulWidget {
-  const TestQuestionScreen({super.key, required String childName});
+  const TestQuestionScreen(
+      {Key? key,
+      required this.childName,
+      required this.selectedAge,
+      required this.selectedGender})
+      : super(key: key);
+
+  final String childName;
+  final String selectedAge;
+  final String selectedGender;
 
   @override
   State<TestQuestionScreen> createState() => _TestQuestionScreenState();
@@ -17,6 +27,14 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
   late double screenHeight, screenWidth;
   late PageController _pageController;
   int _currentPageIndex = 0;
+  late List<dynamic> questionsList; // List to hold the fetched questions
+
+  @override
+  void initState() {
+    super.initState();
+    // Fetch the questions based on selectedAge
+    questionsList = getQuestionsForAge(widget.selectedAge);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +42,8 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
     screenWidth = MediaQuery.of(context).size.width;
 
     // So that we have acccess our controller
-    QuestionController _questionController = Get.put(QuestionController());
+    QuestionController _questionController =
+        Get.put(QuestionController(widget.selectedAge));
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -70,7 +89,7 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
                                 color: Color.fromARGB(255, 255, 255, 255)),
                         children: [
                           TextSpan(
-                            text: "/${_questionController.questions.length}",
+                            text: "/${questionsList.length}",
                             style: Theme.of(context)
                                 .textTheme
                                 .headlineSmall!
@@ -91,9 +110,9 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
                     physics: NeverScrollableScrollPhysics(),
                     controller: _questionController.pageController,
                     onPageChanged: _questionController.updateTheQnNum,
-                    itemCount: _questionController.questions.length,
+                    itemCount: questionsList.length,
                     itemBuilder: (context, index) => Question_Card(
-                      question: _questionController.questions[index],
+                      question: questionsList[index],
                       screenHeight: screenHeight,
                       questionNumber: index + 1,
                     ),
@@ -176,4 +195,30 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
   }
 
   void submitTest() {}
+
+  List<dynamic> getQuestionsForAge(String selectedAge) {
+    // Determine which set of questions to return based on the selectedAge
+    if (selectedAge == "4 - 6") {
+      return question_46_data
+          .map((data) => Question_46(
+                id: data['id'],
+                category: data['category'],
+                instruction: data['instruction'],
+                question: data['question'],
+                options: List<String>.from(data['options']),
+                answer: data['answer_index'],
+              ))
+          .toList();
+    } else {
+      return question_79_data
+          .map((data) => Question_79(
+                id: data['id'],
+                question: data['question'],
+                instruction: data['instruction'],
+                options: List<String>.from(data['options']),
+                answer: data['answer_index'],
+              ))
+          .toList();
+    }
+  }
 }

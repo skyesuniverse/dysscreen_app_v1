@@ -287,27 +287,33 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
   }
 
   void insertDialog() {
-    // if (!_formKey.currentState!.validate()) {
-    //   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-    //     content: Text(
-    //       "Please complete the form",
-    //       style: TextStyle(color: Colors.black),
-    //     ),
-    //     backgroundColor: Colors.white70,
-    //   ));
-    //   return;
-    // }
-    // setState(() {
-    //   childName = _childnameEditingController.text; // Store child's name
-    // });
-    // print(childName);
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (content) => TestQuestionScreen(
-            childName: childName), // Pass child's name to the test screen
-      ),
-    );
+    if (!_formKey.currentState!.validate()) {
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+        content: Text(
+          "Please complete the form",
+          style: TextStyle(color: Colors.black),
+        ),
+        backgroundColor: Colors.white70,
+      ));
+      return;
+    }
+    setState(() {
+      childName = _childnameEditingController.text; // Store child's name
+      selectedAge = selectedAge; // Store child's name
+      selectedGender = selectedGender; // Store child's name
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (content) => TestQuestionScreen(
+            childName: childName, // Pass child's name to the test screen
+            selectedAge: selectedAge, // Pass selected age to the test screen
+            selectedGender:
+                selectedGender, // Pass selected age to the test screen
+          ),
+        ),
+      );
+    });
+    print(childName);
   }
 
   // showDialog(
