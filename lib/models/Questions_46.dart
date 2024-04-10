@@ -1,4 +1,3 @@
-
 class Question_46 {
   int id, answer;
   String question, instruction, category;
@@ -12,8 +11,6 @@ class Question_46 {
       required this.options,
       required this.answer});
 }
-
-
 
 const List question_46_data = [
   {
@@ -32,7 +29,7 @@ const List question_46_data = [
     "instruction":
         "Parents, please answer the following question about your child's experiences or behaviors. Respond with a simple \"Yes\" or \"No\".",
     "question":
-        "Does your child find it challenging to distinguish between similar-looking letters such as \"b\" and \"d\"? Does your child find it challenging to distinguish between similar-looking letters such as \"b\" and \"d\"?Does your child find it challenging to distinguish between similar-looking letters such as \"b\" and \"d\"?Does your child find it challenging to distinguish between similar-looking letters such as \"b\" and \"d\"?Does your child find it challenging to distinguish between similar-looking letters such as \"b\" and \"d\"?Does your child find it challenging to distinguish between similar-looking letters such as \"b\" and \"d\"?",
+        "Does your child find it challenging to distinguish between similar-looking letters such as \"b\" and \"d\"? s",
     "options": ['Yes', 'No'],
     "answer_index": 1,
   },

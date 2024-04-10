@@ -60,11 +60,7 @@ class Question_Card extends StatelessWidget {
               text: question.options[index],
               questionNumber: questionNumber,
 
-              // press: () {
-              //   // Determine whether the answer is "Yes" or "No"
-              //   bool answeredYes = index == 0; // Assuming "Yes" is at index 0
-              //   _controller.recordAnswer(answeredYes);
-              // },
+           
             ),
           ),
         ],

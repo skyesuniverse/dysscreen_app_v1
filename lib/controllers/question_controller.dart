@@ -11,19 +11,6 @@ class QuestionController extends GetxController {
 
   late List<dynamic> _questions;
 
-  // List<Question_46> _questions = question_46_data
-  //     .map(
-  //       (question) => Question_46(
-  //           id: question['id'],
-  //           category: question['category'],
-  //           instruction: question['instruction'],
-  //           question: question['question'],
-  //           options: question['options'],
-  //           answer: question['answer_index']),
-  //     )
-  //     .toList();
-  // List<Question_46> get questions => this._questions;
-
 // Initialize the controller with the selected age
   QuestionController(String selectedAge) {
     _questions = _loadQuestions(selectedAge);
@@ -64,7 +51,6 @@ class QuestionController extends GetxController {
       );
     }).toList();
   }
-
 
   bool _isAnswered = false;
   bool get isAnswered => this._isAnswered;
@@ -124,7 +110,7 @@ class QuestionController extends GetxController {
 
     // Notify GetX to update the UI when counts change
     update(); // This will re-render the UI with updated counts
-    nextQuestion();
+    // nextQuestion();
   }
 
   void previousQuestion() {
@@ -146,31 +132,11 @@ class QuestionController extends GetxController {
       _pageController.animateToPage(nextQuestionNumber - 1,
           duration: Duration(milliseconds: 500), curve: Curves.ease);
       _questionNumber.value = nextQuestionNumber;
-    } else {
-      Get.to(ResultScreen());
     }
+    // else {
+    //   Get.to(ResultScreen());
+    // }
   }
-
-  //  Rxn<Question> currentQuestion = Rxn<Question>();
-  // final questionIndex = 0.obs; //_curruntQuestionIndex
-
-  // bool get isFirstQuestion => questionIndex.value > 0;
-
-  // bool get islastQuestion => questionIndex.value >= allQuestions.length - 1;
-
-  // void nextQuestion() {
-  //   if (questionIndex.value >= allQuestions.length - 1) return;
-  //   questionIndex.value++;
-  //   currentQuestion.value = allQuestions[questionIndex.value];
-  // }
-
-  // void prevQuestion() {
-  //   if (questionIndex.value <= 0) {
-  //     return;
-  //   }
-  //   questionIndex.value--;
-  //   currentQuestion.value = allQuestions[questionIndex.value];
-  // }
 
   /*[GETX] WARNING, consider using: "Get.to(() => Page())" instead of "Get.to(Page())".
        Using a widget function instead of a widget fully guarantees that the widget and its controllers will be removed from memory when they are no longer used.
@@ -189,4 +155,10 @@ class QuestionController extends GetxController {
   void clearSelectedOption(int questionNumber) {
     _selectedOptionIndices.remove(questionNumber);
   }
+
+  // Method to check if it's the first question
+  bool get isFirstQuestion => _questionNumber.value == 1;
+
+  // Method to check if it's the last question
+  bool get isLastQuestion => _questionNumber.value == _questions.length;
 }

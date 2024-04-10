@@ -3,6 +3,7 @@ import 'package:dysscreen_app_v1/models/Questions_46.dart';
 import 'package:dysscreen_app_v1/models/Questions_79.dart';
 import 'package:dysscreen_app_v1/screens/Test_Section/Components/question_card.dart';
 import 'package:dysscreen_app_v1/screens/homescreen.dart';
+import 'package:dysscreen_app_v1/screens/result.dart';
 import 'package:dysscreen_app_v1/widgets/mainButton.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -128,21 +129,33 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
                         Expanded(
                           // flex: 2,
                           child: Visibility(
+                            visible: _questionController.isFirstQuestion,
                             child: Padding(
                                 padding: const EdgeInsets.only(right: 5.0),
                                 child: MainButton(
-                                  onTap: () {},
-                                  title: "Back",
+                                  onTap: () {
+                                    _questionController.previousQuestion();
+                                  },
+                                  child: const Icon(Icons.arrow_back_ios_new),
                                 )),
                           ),
                         ),
                         // Left arrow button
                         Expanded(
-                          child: Visibility(
-                              child: MainButton(
-                            onTap: () {},
-                            title: "Complete",
-                          )),
+                          child: Obx(
+                            () => Visibility(
+                                child: MainButton(
+                              onTap: () {
+                                _questionController.isLastQuestion
+                                    ? Get.to(ResultScreen())
+                                    : _questionController.nextQuestion();
+                              },
+                              title: _questionController.isLastQuestion
+                                  ? 'Complete'
+                                  : 'Next',
+
+                            )),
+                          ),
                         )
                       ],
                     ),
