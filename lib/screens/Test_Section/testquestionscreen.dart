@@ -29,12 +29,16 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
   late PageController _pageController;
   int _currentPageIndex = 0;
   late List<dynamic> questionsList; // List to hold the fetched questions
+  late QuestionController
+      _questionController; // Declare _questionController here
 
   @override
   void initState() {
     super.initState();
     // Fetch the questions based on selectedAge
     questionsList = getQuestionsForAge(widget.selectedAge);
+    // Initialize _questionController in initState
+    _questionController = Get.put(QuestionController(widget.selectedAge));
   }
 
   @override
@@ -147,13 +151,12 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
                                 child: MainButton(
                               onTap: () {
                                 _questionController.isLastQuestion
-                                    ? Get.to(ResultScreen())
+                                    ? submitTest()
                                     : _questionController.nextQuestion();
                               },
                               title: _questionController.isLastQuestion
                                   ? 'Complete'
                                   : 'Next',
-
                             )),
                           ),
                         )
@@ -207,7 +210,54 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
     );
   }
 
-  void submitTest() {}
+  void submitTest() {
+    // Check if all questions have been answered
+    if (_questionController.allQuestionsAnswered) {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(10.0))),
+            title: const Text(
+              "Submit the Test?",
+              style: TextStyle(),
+            ),
+            content: const Text("Are you sure?", style: TextStyle()),
+            actions: <Widget>[
+              TextButton(
+                child: const Text(
+                  "Yes",
+                  style: TextStyle(),
+                ),
+                onPressed: () {
+                  Get.to(ResultScreen());
+                },
+              ),
+              TextButton(
+                child: const Text(
+                  "No",
+                  style: TextStyle(),
+                ),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        },
+      );
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+        content: Text(
+          "Please answer all the question",
+          style: TextStyle(color: Colors.black),
+        ),
+        backgroundColor: Colors.white70,
+      ));
+      return;
+    }
+  }
 
   List<dynamic> getQuestionsForAge(String selectedAge) {
     // Determine which set of questions to return based on the selectedAge

@@ -1,3 +1,6 @@
+
+
+
 import 'package:dysscreen_app_v1/models/Questions_46.dart';
 import 'package:dysscreen_app_v1/models/Questions_79.dart';
 import 'package:dysscreen_app_v1/screens/result.dart';
@@ -85,12 +88,15 @@ class QuestionController extends GetxController {
 
     // Check if an answer has already been recorded for this question
     if (_selectedOptionIndices.containsKey(_questionNumber.value)) {
-      // Remove the previously selected option's count
+      // Check if the selected option index is different from the previously selected option index
       int previousOptionIndex = _selectedOptionIndices[_questionNumber.value]!;
-      if (previousOptionIndex == 0) {
-        _yesCount--;
-      } else {
-        _noCount--;
+      if (previousOptionIndex != selectedOptionIndex) {
+        // Update the counts based on the selected option
+        if (previousOptionIndex == 0) {
+          _yesCount--;
+        } else {
+          _noCount--;
+        }
       }
     }
 
@@ -107,7 +113,7 @@ class QuestionController extends GetxController {
     print("Yes count: $_yesCount, No count: $_noCount");
 
     // Instead of directly calling nextQuestion(), just remove this line
-
+ 
     // Notify GetX to update the UI when counts change
     update(); // This will re-render the UI with updated counts
     // nextQuestion();
@@ -123,19 +129,19 @@ class QuestionController extends GetxController {
 
   void nextQuestion() {
     int nextQuestionNumber = _questionNumber.value + 1;
-    while (nextQuestionNumber <= _questions.length &&
-        _selectedOptionIndices.containsKey(nextQuestionNumber)) {
-      nextQuestionNumber++;
-    }
+    // Find the next unanswered question
+    // while (nextQuestionNumber <= _questions.length &&
+    //     _selectedOptionIndices.containsKey(nextQuestionNumber)) {
+    //   nextQuestionNumber++;
+    // }
 
+    // Check if there are any more questions remaining
     if (nextQuestionNumber <= _questions.length) {
+      // Move to the next question
       _pageController.animateToPage(nextQuestionNumber - 1,
           duration: Duration(milliseconds: 500), curve: Curves.ease);
       _questionNumber.value = nextQuestionNumber;
     }
-    // else {
-    //   Get.to(ResultScreen());
-    // }
   }
 
   /*[GETX] WARNING, consider using: "Get.to(() => Page())" instead of "Get.to(Page())".
@@ -161,4 +167,11 @@ class QuestionController extends GetxController {
 
   // Method to check if it's the last question
   bool get isLastQuestion => _questionNumber.value == _questions.length;
+
+  bool get allQuestionsAnswered {
+    // Check if the length of selectedOptionIndices is equal to the total number of questions
+    return _selectedOptionIndices.length == _questions.length;
+  }
 }
+
+
