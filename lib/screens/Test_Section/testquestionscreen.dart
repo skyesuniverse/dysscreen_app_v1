@@ -276,6 +276,7 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
       return question_79_data
           .map((data) => Question_79(
                 id: data['id'],
+                category: data['category'],
                 question: data['question'],
                 instruction: data['instruction'],
                 options: List<String>.from(data['options']),

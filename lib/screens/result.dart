@@ -1,6 +1,7 @@
+import 'package:dysscreen_app_v1/controllers/question_controller.dart';
 import 'package:dysscreen_app_v1/screens/homescreen.dart';
 import 'package:flutter/material.dart';
-import 'package:get/route_manager.dart';
+import 'package:get/get.dart';
 
 class ResultScreen extends StatefulWidget {
   const ResultScreen({super.key});
@@ -11,6 +12,19 @@ class ResultScreen extends StatefulWidget {
 
 class _ResultScreenState extends State<ResultScreen> {
   late double screenHeight, screenWidth;
+  late final QuestionController questionController;
+
+  @override
+  void initState() {
+    super.initState();
+    questionController = Get.find<QuestionController>();
+    // Update category counts when the screen initializes
+    questionController.updateCategoryCounts(
+      questionController.selectedOptionIndices,
+      questionController.questions,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     screenHeight = MediaQuery.of(context).size.height;
@@ -27,12 +41,8 @@ class _ResultScreenState extends State<ResultScreen> {
           leading: IconButton(
             icon: Icon(Icons.home_outlined, color: Colors.white),
             onPressed: () {
-              // Add your functionality here when the leading icon is pressed
-              // For example, you can navigate to the home screen
-              // Get.to(HomeTabScreen());
-              // Get.offAll(HomeTabScreen());
-              // Navigator.pop(context); // Close the dialog
-              // Example: Go back to the previous screen
+              // Close the current screen and navigate to the home screen
+              Get.offAll(HomeTabScreen());
             },
           ),
           actions: [
@@ -156,10 +166,17 @@ class _ResultScreenState extends State<ResultScreen> {
                     SizedBox(
                       height: 30,
                     ),
-                    progressIndicator_Widget(),
-                    progressIndicator_Widget(),
-                    progressIndicator_Widget(),
-                    progressIndicator_Widget(),
+                    // Dynamic creation of ProgressIndicatorWidgets based on categories
+                    for (var category in questionController.categoryCounts.keys)
+                      progressIndicator_Widget(
+                        categoryName: category,
+                        score: questionController
+                                .getCategoryCounts(category)?['Yes'] ??
+                            0,
+                        totalQuestions: questionController
+                                .getCategoryCounts(category)?['Total'] ??
+                            0,
+                      ),
                     SizedBox(
                       height: 30,
                     ),
@@ -248,61 +265,57 @@ class _ResultScreenState extends State<ResultScreen> {
 }
 
 class progressIndicator_Widget extends StatelessWidget {
+  final String categoryName;
+  final int score;
+  final int totalQuestions;
+
   const progressIndicator_Widget({
-    super.key,
-  });
+    Key? key,
+    required this.categoryName,
+    required this.score,
+    required this.totalQuestions,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(
-        MediaQuery.of(context).size.width *
-            0.08, // 5% of screen width as left padding
-        MediaQuery.of(context).size.height *
-            0.002, // 20% of screen height as top padding
-        MediaQuery.of(context).size.width *
-            0.08, // 5% of screen width as right padding
-        MediaQuery.of(context).size.height *
-            0.02, // 2% of screen height as bottom padding
+        MediaQuery.of(context).size.width * 0.08,
+        MediaQuery.of(context).size.height * 0.002,
+        MediaQuery.of(context).size.width * 0.08,
+        MediaQuery.of(context).size.height * 0.02,
       ),
       child: Column(
         children: [
-          const SizedBox(
-            height: 5,
-          ),
+          const SizedBox(height: 5),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Cat 1",
+                categoryName, // Display the category name dynamically
                 style: TextStyle(
-                  // color: CustomColor.ktextgrey,
                   fontSize: 12,
-                  // fontWeight: kBoldFontWeight,
                 ),
               ),
               const Spacer(),
               Text(
-                '4/8',
+                '$score/$totalQuestions', // Display the score and total questions dynamically
                 style: TextStyle(
-                  // color: CustomColor.ktextgrey,
                   fontSize: 12,
-                  // fontWeight: kBoldFontWeight,
                 ),
               ),
             ],
           ),
-          const SizedBox(
-            height: 8,
-          ),
+          const SizedBox(height: 8),
           ClipRRect(
             borderRadius: BorderRadius.all(Radius.circular(10)),
             child: LinearProgressIndicator(
-              value: 0.5, // 70% progress
+              value:
+                  score / totalQuestions, // Calculate the progress dynamically
               backgroundColor: Color.fromARGB(255, 189, 188, 188),
               valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
-              minHeight: 8.0, // Minimum height of the line
+              minHeight: 8.0,
             ),
           ),
         ],
