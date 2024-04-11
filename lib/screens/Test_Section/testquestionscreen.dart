@@ -231,7 +231,19 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
                   style: TextStyle(),
                 ),
                 onPressed: () {
-                  Get.to(ResultScreen());
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (content) => ResultScreen(
+                        childName: widget
+                            .childName, // Pass child's name to the test screen
+                        selectedAge: widget
+                            .selectedAge, // Pass selected age to the test screen
+                        selectedGender: widget
+                            .selectedGender, // Pass selected age to the test screen
+                      ),
+                    ),
+                  );
                 },
               ),
               TextButton(

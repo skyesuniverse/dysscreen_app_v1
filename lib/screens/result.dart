@@ -4,7 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ResultScreen extends StatefulWidget {
-  const ResultScreen({super.key});
+  final String childName;
+  final String selectedAge;
+  final String selectedGender;
+
+  const ResultScreen({
+    Key? key,
+    required this.childName,
+    required this.selectedAge,
+    required this.selectedGender,
+  }) : super(key: key);
 
   @override
   State<ResultScreen> createState() => _ResultScreenState();
@@ -39,12 +48,14 @@ class _ResultScreenState extends State<ResultScreen> {
           backgroundColor: Colors.transparent,
           elevation: 0,
           leading: IconButton(
-            icon: Icon(Icons.home_outlined, color: Colors.white),
-            onPressed: () {
+              icon: Icon(Icons.home_outlined, color: Colors.white),
+
               // Close the current screen and navigate to the home screen
-              Get.offAll(HomeTabScreen());
-            },
-          ),
+              // Navigate to the desired screen
+              onPressed: () {
+                Navigator.pop(context);
+                Navigator.pop(context);
+              }),
           actions: [
             IconButton(
               color: Colors.white,
@@ -125,7 +136,7 @@ class _ResultScreenState extends State<ResultScreen> {
                                   height: MediaQuery.of(context).size.height *
                                       0.02),
                               Text(
-                                'Child Name: Muthu',
+                                'Child Name: ${widget.childName}',
                                 textAlign: TextAlign.start,
                                 style: TextStyle(
                                   fontSize: screenWidth / 25,
@@ -138,7 +149,7 @@ class _ResultScreenState extends State<ResultScreen> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Gender: Male',
+                                    'Gender: ${widget.selectedGender}',
                                     textAlign: TextAlign.start,
                                     style: TextStyle(
                                       fontSize: screenWidth / 25,
@@ -148,7 +159,7 @@ class _ResultScreenState extends State<ResultScreen> {
                                   ),
                                   SizedBox(height: 20),
                                   Text(
-                                    'Age: 5 Years Old',
+                                    'Age:  ${widget.selectedAge} years old',
                                     textAlign: TextAlign.start,
                                     style: TextStyle(
                                       fontSize: screenWidth / 25,
