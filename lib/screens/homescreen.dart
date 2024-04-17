@@ -195,9 +195,8 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
                                 child: AboutCard(
                                   imageUrl:
                                       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRURjumQMmLb5ybNldAsJhRD_QdkETjksSVzw&usqp=CAU',
-                                  title: translation(context).introduction,
-                                  description:
-                                      'Dyslexia is a type of specific learning difficulty (SLD) in which the person has difficulties with language and words. The term dyslexia, although still used by some, is generally felt to be too narrow and SLD is often used to describe these learning difficulties.',
+                                  title: translation(context).introTitle,
+                                  description: translation(context).introText1,
                                   screenWidth: screenWidth,
                                   screenHeight: screenHeight,
                                 )),
@@ -216,9 +215,9 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
                                 child: AboutCard(
                                     imageUrl:
                                         'https://www.readabilitytutor.com/wp-content/uploads/2022/11/How-AI-can-Support-Students-with-Dyslexia.jpg',
-                                    title: 'Common Signs and Symptoms',
-                                    description:
-                                        'Some of the symptoms of dyslexia or SLD in a preschooler could include...',
+                                    title: translation(context)
+                                        .commonSignsAndSymptomsTitle,
+                                    description: translation(context).openText,
                                     screenWidth: screenWidth,
                                     screenHeight: screenHeight)),
 
@@ -236,9 +235,9 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
                                 child: AboutCard(
                                     imageUrl:
                                         'https://upload.wikimedia.org/wikipedia/commons/3/3d/Dyslexia.jpg',
-                                    title: 'Myths and Facts about Dyslexia',
-                                    description:
-                                        'Let\'s debunk seven common myths surrounding dyslexia and help pave the way for a more inclusive future.',
+                                    title:
+                                        translation(context).mythsAndFactsTitle,
+                                    description: translation(context).introText,
                                     screenWidth: screenWidth,
                                     screenHeight: screenHeight)),
                           ]

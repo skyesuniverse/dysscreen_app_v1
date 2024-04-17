@@ -5,33 +5,15 @@
 
   "welcome": "Selamat datang ke DysScreen",
   "app_intro": "DysScreen, aplikasi mesra pengguna yang direka untuk membantu ibu bapa dan pendidik dalam tugas penting untuk menilai dan menapis disleksia dalam kalangan kanak-kanak",
-  "about_Dyslexia": "Tentang Dyslexia",
-  "introduction": "Pengenalan Tentang Dyslexia",
-  "common_signs_and_symptoms": "Tanda-tanda dan Gejala Am",
-  "myths_and_facts": "Mitos dan Fakta tentang Dyslexia",
+  "about_Dyslexia": "Tentang Disleksia",
   "language": "Bahasa",
-  "select_language": "Pilih Bahasa",
-
+ 
   "introTitle": "Pengenalan kepada Dyslexia",
   "introText1": "Disleksia adalah gangguan pembelajaran neurobiologi yang menyebabkan masalah dalam pengenalan perkataan yang tepat dan lancar, serta kesukaran dalam mengeja dan menerjemahkan perkataan. Disleksia, kadang-kadang dikenali sebagai ketidakupayaan membaca, disebabkan oleh perbezaan spesifik dalam kawasan otak yang bertanggungjawab untuk pemprosesan bahasa.",
   "introText2": "Disleksia tidak disebabkan oleh masalah dengan kecerdasan, pendengaran, atau penglihatan. Kebanyakan kanak-kanak disleksia boleh berjaya di sekolah dengan bimbingan tuisyen atau program pendidikan khas. Sokongan emosi juga sangat penting.",
   "introText3": "Walaupun tiada penawar untuk disleksia, ujian dan intervensi awal memberikan hasil terbaik. Disleksia boleh tidak dikenal pasti untuk tahun-tahun dan tidak dikenali sehingga dewasa, tetapi tidak pernah terlalu lewat untuk mencari bantuan.",
 
-  "mythsAndFactsTitle": "5 Mitos dan Fakta tentang Disleksia",
-  "introText": "Disleksia adalah gangguan pembelajaran kompleks yang mempengaruhi pemprosesan bahasa, terutamanya dalam membaca dan menulis. Walaupun disleksia diiktiraf secara meluas, ia sering dikelilingi oleh mitos dan salah faham, menyebabkan salah faham dan stigma. Mari kita klarifikasi beberapa mitos biasa:",
-  "myth1": "Mitos #1: Disleksia adalah tanda kecerdasan rendah",
-  "fact1": "Fakta: Disleksia tidak berkorelasi dengan kecerdasan, kerana individu dengan disleksia sering memiliki tahap kecerdasan purata atau di atas purata. Mereka mungkin memiliki kekuatan unik dalam kreativiti, penyelesaian masalah, dan penalaran visual-keruangan.",
-  "myth2": "Mitos #2: Disleksia hanya mempengaruhi membaca",
-  "fact2": "Fakta: Disleksia, satu keadaan yang ditandai oleh kesulitan membaca, boleh mempengaruhi kemahiran bahasa lain seperti mengeja, menulis, dan komunikasi lisan. Ia juga boleh mempengaruhi kesedaran fonologi, kelancaran, pemahaman, dan pengambilan kata, mempengaruhi kehidupan harian dan kejayaan akademik dan profesional.",
-  "myth3": "Mitos #3: Disleksia boleh sembuh dengan masa",
-  "fact3": "Fakta: Disleksia adalah keadaan sepanjang hayat yang memerlukan intervensi dan sokongan yang sesuai untuk menguruskan kesulitan dan mengembangkan strategi penanganan. Pengenalan awal dan intervensi adalah penting untuk meningkatkan hasil dan meminimakan kesan negatifnya terhadap fungsi akademik dan sosial. Banyak individu dengan disleksia menjalani kehidupan yang berjaya.",
-  "myth4": "Mitos #4: Disleksia disebabkan oleh kemalasan atau kekurangan usaha",
-  "fact4": "Fakta: Disleksia adalah keadaan neurologi yang disebabkan oleh perbezaan struktur dan fungsi otak, bukan kemalasan atau motivasi. Walaupun usaha yang besar, individu disleksia masih menghadapi cabaran yang berterusan dalam membaca dan pemprosesan bahasa. Menyalahkan mereka mengekalkan stigma dan menghalang usaha mereka untuk mencari sokongan dan penginapan.",
-  "myth5": "Mitos #5: Orang dengan disleksia melihat huruf dan kata-kata terbalik",
-  "fact5": "Fakta: Disleksia bukanlah gangguan penglihatan, tetapi keadaan yang mempengaruhi keupayaan untuk menterjemahkan dan mengenali perkataan bertulis, menyebabkan kesulitan dalam kelancaran membaca, ketepatan, dan pemahaman, terutamanya disebabkan oleh pemprosesan fonologi dan kemahiran bahasa bukan persepsi visual.",
-  "outroText": "Memadamkan mitos dan salah faham tentang disleksia adalah penting untuk membina pemahaman, empati, dan sokongan untuk individu dengan keadaan tersebut. Dengan menantang stereotaip dan mempromosikan maklumat yang tepat, kita dapat mencipta persekitaran yang lebih inklusif dan sokongan untuk individu dengan disleksia untuk berkembang dan mencapai potensi penuh mereka.",
-
-
+  
   "commonSignsAndSymptomsTitle": "Tanda-Tanda dan Simptom-Simptom Umum",
   "openText": "Simptom disleksia mungkin sukar dikesan sebelum seorang kanak-kanak memulakan sekolah, tetapi beberapa tanda awal mungkin menunjukkan masalah. Apabila seorang kanak-kanak mencapai usia sekolah, guru mungkin yang pertama mendeteksi masalah. Keterukan masalah tersebut berbeza-beza, tetapi ia biasanya menjadi jelas apabila kanak-kanak itu mula belajar membaca.",
   "preschoolSymptomsCategory": "Simptom disleksia di kalangan kanak-kanak pra-sekolah",
@@ -53,5 +35,19 @@
   "avoidsActivitiesThatInvolveReading": "Mengelakkan aktiviti yang melibatkan membaca",
   "poorReading": "Membaca yang lemah",
   "poorSpelling": "Mengeja yang lemah, terutamanya banyak kesilapan mengeja bagi satu tugasan penulisan tunggal",
-  "problemsWithWritingSummaries": "Menghadapi masalah menulis ringkasan"
+  "problemsWithWritingSummaries": "Menghadapi masalah menulis ringkasan",
+
+"mythsAndFactsTitle": "5 Mitos dan Fakta tentang Disleksia",
+  "introText": "Disleksia adalah gangguan pembelajaran kompleks yang mempengaruhi pemprosesan bahasa, terutamanya dalam membaca dan menulis. Walaupun disleksia diiktiraf secara meluas, ia sering dikelilingi oleh mitos dan salah faham, menyebabkan salah faham dan stigma. Mari kita klarifikasi beberapa mitos biasa:",
+  "myth1": "Mitos #1: Disleksia adalah tanda kecerdasan rendah",
+  "fact1": "Fakta: Disleksia tidak berkorelasi dengan kecerdasan, kerana individu dengan disleksia sering memiliki tahap kecerdasan purata atau di atas purata. Mereka mungkin memiliki kekuatan unik dalam kreativiti, penyelesaian masalah, dan penalaran visual-keruangan.",
+  "myth2": "Mitos #2: Disleksia hanya mempengaruhi membaca",
+  "fact2": "Fakta: Disleksia, satu keadaan yang ditandai oleh kesulitan membaca, boleh mempengaruhi kemahiran bahasa lain seperti mengeja, menulis, dan komunikasi lisan. Ia juga boleh mempengaruhi kesedaran fonologi, kelancaran, pemahaman, dan pengambilan kata, mempengaruhi kehidupan harian dan kejayaan akademik dan profesional.",
+  "myth3": "Mitos #3: Disleksia boleh sembuh dengan masa",
+  "fact3": "Fakta: Disleksia adalah keadaan sepanjang hayat yang memerlukan intervensi dan sokongan yang sesuai untuk menguruskan kesulitan dan mengembangkan strategi penanganan. Pengenalan awal dan intervensi adalah penting untuk meningkatkan hasil dan meminimakan kesan negatifnya terhadap fungsi akademik dan sosial. Banyak individu dengan disleksia menjalani kehidupan yang berjaya.",
+  "myth4": "Mitos #4: Disleksia disebabkan oleh kemalasan atau kekurangan usaha",
+  "fact4": "Fakta: Disleksia adalah keadaan neurologi yang disebabkan oleh perbezaan struktur dan fungsi otak, bukan kemalasan atau motivasi. Walaupun usaha yang besar, individu disleksia masih menghadapi cabaran yang berterusan dalam membaca dan pemprosesan bahasa. Menyalahkan mereka mengekalkan stigma dan menghalang usaha mereka untuk mencari sokongan dan penginapan.",
+  "myth5": "Mitos #5: Orang dengan disleksia melihat huruf dan kata-kata terbalik",
+  "fact5": "Fakta: Disleksia bukanlah gangguan penglihatan, tetapi keadaan yang mempengaruhi keupayaan untuk menterjemahkan dan mengenali perkataan bertulis, menyebabkan kesulitan dalam kelancaran membaca, ketepatan, dan pemahaman, terutamanya disebabkan oleh pemprosesan fonologi dan kemahiran bahasa bukan persepsi visual.",
+  "outroText": "Memadamkan mitos dan salah faham tentang disleksia adalah penting untuk membina pemahaman, empati, dan sokongan untuk individu dengan keadaan tersebut. Dengan menantang stereotaip dan mempromosikan maklumat yang tepat, kita dapat mencipta persekitaran yang lebih inklusif dan sokongan untuk individu dengan disleksia untuk berkembang dan mencapai potensi penuh mereka."
 }
