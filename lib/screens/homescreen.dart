@@ -173,7 +173,7 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
                           // color: Colors.white,
                           ),
 
-                      ///"About Dyslexia"  List View item
+                      // /"About Dyslexia"  List View item
                       child: ListView(
                           padding: EdgeInsets.fromLTRB(
                             16,
@@ -277,7 +277,8 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
                           height: screenHeight * 0.05,
                         ),
                         Text(
-                          'Language',
+                          // 'Language',
+                          translation(context).language,
                           style:
                               Theme.of(context).textTheme.titleMedium!.copyWith(
                                   fontWeight: FontWeight.bold,

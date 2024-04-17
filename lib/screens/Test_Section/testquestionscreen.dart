@@ -140,7 +140,10 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
                                   onTap: () {
                                     _questionController.previousQuestion();
                                   },
-                                  child: const Icon(Icons.arrow_back_ios_new),
+                                  child: const Icon(
+                                    Icons.arrow_back_ios_new,
+                                    color: Colors.white,
+                                  ),
                                 )),
                           ),
                         ),
