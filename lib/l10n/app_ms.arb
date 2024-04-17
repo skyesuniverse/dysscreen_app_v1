@@ -49,5 +49,25 @@
   "fact4": "Fakta: Disleksia adalah keadaan neurologi yang disebabkan oleh perbezaan struktur dan fungsi otak, bukan kemalasan atau motivasi. Walaupun usaha yang besar, individu disleksia masih menghadapi cabaran yang berterusan dalam membaca dan pemprosesan bahasa. Menyalahkan mereka mengekalkan stigma dan menghalang usaha mereka untuk mencari sokongan dan penginapan.",
   "myth5": "Mitos #5: Orang dengan disleksia melihat huruf dan kata-kata terbalik",
   "fact5": "Fakta: Disleksia bukanlah gangguan penglihatan, tetapi keadaan yang mempengaruhi keupayaan untuk menterjemahkan dan mengenali perkataan bertulis, menyebabkan kesulitan dalam kelancaran membaca, ketepatan, dan pemahaman, terutamanya disebabkan oleh pemprosesan fonologi dan kemahiran bahasa bukan persepsi visual.",
-  "outroText": "Memadamkan mitos dan salah faham tentang disleksia adalah penting untuk membina pemahaman, empati, dan sokongan untuk individu dengan keadaan tersebut. Dengan menantang stereotaip dan mempromosikan maklumat yang tepat, kita dapat mencipta persekitaran yang lebih inklusif dan sokongan untuk individu dengan disleksia untuk berkembang dan mencapai potensi penuh mereka."
+  "outroText": "Memadamkan mitos dan salah faham tentang disleksia adalah penting untuk membina pemahaman, empati, dan sokongan untuk individu dengan keadaan tersebut. Dengan menantang stereotaip dan mempromosikan maklumat yang tepat, kita dapat mencipta persekitaran yang lebih inklusif dan sokongan untuk individu dengan disleksia untuk berkembang dan mencapai potensi penuh mereka.",
+
+
+  "dyslexia_assessment_screen_title": "Ujian Penilaian dan Penyaringan Disleksia",
+  "assessment_description": "Ujian ini direka untuk memberikan pandangan berharga tentang kemahiran membaca dan menulis anak anda, membantu mengenal pasti tanda-tanda potensi disleksia pada peringkat awal.\n\nSepanjang ujian, arahan dan soalan akan diberikan, anak anda akan menghadapi aktiviti yang menarik yang menilai kemahiran penting seperti pemahaman membaca, kesedaran fonologi, dan kecekapan menulis. \n\nPenilaian ini biasanya mengambil masa 10-15 minit untuk dilengkapkan, memastikan penilaian menyeluruh tanpa menyebabkan keletihan kepada anak.",
+  "enter_child_details_message": "**Sila masukkan butiran anak anda di bawah untuk memulakan penilaian.",
+  "child_name_label": "Nama Anak *",
+  "gender_label": "Jantina *",
+  "age_label": "Umur *",
+  "start_test_button": "Mulakan Ujian",
+  "name_validation_error_message": "Sila masukkan nama yang sah",
+  "gender_validation_error_message": "Sila pilih jantina",
+  "age_validation_error_message": "Sila pilih umur",
+  "form_validation_error_message": "Sila lengkapkan borang",
+
+  "gender_placeholder": "Jantina *",
+  "gender_male": "Lelaki",
+  "gender_female": "Perempuan",
+  "age_placeholder": "Umur *",
+  "age_4_6": "4 - 6",
+  "age_7_9": "7 - 9"
 }

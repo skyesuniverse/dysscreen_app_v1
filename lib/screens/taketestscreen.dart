@@ -1,5 +1,7 @@
+import 'package:dysscreen_app_v1/models/language_constants.dart';
 import 'package:dysscreen_app_v1/screens/Test_Section/testquestionscreen.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 void main() => runApp(const TakeTestScreen());
 
@@ -63,20 +65,21 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
         ),
       ),
       child: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Color(0x9A1D2428),
         ),
         child: SingleChildScrollView(
             child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.fromLTRB(24, 60, 24, 24),
+              padding: const EdgeInsets.fromLTRB(24, 60, 24, 24),
               child: Column(
                 children: [
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                     child: Text(
-                      "Dyslexia Assessment and Screening Test",
+                      // "Dyslexia Assessment and Screening Test",
+                      translation(context).dyslexia_assessment_screen_title,
                       style: TextStyle(
                         fontSize: screenWidth / 13,
                         fontWeight: FontWeight.bold,
@@ -85,13 +88,14 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 9, 0, 24),
+                    padding: const EdgeInsetsDirectional.fromSTEB(0, 9, 0, 24),
                     child: Text(
-                      'This test is designed to provide valuable insights into your child\'s reading and writing abilities, helping to identify potential signs of dyslexia at an early stage.\n\nThroughout the test, instructions and questions will be given, your child will encounter engaging activities that assess key skills such as reading comprehension, phonological awareness, and writing proficiency. \n\nThe assessment typically takes 10-15 minutes to complete, ensuring a thorough evaluation without causing fatigue for the child.',
+                      // 'This test is designed to provide valuable insights into your child\'s reading and writing abilities, helping to identify potential signs of dyslexia at an early stage.\n\nThroughout the test, instructions and questions will be given, your child will encounter engaging activities that assess key skills such as reading comprehension, phonological awareness, and writing proficiency. \n\nThe assessment typically takes 10-15 minutes to complete, ensuring a thorough evaluation without causing fatigue for the child.',
+                      translation(context).assessment_description,
                       style: TextStyle(
-                        fontSize: screenWidth / 32,
+                        fontSize: screenWidth / 30,
                         fontWeight: FontWeight.normal,
-                        color: Color.fromARGB(255, 190, 190, 190),
+                        color: const Color.fromARGB(255, 190, 190, 190),
                       ),
                       textAlign: TextAlign.justify,
                     ),
@@ -100,8 +104,9 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                     height: screenHeight * 0.05,
                   ),
                   Text(
-                    '**Please enter your child\'s details below to begin the assessment.',
-                    style: TextStyle(
+                    // '**Please enter your child\'s details below to begin the assessment.',
+                    translation(context).enter_child_details_message,
+                    style: const TextStyle(
                       // fontSize: screenWidth / 30,
                       fontWeight: FontWeight.normal,
                       fontStyle: FontStyle.italic, // Set text to italic
@@ -115,22 +120,22 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                     child: Column(
                       children: [
                         TextFormField(
-                          style: TextStyle(color: Colors.white),
+                          style: const TextStyle(color: Colors.white),
                           textInputAction: TextInputAction.next,
-                          validator: (val) =>
-                              val!.isEmpty ? "Please enter a valid name" : null,
+                          validator: (val) => val!.isEmpty
+                              ? translation(context)
+                                  .name_validation_error_message
+                              : null,
                           onFieldSubmitted: (v) {},
                           // maxLines: 2,
                           controller: _childnameEditingController,
                           keyboardType: TextInputType.text,
-                          decoration: const InputDecoration(
-                            labelText: 'Child Name *',
+                          decoration: InputDecoration(
+                            // labelText: 'Child Name *',
+                            labelText: translation(context).child_name_label,
                             alignLabelWithHint: true,
-                            labelStyle: TextStyle(color: Colors.white),
-                            // focusedBorder: OutlineInputBorder(
-                            //   borderSide: BorderSide(width: 2.0),
-                            // ),
-                            enabledBorder: UnderlineInputBorder(
+                            labelStyle: const TextStyle(color: Colors.white),
+                            enabledBorder: const UnderlineInputBorder(
                               borderSide: BorderSide(
                                 color: Colors
                                     .white, // Set the original line color to white
@@ -144,8 +149,9 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                               //Drop down for Gender
                               child: DropdownButtonFormField(
                                 iconEnabledColor: Colors.white,
-                                dropdownColor: Color.fromARGB(255, 29, 64, 97),
-                                hint: Text(
+                                dropdownColor:
+                                    const Color.fromARGB(255, 29, 64, 97),
+                                hint: const Text(
                                   'Select',
                                 ),
                                 itemHeight: 60,
@@ -154,7 +160,8 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                                   if (value == null ||
                                       value.isEmpty ||
                                       value == "Gender *") {
-                                    return 'Please select a gender';
+                                    return translation(context)
+                                        .gender_validation_error_message;
                                   }
                                   return null;
                                 },
@@ -168,7 +175,7 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                                     value: selectedGender,
                                     child: Text(
                                       selectedGender,
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         // fontSize: screenWidth / 32,
                                         fontWeight: FontWeight.normal,
                                         color: Colors.white,
@@ -176,7 +183,7 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                                     ),
                                   );
                                 }).toList(),
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   //labelText: 'Gender', // Set label text
                                   labelStyle: TextStyle(
                                     color: Colors
@@ -197,7 +204,8 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                             Expanded(
                               child: DropdownButtonFormField(
                                 iconEnabledColor: Colors.white,
-                                dropdownColor: Color.fromARGB(255, 29, 64, 97),
+                                dropdownColor:
+                                    const Color.fromARGB(255, 29, 64, 97),
                                 // Color.fromARGB(255, 21, 46, 70),
                                 itemHeight: 60,
                                 value: selectedAge,
@@ -205,7 +213,8 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                                   if (value == null ||
                                       value.isEmpty ||
                                       value == "Age *") {
-                                    return 'Please select the age';
+                                    return translation(context)
+                                        .age_validation_error_message;
                                   }
                                   return null;
                                 },
@@ -219,7 +228,7 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                                     value: selectedAge,
                                     child: Text(
                                       selectedAge,
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         // fontSize: screenWidth / 32,
                                         fontWeight: FontWeight.normal,
                                         color: Colors.white,
@@ -227,7 +236,7 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                                     ),
                                   );
                                 }).toList(),
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   //labelText: 'Gender', // Set label text
                                   labelStyle: TextStyle(
                                     color: Colors
@@ -250,8 +259,8 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
 
                         //"Start Test" Button
                         Padding(
-                          padding:
-                              EdgeInsetsDirectional.fromSTEB(10, 10, 10, 0),
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              10, 10, 10, 0),
                           child: ElevatedButton(
                               onPressed: () {
                                 insertDialog();
@@ -264,12 +273,14 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                                   borderRadius: BorderRadius.circular(
                                       20.0), // Set border radius to a circular value
                                 ),
-                                minimumSize: Size(double.infinity,
+                                minimumSize: const Size(double.infinity,
                                     50), // Set button width to fill available space
                               ),
-                              child: const Text(
-                                "Start Test",
-                                style: TextStyle(fontWeight: FontWeight.bold),
+                              child: Text(
+                                // "Start Test",
+                                translation(context).start_test_button,
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.bold),
                               )),
                         ),
                       ],
@@ -286,10 +297,11 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
 
   void insertDialog() {
     if (!_formKey.currentState!.validate()) {
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: Text(
-          "Please complete the form",
-          style: TextStyle(color: Colors.black),
+          // "Please complete the form",
+          translation(context).form_validation_error_message,
+          style: const TextStyle(color: Colors.black),
         ),
         backgroundColor: Colors.white70,
       ));
@@ -313,41 +325,4 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
     });
     print(childName);
   }
-
-  // showDialog(
-  //   context: context,
-  //   builder: (BuildContext context) {
-  //     return AlertDialog(
-  //       shape: const RoundedRectangleBorder(
-  //           borderRadius: BorderRadius.all(Radius.circular(10.0))),
-  //       title: const Text(
-  //         "Update your catch?",
-  //         style: TextStyle(),
-  //       ),
-  //       content: const Text("Are you sure?", style: TextStyle()),
-  //       actions: <Widget>[
-  //         TextButton(
-  //           child: const Text(
-  //             "Yes",
-  //             style: TextStyle(),
-  //           ),
-  //           onPressed: () {
-  //             Navigator.of(context).pop();
-  //             // updateCatch();
-  //             //registerUser();
-  //           },
-  //         ),
-  //         TextButton(
-  //           child: const Text(
-  //             "No",
-  //             style: TextStyle(),
-  //           ),
-  //           onPressed: () {
-  //             Navigator.of(context).pop();
-  //           },
-  //         ),
-  //       ],
-  //     );
-  //   },
-  // );
 }

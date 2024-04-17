@@ -58,7 +58,19 @@
   "child_name_label": "Child Name *",
   "gender_label": "Gender *",
   "age_label": "Age *",
-  "select_option": "Select",
   "start_test_button": "Start Test",
-  "form_validation_error_message": "Please complete the form"
+  "name_validation_error_message": "Please enter a valid name",
+  "gender_validation_error_message": "Please select a gender",
+  "age_validation_error_message": "Please select the age",
+  "form_validation_error_message": "Please complete the form",
+
+  "gender_placeholder": "Gender *",
+  "gender_male": "Male",
+  "gender_female": "Female",
+  "age_placeholder": "Age *",
+  "age_4_6": "4 - 6",
+  "age_7_9": "7 - 9"
+
+
+
 }
