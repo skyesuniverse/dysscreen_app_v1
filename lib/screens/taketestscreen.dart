@@ -16,19 +16,28 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
   String maintitle = 'Test';
   final _formKey = GlobalKey<FormState>();
   late double screenHeight, screenWidth;
-  String selectedGender = "Gender *";
-  List<String> genderlist = [
-    "Gender *",
-    "Male",
-    "Female",
-  ];
 
-  String selectedAge = "Age *";
-  List<String> agelist = [
-    "Age *",
-    "4 - 6",
-    "7 - 9",
-  ];
+  // String selectedGender = "Gender *";
+  //   String selectedAge = "Age *";
+
+  // Update the variables for selected gender and age to use the translation keys
+  // String selectedGender = "Gender *"; // Default to the translation key
+  // String selectedAge = "Age *"; // Default to the translation key
+
+  // List<String> genderlist = [
+  //   "Gender *",
+  //   "Male",
+  //   "Female",
+  // ];
+
+  // List<String> agelist = [
+  //   "Age *",
+  //   "4 - 6",
+  //   "7 - 9",
+  // ];
+
+  List<String> genderList = [];
+  List<String> ageList = [];
 
   String childName = ''; // Add this variable to store the child's name
 
@@ -51,6 +60,24 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
   Widget build(BuildContext context) {
     screenHeight = MediaQuery.of(context).size.height;
     screenWidth = MediaQuery.of(context).size.width;
+
+    // Initialize the dropdown lists here, before the build method
+    genderList = [
+      translation(context).gender_placeholder,
+      translation(context).gender_male,
+      translation(context).gender_female,
+    ];
+
+    ageList = [
+      translation(context).age_placeholder,
+      '4 - 6',
+      '7 - 9',
+    ];
+
+    // Initialize selectedGender and selectedAge with the translation keys
+    String selectedGender = translation(context).gender_placeholder;
+    String selectedAge = translation(context).age_placeholder;
+
     return Scaffold(
         body: Container(
       width: double.infinity,
@@ -103,17 +130,20 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                   SizedBox(
                     height: screenHeight * 0.05,
                   ),
-                  Text(
-                    // '**Please enter your child\'s details below to begin the assessment.',
-                    translation(context).enter_child_details_message,
-                    style: const TextStyle(
-                      // fontSize: screenWidth / 30,
-                      fontWeight: FontWeight.normal,
-                      fontStyle: FontStyle.italic, // Set text to italic
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      // '**Please enter your child\'s details below to begin the assessment.',
+                      translation(context).enter_child_details_message,
+                      style: const TextStyle(
+                        // fontSize: screenWidth / 30,
+                        fontWeight: FontWeight.normal,
+                        fontStyle: FontStyle.italic, // Set text to italic
 
-                      color: Colors.white,
+                        color: Colors.white,
+                      ),
+                      textAlign: TextAlign.left,
                     ),
-                    textAlign: TextAlign.justify,
                   ),
                   Form(
                     key: _formKey,
@@ -159,7 +189,9 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                                 validator: (value) {
                                   if (value == null ||
                                       value.isEmpty ||
-                                      value == "Gender *") {
+                                      value ==
+                                          translation(context)
+                                              .gender_placeholder) {
                                     return translation(context)
                                         .gender_validation_error_message;
                                   }
@@ -170,7 +202,7 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                                     selectedGender = newValue.toString();
                                   });
                                 },
-                                items: genderlist.map((selectedGender) {
+                                items: genderList.map((selectedGender) {
                                   return DropdownMenuItem(
                                     value: selectedGender,
                                     child: Text(
@@ -212,7 +244,9 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                                 validator: (value) {
                                   if (value == null ||
                                       value.isEmpty ||
-                                      value == "Age *") {
+                                      value ==
+                                          translation(context)
+                                              .gender_placeholder) {
                                     return translation(context)
                                         .age_validation_error_message;
                                   }
@@ -223,7 +257,7 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                                     selectedAge = newValue.toString();
                                   });
                                 },
-                                items: agelist.map((selectedAge) {
+                                items: ageList.map((selectedAge) {
                                   return DropdownMenuItem(
                                     value: selectedAge,
                                     child: Text(
@@ -254,7 +288,7 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                           ],
                         ),
                         SizedBox(
-                          height: screenHeight * 0.05,
+                          height: screenHeight * 0.025,
                         ),
 
                         //"Start Test" Button
@@ -263,7 +297,7 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                               10, 10, 10, 0),
                           child: ElevatedButton(
                               onPressed: () {
-                                insertDialog();
+                                insertDialog(selectedGender, selectedAge);
                               },
                               style: ElevatedButton.styleFrom(
                                 foregroundColor: Colors.black,
@@ -295,7 +329,7 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
     ));
   }
 
-  void insertDialog() {
+  void insertDialog(String selectedAge, String selectedGender) {
     if (!_formKey.currentState!.validate()) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: Text(
