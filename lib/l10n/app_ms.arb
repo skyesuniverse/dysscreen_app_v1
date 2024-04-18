@@ -69,5 +69,12 @@
   "gender_female": "Perempuan",
   "age_placeholder": "Umur *",
   "age_4_6": "4 - 6",
-  "age_7_9": "7 - 9"
+  "age_7_9": "7 - 9",
+
+  "gender_0": "Jantina *",
+  "gender_1": "Lelaki",
+  "gender_2": "Perempuan",
+  "age_0": "Umur *",
+  "age_1": "4 - 6",
+  "age_2": "7 - 9"
 }

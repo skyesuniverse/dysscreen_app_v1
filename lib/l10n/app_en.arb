@@ -69,7 +69,17 @@
   "gender_female": "Female",
   "age_placeholder": "Age *",
   "age_4_6": "4 - 6",
-  "age_7_9": "7 - 9"
+  "age_7_9": "7 - 9",
+
+  "gender_0": "Gender *",
+  "gender_1": "Male",
+  "gender_2": "Female",
+
+  "age_0": "Age *",
+  "age_1": "4 - 6",
+  "age_2": "7 - 9"
+
+  
 
 
 

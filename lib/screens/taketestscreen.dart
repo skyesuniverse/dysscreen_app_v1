@@ -3,10 +3,8 @@ import 'package:dysscreen_app_v1/screens/Test_Section/testquestionscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-void main() => runApp(const TakeTestScreen());
-
 class TakeTestScreen extends StatefulWidget {
-  const TakeTestScreen({super.key});
+  const TakeTestScreen({Key? key}) : super(key: key);
 
   @override
   State<TakeTestScreen> createState() => _TakeTestScreenState();
@@ -16,28 +14,10 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
   String maintitle = 'Test';
   final _formKey = GlobalKey<FormState>();
   late double screenHeight, screenWidth;
-
-  // String selectedGender = "Gender *";
-  //   String selectedAge = "Age *";
-
-  // Update the variables for selected gender and age to use the translation keys
-  // String selectedGender = "Gender *"; // Default to the translation key
-  // String selectedAge = "Age *"; // Default to the translation key
-
-  // List<String> genderlist = [
-  //   "Gender *",
-  //   "Male",
-  //   "Female",
-  // ];
-
-  // List<String> agelist = [
-  //   "Age *",
-  //   "4 - 6",
-  //   "7 - 9",
-  // ];
-
-  List<String> genderList = [];
-  List<String> ageList = [];
+  String selectedGender = '';
+  List<String> genderlist = [];
+  String selectedAge = '';
+  List<String> agelist = [];
 
   String childName = ''; // Add this variable to store the child's name
 
@@ -51,6 +31,28 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
   }
 
   @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    // Initialize genderlist and agelist here
+    genderlist = [
+      translation(context).gender_0,
+      translation(context).gender_1,
+      translation(context).gender_2,
+    ];
+
+    agelist = [
+      translation(context).age_0,
+      translation(context).age_1,
+      translation(context).age_2,
+    ];
+
+    // Set initial values for selectedGender and selectedAge
+    selectedGender =
+        genderlist[0]; // Set initial value to the first item in the list
+    selectedAge = agelist[0]; // Set initial value to the first item in the list
+  }
+
+  @override
   void dispose() {
     super.dispose();
     print('dispose');
@@ -61,22 +63,18 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
     screenHeight = MediaQuery.of(context).size.height;
     screenWidth = MediaQuery.of(context).size.width;
 
-    // Initialize the dropdown lists here, before the build method
-    genderList = [
-      translation(context).gender_placeholder,
-      translation(context).gender_male,
-      translation(context).gender_female,
+// Initialize genderlist and agelist here
+    genderlist = [
+      translation(context).gender_0,
+      translation(context).gender_1,
+      translation(context).gender_2,
     ];
 
-    ageList = [
-      translation(context).age_placeholder,
-      '4 - 6',
-      '7 - 9',
+    agelist = [
+      translation(context).age_0,
+      translation(context).age_1,
+      translation(context).age_2,
     ];
-
-    // Initialize selectedGender and selectedAge with the translation keys
-    String selectedGender = translation(context).gender_placeholder;
-    String selectedAge = translation(context).age_placeholder;
 
     return Scaffold(
         body: Container(
@@ -130,20 +128,17 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                   SizedBox(
                     height: screenHeight * 0.05,
                   ),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      // '**Please enter your child\'s details below to begin the assessment.',
-                      translation(context).enter_child_details_message,
-                      style: const TextStyle(
-                        // fontSize: screenWidth / 30,
-                        fontWeight: FontWeight.normal,
-                        fontStyle: FontStyle.italic, // Set text to italic
+                  Text(
+                    // '**Please enter your child\'s details below to begin the assessment.',
+                    translation(context).enter_child_details_message,
+                    style: const TextStyle(
+                      // fontSize: screenWidth / 30,
+                      fontWeight: FontWeight.normal,
+                      fontStyle: FontStyle.italic, // Set text to italic
 
-                        color: Colors.white,
-                      ),
-                      textAlign: TextAlign.left,
+                      color: Colors.white,
                     ),
+                    textAlign: TextAlign.justify,
                   ),
                   Form(
                     key: _formKey,
@@ -189,9 +184,7 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                                 validator: (value) {
                                   if (value == null ||
                                       value.isEmpty ||
-                                      value ==
-                                          translation(context)
-                                              .gender_placeholder) {
+                                      value == translation(context).gender_0) {
                                     return translation(context)
                                         .gender_validation_error_message;
                                   }
@@ -202,7 +195,7 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                                     selectedGender = newValue.toString();
                                   });
                                 },
-                                items: genderList.map((selectedGender) {
+                                items: genderlist.map((selectedGender) {
                                   return DropdownMenuItem(
                                     value: selectedGender,
                                     child: Text(
@@ -244,9 +237,7 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                                 validator: (value) {
                                   if (value == null ||
                                       value.isEmpty ||
-                                      value ==
-                                          translation(context)
-                                              .gender_placeholder) {
+                                      value == translation(context).age_0) {
                                     return translation(context)
                                         .age_validation_error_message;
                                   }
@@ -257,7 +248,7 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                                     selectedAge = newValue.toString();
                                   });
                                 },
-                                items: ageList.map((selectedAge) {
+                                items: agelist.map((selectedAge) {
                                   return DropdownMenuItem(
                                     value: selectedAge,
                                     child: Text(
@@ -288,7 +279,7 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                           ],
                         ),
                         SizedBox(
-                          height: screenHeight * 0.025,
+                          height: screenHeight * 0.05,
                         ),
 
                         //"Start Test" Button
@@ -297,7 +288,7 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                               10, 10, 10, 0),
                           child: ElevatedButton(
                               onPressed: () {
-                                insertDialog(selectedGender, selectedAge);
+                                insertDialog();
                               },
                               style: ElevatedButton.styleFrom(
                                 foregroundColor: Colors.black,
@@ -329,7 +320,7 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
     ));
   }
 
-  void insertDialog(String selectedAge, String selectedGender) {
+  void insertDialog() {
     if (!_formKey.currentState!.validate()) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: Text(
@@ -358,5 +349,7 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
       );
     });
     print(childName);
+    print(selectedAge);
+    print(selectedGender);
   }
 }
