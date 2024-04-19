@@ -3,6 +3,7 @@ import 'package:dysscreen_app_v1/models/Questions_46.dart';
 import 'package:dysscreen_app_v1/models/Questions_79.dart';
 import 'package:dysscreen_app_v1/screens/Test_Section/Components/question_card.dart';
 import 'package:dysscreen_app_v1/screens/homescreen.dart';
+import 'package:dysscreen_app_v1/screens/mainscreen.dart';
 import 'package:dysscreen_app_v1/screens/result.dart';
 import 'package:dysscreen_app_v1/widgets/mainButton.dart';
 import 'package:flutter/material.dart';
@@ -35,10 +36,17 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
   @override
   void initState() {
     super.initState();
+    _pageController = PageController();
     // Fetch the questions based on selectedAge
     questionsList = getQuestionsForAge(widget.selectedAge);
     // Initialize _questionController in initState
     _questionController = Get.put(QuestionController(widget.selectedAge));
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
   }
 
   @override
@@ -192,10 +200,21 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
                 style: TextStyle(),
               ),
               onPressed: () {
-                Navigator.pop(context); // Close the dialog
-                Navigator.pop(context); // Close the current screen
-                // updateCatch();
-                //registerUser();
+                // Navigator.pop(context, true); // Close the dialog with a result
+                // Navigator.pop(context, true); // Close the dialog with a result
+                // Navigator.of(context).popUntil((route) => route
+                //     .isFirst); // Close all routes until reaching the first one (HomeTabScreen)
+
+                // Navigator.of(context, rootNavigator: true).pushAndRemoveUntil(
+                //   MaterialPageRoute(builder: (context) => HomeTabScreen()),
+                //   (route) => false,
+                // );
+                // _pageController.jumpToPage(0);
+                _questionController.resetState();
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => MainScreen()),
+                );
               },
             ),
             TextButton(

@@ -336,7 +336,7 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
       childName = _childnameEditingController.text; // Store child's name
       selectedAge = selectedAge; // Store child's name
       selectedGender = selectedGender; // Store child's name
-      Navigator.push(
+      Navigator.pushReplacement(
         context,
         MaterialPageRoute(
           builder: (content) => TestQuestionScreen(
@@ -346,10 +346,18 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                 selectedGender, // Pass selected age to the test screen
           ),
         ),
-      );
+      ).then((result) {
+        // Handle the result when the user navigates back from TestQuestionScreen
+        if (result != null && result) {
+          // Reset form fields and variables here
+          _childnameEditingController.clear();
+          // Assign initial values from agelist and genderlist
+          selectedAge = agelist[0];
+          selectedGender = genderlist[0];
+          print(selectedAge);
+          setState(() {});
+        }
+      });
     });
-    print(childName);
-    print(selectedAge);
-    print(selectedGender);
   }
 }

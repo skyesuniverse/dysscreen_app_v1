@@ -128,11 +128,6 @@ class QuestionController extends GetxController {
 
   void nextQuestion() {
     int nextQuestionNumber = _questionNumber.value + 1;
-    // Find the next unanswered question
-    // while (nextQuestionNumber <= _questions.length &&
-    //     _selectedOptionIndices.containsKey(nextQuestionNumber)) {
-    //   nextQuestionNumber++;
-    // }
 
     // Check if there are any more questions remaining
     if (nextQuestionNumber <= _questions.length) {
@@ -177,34 +172,6 @@ class QuestionController extends GetxController {
     return _selectedOptionIndices.length == _questions.length;
   }
 
-  // Method to update category counts based on selected answers
-  // void updateCategoryCounts(
-  //     Map<int, int> _selectedOptionIndices, List<dynamic> _questions) {
-  //   categoryCounts.clear(); // Clear existing counts
-
-  //   // Iterate through questions and update counts
-  //   _questions.forEach((question) {
-  //     final category = question.category;
-  //     final selectedOptionIndex = _selectedOptionIndices[question.id];
-
-  //     if (selectedOptionIndex != null) {
-  //       final selectedOption = question.options[selectedOptionIndex];
-
-  //       // Initialize counts for the category if they don't exist
-  //       categoryCounts.putIfAbsent(category, () => {'Yes': 0, 'No': 0});
-
-  //       // Increment the count for the selected option if it exists
-  //       // if (categoryCounts[category]![selectedOption] != null) {
-  //       //   categoryCounts[category]![selectedOption]! += 1;
-  //       // }
-
-  //       // Print statements for debugging
-  //       print('Category: $category, Selected Option: $selectedOption');
-  //       print('Updated Category Counts: $categoryCounts');
-  //     }
-  //   });
-  // }
-
   void updateCategoryCounts(
       Map<int, int> selectedOptionIndices, List<dynamic> questions) {
     // Clear existing counts
@@ -246,5 +213,17 @@ class QuestionController extends GetxController {
       totalCount += counts[option]!;
     });
     return totalCount;
+  }
+
+  // Reset all relevant state variables to their initial values
+  void resetState() {
+    _isAnswered = false;
+    _yesCount = 0;
+    _noCount = 0;
+    _questionNumber.value = 1;
+    _selectedOptionIndices.clear();
+    // You may need to reset any other state variables specific to your controller
+    // Reset the PageController
+    // _pageController.jumpToPage(0); // Reset the page to the first question
   }
 }
