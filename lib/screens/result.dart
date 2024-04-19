@@ -1,5 +1,6 @@
 import 'package:dysscreen_app_v1/controllers/question_controller.dart';
 import 'package:dysscreen_app_v1/screens/homescreen.dart';
+import 'package:dysscreen_app_v1/screens/mainscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -35,6 +36,11 @@ class _ResultScreenState extends State<ResultScreen> {
   }
 
   @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     screenHeight = MediaQuery.of(context).size.height;
     screenWidth = MediaQuery.of(context).size.width;
@@ -53,8 +59,10 @@ class _ResultScreenState extends State<ResultScreen> {
               // Close the current screen and navigate to the home screen
               // Navigate to the desired screen
               onPressed: () {
-                Navigator.pop(context);
-                Navigator.pop(context);
+                Navigator.of(context, rootNavigator: true).pushAndRemoveUntil(
+                  MaterialPageRoute(builder: (context) => MainScreen()),
+                  (route) => false,
+                );
               }),
           actions: [
             IconButton(

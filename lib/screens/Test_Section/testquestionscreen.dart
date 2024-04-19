@@ -39,13 +39,15 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
     _pageController = PageController();
     // Fetch the questions based on selectedAge
     questionsList = getQuestionsForAge(widget.selectedAge);
-    // Initialize _questionController in initState
+
+    // Initialize a new QuestionController for the selected age group
     _questionController = Get.put(QuestionController(widget.selectedAge));
   }
 
   @override
   void dispose() {
     _pageController.dispose();
+
     super.dispose();
   }
 
@@ -205,16 +207,16 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
                 // Navigator.of(context).popUntil((route) => route
                 //     .isFirst); // Close all routes until reaching the first one (HomeTabScreen)
 
-                // Navigator.of(context, rootNavigator: true).pushAndRemoveUntil(
-                //   MaterialPageRoute(builder: (context) => HomeTabScreen()),
-                //   (route) => false,
-                // );
-                // _pageController.jumpToPage(0);
-                _questionController.resetState();
-                Navigator.pushReplacement(
-                  context,
+                Navigator.of(context, rootNavigator: true).pushAndRemoveUntil(
                   MaterialPageRoute(builder: (context) => MainScreen()),
+                  (route) => false,
                 );
+                // _pageController.jumpToPage(0);
+
+                // Navigator.pushReplacement(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => MainScreen()),
+                // );
               },
             ),
             TextButton(
