@@ -54,28 +54,37 @@ class _ResultScreenState extends State<ResultScreen> {
         extendBodyBehindAppBar: true,
         backgroundColor: Colors.white,
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           backgroundColor: Colors.transparent,
           elevation: 0,
-          leading: IconButton(
-              icon: Icon(Icons.home_outlined, color: Colors.white),
+          // leading:
+          // IconButton(
+          //     icon: Icon(Icons.home_outlined, color: Colors.white),
 
-              // Close the current screen and navigate to the home screen
-              // Navigate to the desired screen
-              onPressed: () {
-                Navigator.of(context, rootNavigator: true).pushAndRemoveUntil(
-                  MaterialPageRoute(builder: (context) => MainScreen()),
-                  (route) => false,
-                );
-              }),
+          //     // Close the current screen and navigate to the home screen
+          //     // Navigate to the desired screen
+          //     onPressed: () {
+          //       Get.deleteAll();
+
+          //       Navigator.of(context, rootNavigator: true).pushAndRemoveUntil(
+          //         MaterialPageRoute(builder: (context) => MainScreen()),
+          //         (route) => false,
+          //       );
+          //     }
+          //     ),
           actions: [
             IconButton(
               color: Colors.white,
               onPressed: () {
-                // Add your functionality here
-                // takeScreenshot();
+                Get.deleteAll();
+
+                Navigator.of(context, rootNavigator: true).pushAndRemoveUntil(
+                  MaterialPageRoute(builder: (context) => MainScreen()),
+                  (route) => false,
+                );
               },
               icon: const Icon(
-                Icons.camera_alt_outlined,
+                Icons.home_outlined,
                 // color: Colors.white,
               ),
             ),

@@ -33,6 +33,19 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
   late QuestionController
       _questionController; // Declare _questionController here
 
+  // void startNewTest() {
+  //   // Reset the question controller and page controller
+  //   _questionController.resetState();
+
+  //   // Update state variables
+  //   setState(() {
+  //     _currentPageIndex = 0;
+  //   });
+
+  //   // Fetch the questions based on the selected age
+  //   questionsList = getQuestionsForAge(widget.selectedAge);
+  // }
+
   @override
   void initState() {
     super.initState();
@@ -206,12 +219,14 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
                 // Navigator.pop(context, true); // Close the dialog with a result
                 // Navigator.of(context).popUntil((route) => route
                 //     .isFirst); // Close all routes until reaching the first one (HomeTabScreen)
+                Get.deleteAll();
 
                 Navigator.of(context, rootNavigator: true).pushAndRemoveUntil(
                   MaterialPageRoute(builder: (context) => MainScreen()),
                   (route) => false,
                 );
                 // _pageController.jumpToPage(0);
+                // startNewTest(); // Start a new test when quitting
 
                 // Navigator.pushReplacement(
                 //   context,

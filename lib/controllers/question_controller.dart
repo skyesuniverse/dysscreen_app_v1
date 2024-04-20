@@ -224,6 +224,6 @@ class QuestionController extends GetxController {
     _selectedOptionIndices.clear();
     // You may need to reset any other state variables specific to your controller
     // Reset the PageController
-    // _pageController.jumpToPage(0); // Reset the page to the first question
+    _pageController.jumpToPage(0); // Reset the page to the first question
   }
 }
