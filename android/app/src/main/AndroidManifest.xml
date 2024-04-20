@@ -1,5 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.dysscreen_app_v1">
+   
+   <uses-permission android:name="android.permission.INTERNET"/>
+   
    <application
         android:label="dysscreen_app_v1"
         android:name="${applicationName}"

@@ -1,6 +1,7 @@
 import 'package:dysscreen_app_v1/models/ResourceAndSupport.dart';
 import 'package:dysscreen_app_v1/widgets/bullet_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ResourcesAndSupport extends StatefulWidget {
   const ResourcesAndSupport({super.key});
@@ -12,6 +13,7 @@ class ResourcesAndSupport extends StatefulWidget {
 class _ResourcesAndSupportState extends State<ResourcesAndSupport> {
   late double screenHeight, screenWidth;
   final List<int> index = [1, 2, 3];
+
   @override
   Widget build(BuildContext context) {
     screenHeight = MediaQuery.of(context).size.height;
@@ -132,13 +134,20 @@ class _ResourcesAndSupportState extends State<ResourcesAndSupport> {
                                     children: [
                                       Text('Website: '),
                                       Expanded(
-                                        child: Text(
-                                          myorg.myOrg_WebLink,
-                                          style: TextStyle(
-                                            fontSize: screenWidth / 25,
-                                            color: Colors.blue,
-                                            decoration:
-                                                TextDecoration.underline,
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            launchUrl_MY(myorg.myOrg_WebLink);
+                                            print(myorg.myOrg_WebLink);
+                         
+                                          },
+                                          child: Text(
+                                            myorg.myOrg_WebLink,
+                                            style: TextStyle(
+                                              fontSize: screenWidth / 25,
+                                              color: Colors.blue,
+                                              // decoration:
+                                              //     TextDecoration.underline,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -211,14 +220,27 @@ class _ResourcesAndSupportState extends State<ResourcesAndSupport> {
                                     children: [
                                       Text('Website: '),
                                       Expanded(
-                                        child: Text(
-                                          internationalOrg
-                                              .internationalOrg_WebLink,
-                                          style: TextStyle(
-                                            fontSize: screenWidth / 25,
-                                            color: Colors.blue,
-                                            decoration:
-                                                TextDecoration.underline,
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            launchUrl_Inter(internationalOrg
+                                                .internationalOrg_WebLink);
+                                            print(internationalOrg
+                                                .internationalOrg_WebLink);
+                                            // final url =
+                                            //     Uri.parse(myorg.myOrg_WebLink);
+                                            // if (await canLaunchUrl(url)) {
+                                            //   await launchUrl(url);
+                                            // }
+                                          },
+                                          child: Text(
+                                            internationalOrg
+                                                .internationalOrg_WebLink,
+                                            style: TextStyle(
+                                              fontSize: screenWidth / 25,
+                                              color: Colors.blue,
+                                              // decoration:
+                                              //     TextDecoration.underline,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -239,5 +261,25 @@ class _ResourcesAndSupportState extends State<ResourcesAndSupport> {
         ),
       ),
     );
+  }
+
+  // Function to launch URL
+  Future<void> launchUrl_MY(String urlString) async {
+    if (await canLaunch(urlString)) {
+      // Check if the URL can be launched
+      await launch(urlString);
+    } else {
+      throw 'Could not launch $urlString'; // throw could be used to handle erroneous situations
+    }
+  }
+
+  // Function to launch URL
+  Future<void> launchUrl_Inter(String urlString) async {
+    if (await canLaunch(urlString)) {
+      // Check if the URL can be launched
+      await launch(urlString);
+    } else {
+      throw 'Could not launch $urlString'; // throw could be used to handle erroneous situations
+    }
   }
 }
