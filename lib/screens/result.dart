@@ -1,8 +1,11 @@
 import 'package:dysscreen_app_v1/controllers/question_controller.dart';
+import 'package:dysscreen_app_v1/models/language_constants.dart';
 import 'package:dysscreen_app_v1/screens/homescreen.dart';
 import 'package:dysscreen_app_v1/screens/mainscreen.dart';
+import 'package:dysscreen_app_v1/widgets/mainButton.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:dysscreen_app_v1/controllers/pdf_generator.dart';
 
 class ResultScreen extends StatefulWidget {
   final String childName;
@@ -69,7 +72,7 @@ class _ResultScreenState extends State<ResultScreen> {
               color: Colors.white,
               onPressed: () {
                 // Add your functionality here
-                takeScreenshot();
+                // takeScreenshot();
               },
               icon: const Icon(
                 Icons.camera_alt_outlined,
@@ -255,7 +258,8 @@ class _ResultScreenState extends State<ResultScreen> {
               padding: EdgeInsetsDirectional.fromSTEB(30, 10, 30, 30),
               child: ElevatedButton(
                   onPressed: () {
-                    insertDialog();
+                    // Call the generateAndSharePdf method from PdfGenerator
+                    _generatePdfAndShare(context);
                   },
                   style: ElevatedButton.styleFrom(
                     foregroundColor: Color.fromARGB(255, 255, 255, 255),
@@ -268,9 +272,9 @@ class _ResultScreenState extends State<ResultScreen> {
                     minimumSize: Size(double.infinity,
                         50), // Set button width to fill available space
                   ),
-                  child: const Text(
-                    "Email Result",
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                  child: Text(
+                    'Email Result',
+                    style: const TextStyle(fontWeight: FontWeight.bold),
                   )),
             ),
           ],
@@ -278,7 +282,33 @@ class _ResultScreenState extends State<ResultScreen> {
         ));
   }
 
-  void takeScreenshot() {}
+  Future<void> _generatePdfAndShare(BuildContext context) async {
+    try {
+      final List<Map<String, dynamic>> testResults = [];
+
+      for (var category in questionController.categoryCounts.keys) {
+        final widget = progressIndicator_Widget(
+          categoryName: category,
+          score: questionController.getCategoryCounts(category)?['Yes'] ?? 0,
+          totalQuestions:
+              questionController.getCategoryCounts(category)?['Total'] ?? 0,
+        );
+        final result = widget.getTestResults();
+        print(result);
+        testResults.add(result);
+      }
+
+      await PdfGenerator.generateAndSharePdf(
+        childName: widget.childName,
+        selectedAge: widget.selectedAge,
+        selectedGender: widget.selectedGender,
+        testResults: testResults,
+        context: context,
+      );
+    } catch (e) {
+      print('Error generating or sharing PDF: $e');
+    }
+  }
 
   void insertDialog() {}
 }
@@ -294,6 +324,15 @@ class progressIndicator_Widget extends StatelessWidget {
     required this.score,
     required this.totalQuestions,
   }) : super(key: key);
+
+  // Method to retrieve test results data
+  Map<String, dynamic> getTestResults() {
+    return {
+      'categoryName': categoryName,
+      'score': score,
+      'totalQuestions': totalQuestions,
+    };
+  }
 
   @override
   Widget build(BuildContext context) {
