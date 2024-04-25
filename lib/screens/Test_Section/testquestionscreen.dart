@@ -318,6 +318,7 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
                 id: data['id'],
                 category: data['category'],
                 instruction: data['instruction'],
+                imagePath: data['imagePath'],
                 question: data['question'],
                 options: List<String>.from(data['options']),
                 answer: data['answer_index'],

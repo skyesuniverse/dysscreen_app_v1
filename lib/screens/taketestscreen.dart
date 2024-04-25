@@ -118,7 +118,7 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                       // 'This test is designed to provide valuable insights into your child\'s reading and writing abilities, helping to identify potential signs of dyslexia at an early stage.\n\nThroughout the test, instructions and questions will be given, your child will encounter engaging activities that assess key skills such as reading comprehension, phonological awareness, and writing proficiency. \n\nThe assessment typically takes 10-15 minutes to complete, ensuring a thorough evaluation without causing fatigue for the child.',
                       translation(context).assessment_description,
                       style: TextStyle(
-                        fontSize: screenWidth / 30,
+                        fontSize: screenWidth / 28,
                         fontWeight: FontWeight.normal,
                         color: const Color.fromARGB(255, 190, 190, 190),
                       ),

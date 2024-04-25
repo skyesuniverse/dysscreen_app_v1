@@ -52,7 +52,7 @@ class _LanguageSelectionBottomSheetState
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: languages!.map((language) {
+          children: languages.map((language) {
             return Column(
               children: [
                 ListTile(

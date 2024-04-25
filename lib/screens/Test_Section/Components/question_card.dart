@@ -32,38 +32,93 @@ class Question_Card extends StatelessWidget {
           topRight: Radius.circular(20.0), // Change the value as needed
         ),
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(height: screenHeight * 0.04),
-          Text(
-            'Instruction',
-            style: TextStyle(fontStyle: FontStyle.italic),
-          ),
-          Text(
-            question.instruction,
-          ),
-          SizedBox(height: screenHeight * 0.06),
-          Text(
-            'Question',
-            style: TextStyle(fontStyle: FontStyle.italic),
-          ),
-          Text(
-            question.question,
-          ),
-          SizedBox(height: screenHeight * 0.06),
-          //option section
-          ...List.generate(
-            question.options.length,
-            (index) => Option(
-              index: index,
-              text: question.options[index],
-              questionNumber: questionNumber,
+      child: Scrollbar(
+        // isAlwaysShown: true, // Ensure scrollbar is always shown
+        thickness: 6, // Set thickness of the scrollbar
+        radius: Radius.circular(3), // Set radius of the scrollbar
+        // controller: ScrollController(), // Optional: Scroll controller
+        // trackVisibility: true,
+        interactive: true,
+        child: SingleChildScrollView(
+          physics:
+              AlwaysScrollableScrollPhysics(), // Ensure scrollbar is always visible
 
-           
-            ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: screenHeight * 0.04),
+              Text(
+                'Instruction',
+                style: TextStyle(
+                    fontStyle: FontStyle.italic, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: screenHeight * 0.009),
+              Text(
+                question.instruction,
+                // style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: screenHeight * 0.02),
+              // Display image if imagePath is provided
+              if (question.imagePath != null)
+                GestureDetector(
+                  onTap: () {
+                    // Show larger version of the image (e.g., in a dialog)
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return Dialog(
+                          insetPadding:
+                              EdgeInsets.zero, // Remove default padding
+
+                          child: InteractiveViewer(
+                            scaleEnabled:
+                                true, // Optional: Allow scaling (zooming)
+                            panEnabled:
+                                true, // Optional: Allow panning (dragging)
+                            boundaryMargin: EdgeInsets.all(0.0),
+                            minScale: 0.5,
+                            maxScale: 3.0,
+                            child: Image.asset(
+                              question.imagePath!,
+                              fit: BoxFit.contain, // Adjust as needed
+                            ),
+                          ),
+                        );
+                      },
+                    );
+                  },
+                  child: Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 9, 0, 9),
+                    child: Image.asset(
+                      question.imagePath!,
+                      fit: BoxFit.cover, // Adjust BoxFit as needed
+                    ),
+                  ),
+                ),
+
+              SizedBox(height: screenHeight * 0.045),
+              Text(
+                'Question',
+                style: TextStyle(
+                    fontStyle: FontStyle.italic, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: screenHeight * 0.009),
+              Text(
+                question.question,
+              ),
+              SizedBox(height: screenHeight * 0.06),
+              //option section
+              ...List.generate(
+                question.options.length,
+                (index) => Option(
+                  index: index,
+                  text: question.options[index],
+                  questionNumber: questionNumber,
+                ),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
