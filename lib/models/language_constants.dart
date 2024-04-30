@@ -1,3 +1,6 @@
+
+
+import 'package:dysscreen_app_v1/models/Questions_46.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -36,4 +39,11 @@ Locale _locale(String languageCode) {
 
 AppLocalizations translation(BuildContext context) {
   return AppLocalizations.of(context)!;
+}
+
+String getTranslatedText(Map<dynamic, dynamic> data, BuildContext context) {
+  final currentLocale = Localizations.localeOf(context).languageCode;
+  return data[currentLocale] ??
+      data['en'] ??
+      ''; // Fallback to English if translation not available
 }

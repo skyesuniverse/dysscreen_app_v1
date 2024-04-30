@@ -33,19 +33,6 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
   late QuestionController
       _questionController; // Declare _questionController here
 
-  // void startNewTest() {
-  //   // Reset the question controller and page controller
-  //   _questionController.resetState();
-
-  //   // Update state variables
-  //   setState(() {
-  //     _currentPageIndex = 0;
-  //   });
-
-  //   // Fetch the questions based on the selected age
-  //   questionsList = getQuestionsForAge(widget.selectedAge);
-  // }
-
   @override
   void initState() {
     super.initState();
@@ -311,29 +298,41 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
   }
 
   List<dynamic> getQuestionsForAge(String selectedAge) {
-    // Determine which set of questions to return based on the selectedAge
     if (selectedAge == "4 - 6") {
       return question_46_data
-          .map((data) => Question_46(
-                id: data['id'],
-                category: data['category'],
-                instruction: data['instruction'],
-                imagePath: data['imagePath'],
-                question: data['question'],
-                options: List<String>.from(data['options']),
-                answer: data['answer_index'],
-              ))
+          .map(
+            (data) => Question_46(
+              id: data['id'],
+              category: data['category']
+                  ['en'], // Use English as default language
+              instruction: data['instruction']
+                  ['en'], // Use English as default language
+              imagePath: data['imagePath'],
+              question: data['question']
+                  ['en'], // Use English as default language
+
+              options: List<String>.from(
+                  data['options']['en']), // Use English as default language
+              answer: data['answer_index'],
+            ),
+          )
           .toList();
     } else {
       return question_79_data
-          .map((data) => Question_79(
-                id: data['id'],
-                category: data['category'],
-                question: data['question'],
-                instruction: data['instruction'],
-                options: List<String>.from(data['options']),
-                answer: data['answer_index'],
-              ))
+          .map(
+            (data) => Question_79(
+              id: data['id'],
+              category: data['category']
+                  ['en'], // Use English as default language
+              instruction: data['instruction']
+                  ['en'], // Use English as default language
+              question: data['question']
+                  ['en'], // Use English as default language
+              options: List<String>.from(
+                  data['options']['en']), // Use English as default language
+              answer: data['answer_index'],
+            ),
+          )
           .toList();
     }
   }

@@ -1,9 +1,8 @@
-
-
 class Question_79 {
   int id, answer;
   String question, instruction, category;
   List<String> options;
+  String? imagePath; // New attribute to store image path
 
   Question_79(
       {required this.id,
@@ -11,58 +10,51 @@ class Question_79 {
       required this.instruction,
       required this.question,
       required this.options,
-      required this.answer});
+      required this.answer,
+      this.imagePath}); // Updated constructor to include imagePath
 }
 
 const List question_79_data = [
   {
     "id": 1,
-    "category": "Language",
-    "instruction": "Let your children write somehitng",
-    "question":
-        "Flutter is an open-source UI software development kit created by ______",
-    "options": ['Yes', 'No'],
+    "category": {
+      "en": "Language",
+      "ms": "Bahasa",
+    },
+    "instruction": {
+      "en": "Point to the alphabet and ask the child to read out.",
+      "ms": "Tunjuk pada abjad dan minta anak membacanya.",
+    },
+    "imagePath": "assets/images/lowercase.png",
+    "question": {
+      "en": "Does the child have difficulties to name the uppercase letters?",
+      "ms": "Adakah anak mengalami kesukaran untuk menyebut huruf besar?",
+    },
+    "options": {
+      "en": ['Yes', 'No'],
+      "ms": ['Ya', 'Tidak'],
+    },
     "answer_index": 1,
   },
   {
     "id": 2,
-    "category": "Memory",
-    "instruction":
-        "Let your children read the full word, then the word next to it.\n\n1.Cat = At \n2.Cup = Up \n3.Bus = Us",
-    "question": "When google release Flutter.",
-    "options": ['Yes', 'No'],
-    "answer_index": 1,
-  },
-  {
-    "id": 3,
-    "category": "Attention",
-    "instruction": "Instruction 3",
-    "question": "A memory location that holds a single letter or number.",
-    "options": ['Yes', 'No'],
-    "answer_index": 1,
-  },
-  {
-    "id": 4,
-    "category": "Fine motor skills",
-    "instruction": "Instruction 4",
-    "question": "What command do you use to output data to the screen?",
-    "options": ['Yes', 'No'],
-    "answer_index": 1,
-  },
-  {
-    "id": 5,
-    "category": "Visual skills",
-    "instruction": "Instruction 5",
-    "question": "Consistent reading and spelling errors?",
-    "options": ['Yes', 'No'],
-    "answer_index": 1,
-  },
-  {
-    "id": 6,
-    "category": "Language",
-    "instruction": "Instruction 6",
-    "question": "Delayed decoding abilities for reading?",
-    "options": ['Yes', 'No'],
+    "category": {
+      "en": "Language",
+      "ms": "Bahasa",
+    },
+    "instruction": {
+      "en": "Point to the alphabet and ask the child to read out.",
+      "ms": "Tunjuk pada abjad dan minta anak membacanya.",
+    },
+    "imagePath": "assets/images/lowercase.png",
+    "question": {
+      "en": "Does the child have difficulties to name the lowercase letters?",
+      "ms": "Adakah anak mengalami kesukaran untuk menyebut huruf kecil?",
+    },
+    "options": {
+      "en": ['Yes', 'No'],
+      "ms": ['Ya', 'Tidak'],
+    },
     "answer_index": 1,
   },
 ];

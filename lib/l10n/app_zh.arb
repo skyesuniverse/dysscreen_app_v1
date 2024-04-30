@@ -76,8 +76,11 @@
   "gender_2": "女性",
   "age_0": "年龄 *",
   "age_1": "4 - 6",
-  "age_2": "7 - 9"
+  "age_2": "7 - 9",
 
-
+  "category1_46": "Bahasa",
+  "category2_46": "Ingatan",
+  "category2_46": "Fine Motor Skills",
+  "instruction1_46": "指出"
 
 }

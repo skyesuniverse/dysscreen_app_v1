@@ -1,6 +1,7 @@
 import 'package:dysscreen_app_v1/models/language_constants.dart';
 import 'package:dysscreen_app_v1/screens/Test_Section/testquestionscreen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 class TakeTestScreen extends StatefulWidget {
@@ -288,7 +289,11 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                               10, 10, 10, 0),
                           child: ElevatedButton(
                               onPressed: () {
-                                insertDialog();
+                                try {
+                                  insertDialog();
+                                } catch (e) {
+                                  printError();
+                                }
                               },
                               style: ElevatedButton.styleFrom(
                                 foregroundColor: Colors.black,

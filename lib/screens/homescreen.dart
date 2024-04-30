@@ -110,7 +110,9 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
                       Text(
                         // "dff",
                         // AppLocalizations.of(context)!.welcome,
-                        translation(context).welcome,
+                       
+                       
+                       translation(context).welcome,
                         style: TextStyle(
                           fontSize: screenWidth / 12,
                           fontWeight: FontWeight.bold,

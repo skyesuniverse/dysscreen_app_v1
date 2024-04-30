@@ -1,5 +1,7 @@
 import 'package:dysscreen_app_v1/controllers/question_controller.dart';
 import 'package:dysscreen_app_v1/models/Questions_46.dart';
+import 'package:dysscreen_app_v1/models/Questions_79.dart';
+import 'package:dysscreen_app_v1/models/language_constants.dart';
 import 'package:dysscreen_app_v1/screens/Test_Section/Components/option.dart';
 import 'package:dysscreen_app_v1/screens/Test_Section/testquestionscreen.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +22,33 @@ class Question_Card extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // QuestionController _controller = Get.put(QuestionController());
+    if (question is Question_46) {
+      return buildQuestionCard(context,
+          instruction: question.instruction,
+          questionText: question.question,
+          options: question.options,
+          imagePath: question.imagePath);
+    } else if (question is Question_79) {
+      return buildQuestionCard(context,
+          instruction: question.instruction,
+          questionText: question.question,
+          options: question.options,
+          imagePath: question.imagePath);
+    } else {
+      // Handle unsupported question type
+      return Container(
+        child: Text("Unsupported question type"),
+      );
+    }
+  }
+
+  @override
+  Widget buildQuestionCard(BuildContext context,
+      {required dynamic instruction,
+      required dynamic questionText,
+      required List<String> options,
+      required String? imagePath}) {
+    final currentLocale = Localizations.localeOf(context).languageCode;
 
     return Container(
       width: double.infinity,
@@ -54,8 +82,9 @@ class Question_Card extends StatelessWidget {
               ),
               SizedBox(height: screenHeight * 0.009),
               Text(
-                question.instruction,
-                // style: TextStyle(fontWeight: FontWeight.bold),
+                instruction is Map<String, dynamic>
+                    ? instruction[currentLocale]
+                    : instruction, // If instruction is a map, access by currentLocale, otherwise, use it directly
               ),
               SizedBox(height: screenHeight * 0.02),
               // Display image if imagePath is provided
@@ -104,7 +133,10 @@ class Question_Card extends StatelessWidget {
               ),
               SizedBox(height: screenHeight * 0.009),
               Text(
-                question.question,
+                // questionText[currentLocale],
+                questionText is Map<String, dynamic>
+                    ? questionText[currentLocale]
+                    : questionText, // If instruction is a map, access by currentLocale, otherwise, use it directly
               ),
               SizedBox(height: screenHeight * 0.06),
               //option section

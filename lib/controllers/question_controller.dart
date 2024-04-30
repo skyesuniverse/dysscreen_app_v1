@@ -31,11 +31,15 @@ class QuestionController extends GetxController {
     return question_46_data.map((data) {
       return Question_46(
         id: data['id'],
-        category: data['category'],
-        instruction: data['instruction'],
+        category: data['category']
+            ['en'], // Access English translation by default
+        instruction: data['instruction']
+            ['en'], // Access English translation by default
         imagePath: data['imagePath'],
-        question: data['question'],
-        options: List<String>.from(data['options']),
+        question: data['question']
+            ['en'], // Access English translation by default
+        options: List<String>.from(
+            data['options']['en']), // Access English translation by default
         answer: data['answer_index'],
       );
     }).toList();
@@ -46,10 +50,15 @@ class QuestionController extends GetxController {
     return question_79_data.map((data) {
       return Question_79(
         id: data['id'],
-        category: data['category'],
-        instruction: data['instruction'],
-        question: data['question'],
-        options: List<String>.from(data['options']),
+        category: data['category']
+            ['en'], // Access English translation by default
+        instruction: data['instruction']
+            ['en'], // Access English translation by default
+        imagePath: data['imagePath'],
+        question: data['question']
+            ['en'], // Access English translation by default
+        options: List<String>.from(
+            data['options']['en']), // Access English translation by default
         answer: data['answer_index'],
       );
     }).toList();

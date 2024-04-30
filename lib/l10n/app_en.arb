@@ -77,8 +77,13 @@
 
   "age_0": "Age *",
   "age_1": "4 - 6",
-  "age_2": "7 - 9"
+  "age_2": "7 - 9",
 
+  "category1_46": "Language",
+  "category2_46": "Memory",
+  "category2_46": "Fine Motor Skills",
+  "instruction1_46": "Point to the alphabet and ask the child to read out."
+  
   
 
 
