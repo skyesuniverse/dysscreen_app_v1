@@ -26,13 +26,14 @@ class Option extends StatelessWidget {
 
       return InkWell(
         onTap: () {
-          // If the option is already selected, deselect it
+          // If the option is already selected, do nothing (allow it to remain selected)
           if (isSelected) {
-            _controller.clearSelectedOption(questionNumber);
+            return;
           } else {
             // Otherwise, select this option
             _controller.recordAnswer(
-                index, index == 0); // Assuming "Yes" is the correct answer
+                index, index == 0 // Assuming "Yes" is the correct answer
+                );
           }
         },
         child: Container(

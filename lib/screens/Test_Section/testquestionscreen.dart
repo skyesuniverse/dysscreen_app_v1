@@ -42,9 +42,14 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
     questionsList = getQuestionsForAge(
         widget.selectedAge, Get.locale?.languageCode ?? 'en');
 
-    // Initialize a new QuestionController for the selected age group and current locale
-    _questionController = Get.put(QuestionController(
-        widget.selectedAge, Get.locale?.languageCode ?? 'en'));
+    // Initialize a new QuestionController only once if it's not initialized yet
+    if (!Get.isRegistered<QuestionController>()) {
+      _questionController = Get.put(QuestionController(
+          widget.selectedAge, Get.locale?.languageCode ?? 'en'));
+    } else {
+      // If already initialized, retrieve the existing controller
+      _questionController = Get.find<QuestionController>();
+    }
   }
 
   @override
@@ -124,12 +129,14 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
                 ),
                 Expanded(
                   child: PageView.builder(
-                    // Block swipe to next qn
-                    physics: NeverScrollableScrollPhysics(),
+                    key: PageStorageKey<String>(
+                        'page_view_key'), // Add this line
                     controller: _questionController.pageController,
                     onPageChanged: _questionController.updateTheQnNum,
                     itemCount: questionsList.length,
                     itemBuilder: (context, index) => Question_Card(
+                      key: PageStorageKey<String>(
+                          'question_${index + 1}_key'), // Add this line
                       question: questionsList[index],
                       screenHeight: screenHeight,
                       questionNumber: index + 1,
@@ -315,7 +322,7 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
 
               question: data['question'] as Map<String, dynamic>, // Cast to Map
 
-               options: Map<String, List<String>>.from(data['options']),
+              options: Map<String, List<String>>.from(data['options']),
               answer: data['answer_index'],
             ),
           )

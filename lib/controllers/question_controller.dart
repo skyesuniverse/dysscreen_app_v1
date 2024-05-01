@@ -26,8 +26,6 @@ class QuestionController extends GetxController {
     }
   }
 
-
-
   List<Question_46> _loadQuestionsForAge46(String currentLocale) {
     return question_46_data.map((data) {
       return Question_46(
@@ -37,10 +35,10 @@ class QuestionController extends GetxController {
         instruction: data['instruction'] as Map<String, dynamic>, // Cast to Map
 
         imagePath: data['imagePath'],
-        
+
         question: data['question'] as Map<String, dynamic>, // Cast to Map
 
-         options: Map<String, List<String>>.from(data['options']),
+        options: Map<String, List<String>>.from(data['options']),
         answer: data['answer_index'],
       );
     }).toList();
@@ -75,6 +73,9 @@ class QuestionController extends GetxController {
   // Store selected option index for each question
   Map<int, int> _selectedOptionIndices = {};
 
+  // Store previously selected option index for each question
+  Map<int, int> _previousOptionIndices = {};
+
   @override
   void onInit() {
     _pageController = PageController();
@@ -89,20 +90,28 @@ class QuestionController extends GetxController {
 
   void recordAnswer(int selectedOptionIndex, bool answeredYes) {
     print("QUESTION NO: $_questionNumber");
-    _isAnswered = true;
 
     // Check if an answer has already been recorded for this question
     if (_selectedOptionIndices.containsKey(_questionNumber.value)) {
-      // Check if the selected option index is different from the previously selected option index
-      int previousOptionIndex = _selectedOptionIndices[_questionNumber.value]!;
-      if (previousOptionIndex != selectedOptionIndex) {
-        // Update the counts based on the selected option
+      // Check if the selected option is different from the previously selected option
+      bool isOptionChanged =
+          _selectedOptionIndices[_questionNumber.value] != selectedOptionIndex;
+
+      if (isOptionChanged) {
+        // Update the counts based on the previously selected option
+        int previousOptionIndex =
+            _selectedOptionIndices[_questionNumber.value]!;
         if (previousOptionIndex == 0) {
           _yesCount--;
         } else {
           _noCount--;
         }
+        // Update the UI only when the selected option changes
+        update();
       }
+    } else {
+      // Call update() when an option is selected for the first time
+      update();
     }
 
     // Update the selected option index for the current question
@@ -116,12 +125,6 @@ class QuestionController extends GetxController {
     }
 
     print("Yes count: $_yesCount, No count: $_noCount");
-
-    // Instead of directly calling nextQuestion(), just remove this line
-
-    // Notify GetX to update the UI when counts change
-    update(); // This will re-render the UI with updated counts
-    // nextQuestion();
   }
 
   void previousQuestion() {
@@ -175,35 +178,36 @@ class QuestionController extends GetxController {
 
   bool get allQuestionsAnswered {
     // Check if the length of selectedOptionIndices is equal to the total number of questions
-    return _selectedOptionIndices.length == _questions.length;
+    int totalAnswered = _yesCount + _noCount;
+    print(totalAnswered);
+    return totalAnswered == _questions.length;
   }
 
-  void updateCategoryCounts(
-      Map<int, int> selectedOptionIndices, List<dynamic> questions) {
+  void updateCategoryCounts(Map<int, int> selectedOptionIndices,
+      List<dynamic> questions, BuildContext context) {
     // Clear existing counts
     categoryCounts.clear();
 
     // Iterate through questions and update counts
     questions.forEach((question) {
-      final category = question.category;
+      final Map<String, dynamic> categoryMap = question.category;
+      final String currentLocale = Localizations.localeOf(context).languageCode;
+      final String category =
+          categoryMap[currentLocale] ?? ''; // Adjust to access by currentLocale
       final selectedOptionIndex = selectedOptionIndices[question.id];
 
       // Check if the question has been answered
       if (selectedOptionIndex != null) {
         // Increment the count for the category
         categoryCounts.putIfAbsent(category, () => {'Total': 0, 'Yes': 0});
-
-
-
-
-        
         categoryCounts[category]!['Total'] ??= 0; // Initialize with 0 if null
         categoryCounts[category]!['Total'] =
             categoryCounts[category]!['Total']! +
                 1; // Increment total count for the category
 
         // Check if the selected option is "Yes" and update the count
-        if (question.options[selectedOptionIndex] == 'Yes') {
+        if (question.options[currentLocale]?[selectedOptionIndex] == 'Yes' ||
+            question.options[currentLocale]?[selectedOptionIndex] == 'Ya') {
           categoryCounts[category]!['Yes'] ??= 0; // Initialize with 0 if null
           categoryCounts[category]!['Yes'] = categoryCounts[category]!['Yes']! +
               1; // Increment total count for the category

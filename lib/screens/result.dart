@@ -26,16 +26,23 @@ class ResultScreen extends StatefulWidget {
 class _ResultScreenState extends State<ResultScreen> {
   late double screenHeight, screenWidth;
   late final QuestionController questionController;
+  final currentLocale = Get.locale?.languageCode ?? 'en';
+  bool _isInitialized = false; // Add a flag to track initialization
 
   @override
-  void initState() {
-    super.initState();
-    questionController = Get.find<QuestionController>();
-    // Update category counts when the screen initializes
-    questionController.updateCategoryCounts(
-      questionController.selectedOptionIndices,
-      questionController.questions,
-    );
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (!_isInitialized) {
+      // Only update category counts if not initialized yet
+      questionController = Get.find<QuestionController>();
+      // Update category counts when the screen initializes
+      questionController.updateCategoryCounts(
+        questionController.selectedOptionIndices,
+        questionController.questions,
+        context, // Pass the context parameter to updateCategoryCounts
+      );
+      _isInitialized = true; // Mark initialization as completed
+    }
   }
 
   @override
