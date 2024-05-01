@@ -37,11 +37,14 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
   void initState() {
     super.initState();
     _pageController = PageController();
-    // Fetch the questions based on selectedAge
-    questionsList = getQuestionsForAge(widget.selectedAge);
 
-    // Initialize a new QuestionController for the selected age group
-    _questionController = Get.put(QuestionController(widget.selectedAge));
+    // Fetch the questions based on selectedAge and current locale
+    questionsList = getQuestionsForAge(
+        widget.selectedAge, Get.locale?.languageCode ?? 'en');
+
+    // Initialize a new QuestionController for the selected age group and current locale
+    _questionController = Get.put(QuestionController(
+        widget.selectedAge, Get.locale?.languageCode ?? 'en'));
   }
 
   @override
@@ -57,8 +60,8 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
     screenWidth = MediaQuery.of(context).size.width;
 
     // So that we have acccess our controller
-    QuestionController _questionController =
-        Get.put(QuestionController(widget.selectedAge));
+    _questionController = Get.put(QuestionController(
+        widget.selectedAge, Get.locale?.languageCode ?? 'en'));
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -297,22 +300,22 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
     }
   }
 
-  List<dynamic> getQuestionsForAge(String selectedAge) {
+  List<dynamic> getQuestionsForAge(String selectedAge, String currentLocale) {
     if (selectedAge == "4 - 6") {
       return question_46_data
           .map(
             (data) => Question_46(
               id: data['id'],
-              category: data['category']
-                  ['en'], // Use English as default language
-              instruction: data['instruction']
-                  ['en'], // Use English as default language
-              imagePath: data['imagePath'],
-              question: data['question']
-                  ['en'], // Use English as default language
+              category: data['category'] as Map<String, dynamic>,
 
-              options: List<String>.from(
-                  data['options']['en']), // Use English as default language
+              instruction:
+                  data['instruction'] as Map<String, dynamic>, // Cast to Map
+
+              imagePath: data['imagePath'],
+
+              question: data['question'] as Map<String, dynamic>, // Cast to Map
+
+               options: Map<String, List<String>>.from(data['options']),
               answer: data['answer_index'],
             ),
           )
@@ -322,14 +325,10 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
           .map(
             (data) => Question_79(
               id: data['id'],
-              category: data['category']
-                  ['en'], // Use English as default language
-              instruction: data['instruction']
-                  ['en'], // Use English as default language
-              question: data['question']
-                  ['en'], // Use English as default language
-              options: List<String>.from(
-                  data['options']['en']), // Use English as default language
+              category: data['category'][currentLocale] ?? '',
+              instruction: data['instruction'][currentLocale] ?? '',
+              question: data['question'][currentLocale] ?? '',
+              options: List<String>.from(data['options'][currentLocale] ?? []),
               answer: data['answer_index'],
             ),
           )

@@ -22,33 +22,14 @@ class Question_Card extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (question is Question_46) {
-      return buildQuestionCard(context,
-          instruction: question.instruction,
-          questionText: question.question,
-          options: question.options,
-          imagePath: question.imagePath);
-    } else if (question is Question_79) {
-      return buildQuestionCard(context,
-          instruction: question.instruction,
-          questionText: question.question,
-          options: question.options,
-          imagePath: question.imagePath);
-    } else {
-      // Handle unsupported question type
-      return Container(
-        child: Text("Unsupported question type"),
-      );
-    }
+    return buildQuestionCard(context);
   }
 
-  @override
-  Widget buildQuestionCard(BuildContext context,
-      {required dynamic instruction,
-      required dynamic questionText,
-      required List<String> options,
-      required String? imagePath}) {
-    final currentLocale = Localizations.localeOf(context).languageCode;
+  Widget buildQuestionCard(BuildContext context) {
+    final currentLocale = Get.locale?.languageCode ?? 'en';
+
+    print("Current Locale in buildQuestionCard: $currentLocale");
+    // print("Translated Instruction: ${getTranslatedText(instruction, context)}");
 
     return Container(
       width: double.infinity,
@@ -81,11 +62,25 @@ class Question_Card extends StatelessWidget {
                     fontStyle: FontStyle.italic, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: screenHeight * 0.009),
-              Text(
-                instruction is Map<String, dynamic>
-                    ? instruction[currentLocale]
-                    : instruction, // If instruction is a map, access by currentLocale, otherwise, use it directly
-              ),
+              Text(question.getContentByLocale(context, question.instruction)
+                  // getTranslatedText(
+
+                  //     instruction, context), // Translate instruction
+                  // question.instruction[1],
+                  // Display instruction based on current locale
+                  // Display instruction based on current locale
+                  // currentLocale == 'en'
+                  //     ? question.instruction['en'] ??
+                  //         'Instruction not available in English'
+                  //     : currentLocale == 'ms'
+                  //         ? question.instruction['ms'] ??
+                  //             'Instruction not available in Malay'
+                  //         : 'Instruction not available for current locale',
+                  // instruction is Map<String, dynamic>
+                  //     ? instruction[currentLocale]
+                  //     : instruction, // If instruction is a map, access by currentLocale, otherwise, use it directly
+                  ),
+
               SizedBox(height: screenHeight * 0.02),
               // Display image if imagePath is provided
               if (question.imagePath != null)
@@ -133,18 +128,24 @@ class Question_Card extends StatelessWidget {
               ),
               SizedBox(height: screenHeight * 0.009),
               Text(
-                // questionText[currentLocale],
-                questionText is Map<String, dynamic>
-                    ? questionText[currentLocale]
-                    : questionText, // If instruction is a map, access by currentLocale, otherwise, use it directly
-              ),
+                  // questionText[currentLocale],
+                  // getTranslatedText(
+                  //     questionText, context), // Translate question text
+                  question.getContentByLocale(context, question.question)
+
+                  // questionText is Map<String, dynamic>
+                  //     ? questionText[currentLocale]
+                  //     : questionText, // If instruction is a map, access by currentLocale, otherwise, use it directly
+                  ),
               SizedBox(height: screenHeight * 0.06),
               //option section
               ...List.generate(
                 question.options.length,
                 (index) => Option(
                   index: index,
-                  text: question.options[index],
+                  text: question.getOptionsByLocale(
+                      context)[index], // Update to use translated options
+
                   questionNumber: questionNumber,
                 ),
               ),

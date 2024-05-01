@@ -9,7 +9,7 @@ class Language {
     return <Language>[
       Language(1, "English", "en"),
       Language(2, "Malay", "ms"),
-      Language(3, "简体中文", "zh")
+      // Language(3, "简体中文", "zh")
     ];
   }
 }

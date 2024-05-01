@@ -12,53 +12,49 @@ class QuestionController extends GetxController {
 
   late List<dynamic> _questions;
 
-// Initialize the controller with the selected age
-  QuestionController(String selectedAge) {
-    _questions = _loadQuestions(selectedAge);
+  // Initialize the controller with the selected age and current locale
+  QuestionController(String selectedAge, String currentLocale) {
+    _questions = _loadQuestions(selectedAge, currentLocale);
   }
 
   // Method to load questions based on the selected age
-  List<dynamic> _loadQuestions(String selectedAge) {
+  List<dynamic> _loadQuestions(String selectedAge, String currentLocale) {
     if (selectedAge == "4 - 6") {
-      return _loadQuestionsForAge46();
+      return _loadQuestionsForAge46(currentLocale);
     } else {
-      return _loadQuestionsForAge79();
+      return _loadQuestionsForAge79(currentLocale);
     }
   }
 
-  List<Question_46> _loadQuestionsForAge46() {
-    // Parse the question data for age 46 into Question_46 objects
+
+
+  List<Question_46> _loadQuestionsForAge46(String currentLocale) {
     return question_46_data.map((data) {
       return Question_46(
         id: data['id'],
-        category: data['category']
-            ['en'], // Access English translation by default
-        instruction: data['instruction']
-            ['en'], // Access English translation by default
+        category: data['category'] as Map<String, dynamic>,
+
+        instruction: data['instruction'] as Map<String, dynamic>, // Cast to Map
+
         imagePath: data['imagePath'],
-        question: data['question']
-            ['en'], // Access English translation by default
-        options: List<String>.from(
-            data['options']['en']), // Access English translation by default
+        
+        question: data['question'] as Map<String, dynamic>, // Cast to Map
+
+         options: Map<String, List<String>>.from(data['options']),
         answer: data['answer_index'],
       );
     }).toList();
   }
 
-  List<Question_79> _loadQuestionsForAge79() {
-    // Parse the question data for age 79 into Question_79 objects
+  List<Question_79> _loadQuestionsForAge79(String currentLocale) {
     return question_79_data.map((data) {
       return Question_79(
         id: data['id'],
-        category: data['category']
-            ['en'], // Access English translation by default
-        instruction: data['instruction']
-            ['en'], // Access English translation by default
+        category: data['category'][currentLocale] ?? '',
+        instruction: data['instruction'][currentLocale] ?? '',
         imagePath: data['imagePath'],
-        question: data['question']
-            ['en'], // Access English translation by default
-        options: List<String>.from(
-            data['options']['en']), // Access English translation by default
+        question: data['question'][currentLocale] ?? '',
+        options: List<String>.from(data['options'][currentLocale] ?? []),
         answer: data['answer_index'],
       );
     }).toList();
@@ -196,6 +192,11 @@ class QuestionController extends GetxController {
       if (selectedOptionIndex != null) {
         // Increment the count for the category
         categoryCounts.putIfAbsent(category, () => {'Total': 0, 'Yes': 0});
+
+
+
+
+        
         categoryCounts[category]!['Total'] ??= 0; // Initialize with 0 if null
         categoryCounts[category]!['Total'] =
             categoryCounts[category]!['Total']! +
