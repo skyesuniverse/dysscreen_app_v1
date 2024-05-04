@@ -1,19 +1,15 @@
-{ 
+{
   "homeLabel": "Home",
   "testLabel": "Test",
   "aboutLabel": "About",
-
   "welcome": "Welcome to DysScreenDysScreen",
   "app_intro": "DysScreen, a user-friendly app crafted to assist parents and educators in the crucial task of assessing and screening for dyslexia in children.",
   "about_Dyslexia": "About Dyslexia",
   "language": "Language",
-
   "introTitle": "Introduction to Dyslexia",
   "introText1": "Dyslexia is a neurobiological learning disorder that causes problems in both accurate and fluent word recognition, as well as difficulty spelling and decoding words. Dyslexia, sometimes known as reading disability, is caused by specific differences in brain areas responsible for language processing.",
   "introText2": "Dyslexia is not caused by issues with intelligence, hearing, or vision. Most dyslexic children can do well in school with tutoring or a specialized education program. Emotional support is also very crucial.",
   "introText3": "Although there is no cure for dyslexia, early testing and intervention bring the best results. Dyslexia can go undiagnosed for years and not be recognized until adulthood, but it is never too late to seek help.",
- 
-
   "commonSignsAndSymptomsTitle": "Common Signs and Symptomsx",
   "openText": "Dyslexia symptoms might be difficult to detect before a child begins school, but several early warning signs might indicate a problem. When a child reaches school age, the teacher may be the first to detect an issue. The severity of the issue varies, but it usually becomes obvious when the child begins to learn to read.",
   "preschoolSymptomsCategory": "Symptoms of dyslexia among preschoolers",
@@ -36,7 +32,6 @@
   "poorReading": "Poor reading",
   "poorSpelling": "Poor spelling, especially many misspellings of the same term in a single writing assignment",
   "problemsWithWritingSummaries": "Facing problems with writing summaries",
-
   "mythsAndFactsTitle": "5 Myths and Facts about Dyslexia",
   "introText": "Dyslexia is a complex learning disorder affecting language processing, especially in reading and writing. Despite its widespread recognition, it is often surrounded by myths and misconceptions, leading to misunderstanding and stigma. Let's clarify some common myths:",
   "myth1": "Myth #1: Dyslexia is a sign of low intelligence",
@@ -50,8 +45,6 @@
   "myth5": "Myth #5: People with dyslexia see letters and words backward",
   "fact5": "Fact: Dyslexia is not a visual impairment, but rather a condition affecting the ability to decode and recognize written words, leading to difficulties in reading fluency, accuracy, and comprehension, primarily due to phonological processing and language skills rather than visual perception.",
   "outroText": "Dispelling myths and misconceptions about dyslexia is essential for fostering understanding, empathy, and support for individuals with the condition. By challenging stereotypes and promoting accurate information, we can create a more inclusive and supportive environment for individuals with dyslexia to thrive and reach their full potential.",
-
-
   "dyslexia_assessment_screen_title": "Dyslexia Assessment and Screening Test",
   "assessment_description": "This test is designed to provide valuable insights into your child's reading and writing abilities, helping to identify potential signs of dyslexia at an early stage.\n\nThroughout the test, instructions and questions will be given, your child will encounter engaging activities that assess key skills such as reading comprehension, phonological awareness, and writing proficiency. \n\nThe assessment typically takes 10-15 minutes to complete, ensuring a thorough evaluation without causing fatigue for the child.",
   "enter_child_details_message": "**Please enter your child's details below to begin the assessment.",
@@ -63,29 +56,32 @@
   "gender_validation_error_message": "Please select a gender",
   "age_validation_error_message": "Please select the age",
   "form_validation_error_message": "Please complete the form",
-
   "gender_placeholder": "Gender *",
   "gender_male": "Male",
   "gender_female": "Female",
   "age_placeholder": "Age *",
   "age_4_6": "4 - 6",
   "age_7_9": "7 - 9",
-
   "gender_0": "Gender *",
   "gender_1": "Male",
   "gender_2": "Female",
-
   "age_0": "Age *",
   "age_1": "4 - 6",
   "age_2": "7 - 9",
 
-  "category1_46": "Language",
-  "category2_46": "Memory",
-  "category2_46": "Fine Motor Skills",
-  "instruction1_46": "Point to the alphabet and ask the child to read out."
-  
-  
+  "question": "Question",
+  "instruction": "Instruction",
+  "quit_the_test": "Quit the Test?",
+  "are_you_sure": "Are you sure?",
+  "submit_the_test": "Submit the test?",
+  "yes": "Yes",
+  "no": "No",
+  "please_answer_all_the_question": "Please answer all the question",
 
-
-
+  "test_result": "Test Result",
+  "child_name": "Child Name: ",
+  "gender": "Gender: ",
+  "age": "Age: ",
+  "years_old": " years old",
+  "share_result": "Share Result"
 }

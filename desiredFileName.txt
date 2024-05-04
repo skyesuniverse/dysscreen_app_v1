@@ -1,1 +1,18 @@
-{}
+{
+  "zh": [
+    "question",
+    "instruction",
+    "quit_the_test",
+    "are_you_sure",
+    "submit_the_test",
+    "yes",
+    "no",
+    "please_answer_all_the_question",
+    "test_result",
+    "child_name",
+    "gender",
+    "age",
+    "years_old",
+    "share_result"
+  ]
+}

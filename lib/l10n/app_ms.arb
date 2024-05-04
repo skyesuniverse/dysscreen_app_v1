@@ -69,8 +69,22 @@
   "age_1": "4 - 6",
   "age_2": "7 - 9",
 
-  "category1_46": "Bahasa",
-  "category2_46": "Ingatan",
-  "category2_46": "Fine Motor Skills",
-  "instruction1_46": "tunjukkan..."
+  "question": "Soalan",
+  "instruction": "Arahan",
+  "quit_the_test": "Berhenti Ujian?",
+  "are_you_sure": "Adakah anda pasti?",
+  "submit_the_test": "Hantar Ujian?",
+  "yes": "Ya",
+  "no": "Tidak",
+  "please_answer_all_the_question": "Sila jawab semua soalan.",
+
+  "test_result": "Keputusan Ujian",
+  "child_name": "Nama Anak: ",
+  "gender": "Jantina: ",
+  "age": "Umur:",
+  "years_old": " tahun",
+  "share_result": "Kongsi Keputusan"
+
+
+  
 }

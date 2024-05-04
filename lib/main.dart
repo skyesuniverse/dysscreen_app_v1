@@ -7,8 +7,6 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-
-
 void main() {
   runApp(const MyApp());
 }
@@ -44,12 +42,9 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'DysScreen',
-
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-
       locale: _locale,
-
       theme: ThemeData(
         // primarySwatch: Color(0xFF03A9F4),
         colorSchemeSeed: const Color(0xFF03A9F4),

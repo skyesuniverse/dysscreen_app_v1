@@ -152,7 +152,8 @@ class _ResultScreenState extends State<ResultScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Test Result',
+                                // 'Test Result',
+                                translation(context).test_result,
                                 style: TextStyle(
                                   fontSize: screenWidth / 12,
                                   fontWeight: FontWeight.bold,
@@ -162,15 +163,18 @@ class _ResultScreenState extends State<ResultScreen> {
                               SizedBox(
                                   height: MediaQuery.of(context).size.height *
                                       0.02),
-                              Text(
-                                'Child Name: ${widget.childName}',
-                                textAlign: TextAlign.start,
-                                style: TextStyle(
-                                  fontSize: screenWidth / 25,
-                                  fontWeight: FontWeight.normal,
-                                  color: Color.fromARGB(255, 190, 190, 190),
-                                ),
-                              ),
+                              Text.rich(TextSpan(
+                                  text: translation(context).child_name,
+                                  style: TextStyle(
+                                    fontSize: screenWidth / 25,
+                                    fontWeight: FontWeight.normal,
+                                    color: Color.fromARGB(255, 190, 190, 190),
+                                  ),
+                                  children: [
+                                    TextSpan(
+                                      text: " ${widget.childName}",
+                                    ),
+                                  ])),
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,

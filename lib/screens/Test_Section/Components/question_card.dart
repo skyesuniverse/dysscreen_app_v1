@@ -50,7 +50,7 @@ class Question_Card extends StatelessWidget {
           children: [
             SizedBox(height: screenHeight * 0.04),
             Text(
-              'Instruction',
+              translation(context).instruction,
               style: TextStyle(
                   fontStyle: FontStyle.italic, fontWeight: FontWeight.bold),
             ),
@@ -58,7 +58,7 @@ class Question_Card extends StatelessWidget {
             Text(question.getContentByLocale(context, question.instruction)),
 
             SizedBox(height: screenHeight * 0.02),
-            // Display image if imagePath is provided
+            // Display   image if imagePath is provided
             if (question.imagePath != null)
               GestureDetector(
                 onTap: () {
@@ -97,7 +97,7 @@ class Question_Card extends StatelessWidget {
 
             SizedBox(height: screenHeight * 0.045),
             Text(
-              'Question',
+              translation(context).question,
               style: TextStyle(
                   fontStyle: FontStyle.italic, fontWeight: FontWeight.bold),
             ),

@@ -110,9 +110,8 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
                       Text(
                         // "dff",
                         // AppLocalizations.of(context)!.welcome,
-                       
-                       
-                       translation(context).welcome,
+
+                        translation(context).welcome,
                         style: TextStyle(
                           fontSize: screenWidth / 12,
                           fontWeight: FontWeight.bold,
@@ -139,117 +138,117 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
             ),
 
             ////About Dyslexia Section
-            // Container(
-            //   width: double.infinity,
-            //   height: screenHeight * (45 / 100),
-            //   // color: Colors.amber,
-            //   child: Column(
-            //     mainAxisSize: MainAxisSize.max,
-            //     // crossAxisAlignment: CrossAxisAlignment.start,
-            //     children: [
-            //       SizedBox(height: screenHeight * 0.03),
-            //       Padding(
-            //         padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
-            //         child: Align(
-            //           alignment: Alignment.centerLeft,
-            //           child: Text(
-            //             translation(context).about_Dyslexia,
-            //             textAlign: TextAlign.left,
-            //             // "About Dyslexia",
-            //             // AppLocalizations.of(context)!.about_Dyslexia,
+            Container(
+              width: double.infinity,
+              height: screenHeight * (45 / 100),
+              // color: Colors.amber,
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                // crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(height: screenHeight * 0.03),
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        translation(context).about_Dyslexia,
+                        textAlign: TextAlign.left,
+                        // "About Dyslexia",
+                        // AppLocalizations.of(context)!.about_Dyslexia,
 
-            //             style: Theme.of(context).textTheme.titleLarge!.copyWith(
-            //                 fontWeight: FontWeight.bold,
-            //                 // height: 1.25,
-            //                 color: Color.fromARGB(255, 0, 0, 0)),
-            //           ),
-            //         ),
-            //       ),
-            //       SizedBox(height: screenHeight * 0.01),
-            //       AspectRatio(
-            //         aspectRatio: 16 / 10,
-            //         child: Container(
-            //           // width: double.infinity,
-            //           // height: screenHeight / 2.7,
-            //           decoration: BoxDecoration(
-            //               // color: Colors.white,
-            //               ),
+                        style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                            fontWeight: FontWeight.bold,
+                            // height: 1.25,
+                            color: Color.fromARGB(255, 0, 0, 0)),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: screenHeight * 0.01),
+                  AspectRatio(
+                    aspectRatio: 16 / 10,
+                    child: Container(
+                      // width: double.infinity,
+                      // height: screenHeight / 2.7,
+                      decoration: BoxDecoration(
+                          // color: Colors.white,
+                          ),
 
-            //           // /"About Dyslexia"  List View item
-            //           child: ListView(
-            //               padding: EdgeInsets.fromLTRB(
-            //                 16,
-            //                 0,
-            //                 16,
-            //                 0,
-            //               ),
-            //               scrollDirection: Axis.horizontal,
-            //               children: [
-            //                 ////card 1
-            //                 InkWell(
-            //                     onTap: () {
-            //                       Navigator.push(
-            //                           context,
-            //                           MaterialPageRoute(
-            //                               builder: (context) =>
-            //                                   IntroOfDyslexiaScreen()));
-            //                     },
-            //                     child: AboutCard(
-            //                       imageUrl:
-            //                           'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRURjumQMmLb5ybNldAsJhRD_QdkETjksSVzw&usqp=CAU',
-            //                       title: translation(context).introTitle,
-            //                       description: translation(context).introText1,
-            //                       screenWidth: screenWidth,
-            //                       screenHeight: screenHeight,
-            //                     )),
+                      // /"About Dyslexia"  List View item
+                      child: ListView(
+                          padding: EdgeInsets.fromLTRB(
+                            16,
+                            0,
+                            16,
+                            0,
+                          ),
+                          scrollDirection: Axis.horizontal,
+                          children: [
+                            ////card 1
+                            InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              IntroOfDyslexiaScreen()));
+                                },
+                                child: AboutCard(
+                                  imageUrl:
+                                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRURjumQMmLb5ybNldAsJhRD_QdkETjksSVzw&usqp=CAU',
+                                  title: translation(context).introTitle,
+                                  description: translation(context).introText1,
+                                  screenWidth: screenWidth,
+                                  screenHeight: screenHeight,
+                                )),
 
-            //                 SizedBox(width: screenWidth * 0.02),
+                            SizedBox(width: screenWidth * 0.02),
 
-            //                 ////card 2
-            //                 InkWell(
-            //                     onTap: () {
-            //                       Navigator.push(
-            //                           context,
-            //                           MaterialPageRoute(
-            //                               builder: (context) =>
-            //                                   SignAndSymtoms()));
-            //                     },
-            //                     child: AboutCard(
-            //                         imageUrl:
-            //                             'https://www.readabilitytutor.com/wp-content/uploads/2022/11/How-AI-can-Support-Students-with-Dyslexia.jpg',
-            //                         title: translation(context)
-            //                             .commonSignsAndSymptomsTitle,
-            //                         description: translation(context).openText,
-            //                         screenWidth: screenWidth,
-            //                         screenHeight: screenHeight)),
+                            ////card 2
+                            InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              SignAndSymtoms()));
+                                },
+                                child: AboutCard(
+                                    imageUrl:
+                                        'https://www.readabilitytutor.com/wp-content/uploads/2022/11/How-AI-can-Support-Students-with-Dyslexia.jpg',
+                                    title: translation(context)
+                                        .commonSignsAndSymptomsTitle,
+                                    description: translation(context).openText,
+                                    screenWidth: screenWidth,
+                                    screenHeight: screenHeight)),
 
-            //                 SizedBox(width: screenWidth * 0.02),
+                            SizedBox(width: screenWidth * 0.02),
 
-            //                 ////card 3
-            //                 InkWell(
-            //                     onTap: () {
-            //                       Navigator.push(
-            //                           context,
-            //                           MaterialPageRoute(
-            //                               builder: (context) =>
-            //                                   MythsAndFactScreen()));
-            //                     },
-            //                     child: AboutCard(
-            //                         imageUrl:
-            //                             'https://upload.wikimedia.org/wikipedia/commons/3/3d/Dyslexia.jpg',
-            //                         title:
-            //                             translation(context).mythsAndFactsTitle,
-            //                         description: translation(context).introText,
-            //                         screenWidth: screenWidth,
-            //                         screenHeight: screenHeight)),
-            //               ]
-            //               // .divide(SizedBox(width: 12)),
-            //               ),
-            //         ),
-            //       ),
-            //     ],
-            //   ),
-            // ),
+                            ////card 3
+                            InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              MythsAndFactScreen()));
+                                },
+                                child: AboutCard(
+                                    imageUrl:
+                                        'https://upload.wikimedia.org/wikipedia/commons/3/3d/Dyslexia.jpg',
+                                    title:
+                                        translation(context).mythsAndFactsTitle,
+                                    description: translation(context).introText,
+                                    screenWidth: screenWidth,
+                                    screenHeight: screenHeight)),
+                          ]
+                          // .divide(SizedBox(width: 12)),
+                          ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),

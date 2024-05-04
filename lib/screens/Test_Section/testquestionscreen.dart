@@ -1,6 +1,7 @@
 import 'package:dysscreen_app_v1/controllers/question_controller.dart';
 import 'package:dysscreen_app_v1/models/Questions_46.dart';
 import 'package:dysscreen_app_v1/models/Questions_79.dart';
+import 'package:dysscreen_app_v1/models/language_constants.dart';
 import 'package:dysscreen_app_v1/screens/Test_Section/Components/question_card.dart';
 import 'package:dysscreen_app_v1/screens/homescreen.dart';
 import 'package:dysscreen_app_v1/screens/mainscreen.dart';
@@ -73,7 +74,7 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
       appBar: AppBar(
         elevation: 0.00,
         backgroundColor: Colors.transparent,
-        leading: Icon(Icons.apps_rounded, color: Colors.white),
+        // leading: Icon(Icons.apps_rounded, color: Colors.white),
         actions: [
           IconButton(
             onPressed: () {
@@ -103,14 +104,22 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
                   child: Obx(
                     () => Text.rich(
                       TextSpan(
-                        text:
-                            "Question ${_questionController.questionNumber.value}",
+                        text: translation(context).question,
                         style: Theme.of(context)
                             .textTheme
                             .headlineMedium!
                             .copyWith(
                                 color: Color.fromARGB(255, 255, 255, 255)),
                         children: [
+                          TextSpan(
+                            text:
+                                " ${_questionController.questionNumber.value}",
+                            style: Theme.of(context)
+                                .textTheme
+                                .headlineMedium!
+                                .copyWith(
+                                    color: Color.fromARGB(255, 255, 255, 255)),
+                          ),
                           TextSpan(
                             text: "/${questionsList.length}",
                             style: Theme.of(context)
@@ -200,15 +209,20 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
         return AlertDialog(
           shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(10.0))),
-          title: const Text(
-            "Quit the Test?",
+          title: Text(
+            // "Quit the Test?",
+            translation(context).quit_the_test,
             style: TextStyle(),
           ),
-          content: const Text("Are you sure?", style: TextStyle()),
+          content: Text(
+              // "Are you sure?",
+              translation(context).are_you_sure,
+              style: TextStyle()),
           actions: <Widget>[
             TextButton(
-              child: const Text(
-                "Yes",
+              child: Text(
+                // "Yes",
+                translation(context).yes,
                 style: TextStyle(),
               ),
               onPressed: () {
@@ -232,8 +246,9 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
               },
             ),
             TextButton(
-              child: const Text(
-                "No",
+              child: Text(
+                // "No",
+                translation(context).no,
                 style: TextStyle(),
               ),
               onPressed: () {
@@ -255,15 +270,20 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
           return AlertDialog(
             shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(10.0))),
-            title: const Text(
-              "Submit the Test?",
+            title: Text(
+              // "Submit the Test?",
+              translation(context).submit_the_test,
               style: TextStyle(),
             ),
-            content: const Text("Are you sure?", style: TextStyle()),
+            content: Text(
+                // "Are you sure?",
+                translation(context).are_you_sure,
+                style: TextStyle()),
             actions: <Widget>[
               TextButton(
-                child: const Text(
-                  "Yes",
+                child: Text(
+                  // "Yes",
+                  translation(context).yes,
                   style: TextStyle(),
                 ),
                 onPressed: () {
@@ -283,8 +303,9 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
                 },
               ),
               TextButton(
-                child: const Text(
-                  "No",
+                child: Text(
+                  // "No",
+                  translation(context).no,
                   style: TextStyle(),
                 ),
                 onPressed: () {
@@ -296,9 +317,10 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
         },
       );
     } else {
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: Text(
-          "Please answer all the question",
+          // "Please answer all the question",
+          translation(context).please_answer_all_the_question,
           style: TextStyle(color: Colors.black),
         ),
         backgroundColor: Colors.white70,
