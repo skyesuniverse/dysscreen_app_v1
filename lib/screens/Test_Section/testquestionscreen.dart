@@ -138,6 +138,7 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
                 ),
                 Expanded(
                   child: PageView.builder(
+                    physics: NeverScrollableScrollPhysics(),
                     key: PageStorageKey<String>(
                         'page_view_key'), // Add this line
                     controller: _questionController.pageController,

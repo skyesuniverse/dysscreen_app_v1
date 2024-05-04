@@ -108,27 +108,36 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        // "dff",
                         // AppLocalizations.of(context)!.welcome,
 
                         translation(context).welcome,
                         style: TextStyle(
-                          fontSize: screenWidth / 12,
+                          fontSize: screenWidth / 14,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
                         ),
+                        overflow: TextOverflow
+                            .fade, // Or TextOverflow.ellipsis as per your preference
                       ),
                       SizedBox(
                           height: MediaQuery.of(context).size.height * 0.02),
-                      Text(
-                        // "sss'",
-                        // AppLocalizations.of(context)!.app_intro,
-                        translation(context).app_intro,
-                        textAlign: TextAlign.start,
-                        style: TextStyle(
-                          fontSize: screenWidth / 25,
-                          fontWeight: FontWeight.normal,
-                          color: Color.fromARGB(255, 190, 190, 190),
+                      Flexible(
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 0.0),
+                          child: Text(
+                            translation(context).app_intro,
+                            textAlign: TextAlign.start,
+                            style: TextStyle(
+                              fontSize: screenWidth / 30,
+                              fontWeight: FontWeight.normal,
+                              color: Color.fromARGB(255, 190, 190, 190),
+                            ),
+                            overflow: TextOverflow.fade,
+                            softWrap: true, // Enable soft wrapping
+
+                            // Or TextOverflow.ellipsis as per your preference
+                            // maxLines: 2, // Limit to two lines
+                          ),
                         ),
                       ),
                     ],

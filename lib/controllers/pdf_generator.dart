@@ -23,7 +23,7 @@ class PdfGenerator {
             crossAxisAlignment: pdfLib.CrossAxisAlignment.start,
             children: [
               pdfLib.Text(
-                'Medical Report',
+                'Dyslexia Assessment and Screening Test',
                 style: pdfLib.TextStyle(
                     fontSize: 20, fontWeight: pdfLib.FontWeight.bold),
               ),
@@ -68,10 +68,11 @@ class PdfGenerator {
     );
 
     final output = await getTemporaryDirectory();
-    final file = File('${output.path}/medical_report.pdf');
+    final file = File('${output.path}/test_result.pdf');
     final bytes = await pdf.save();
     await file.writeAsBytes(bytes.toList());
 
-    Share.shareFiles([file.path], text: 'Medical Report');
+    Share.shareFiles([file.path],
+        text: 'Dyslexia Assessment and Screening Test Result ');
   }
 }

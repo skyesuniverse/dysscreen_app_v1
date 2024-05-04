@@ -151,18 +151,18 @@ class _ResultScreenState extends State<ResultScreen> {
                             // mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                // 'Test Result',
-                                translation(context).test_result,
-                                style: TextStyle(
-                                  fontSize: screenWidth / 12,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
+                              Expanded(
+                                child: Text(
+                                  // 'Test Result',
+                                  translation(context).test_result,
+                                  style: TextStyle(
+                                    fontSize: screenWidth / 14,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                  ),
                                 ),
                               ),
-                              SizedBox(
-                                  height: MediaQuery.of(context).size.height *
-                                      0.02),
+                              SizedBox(height: 10),
                               Text.rich(TextSpan(
                                   text: translation(context).child_name,
                                   style: TextStyle(
@@ -179,27 +179,57 @@ class _ResultScreenState extends State<ResultScreen> {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Text(
-                                    'Gender: ${widget.selectedGender}',
-                                    textAlign: TextAlign.start,
-                                    style: TextStyle(
-                                      fontSize: screenWidth / 25,
-                                      fontWeight: FontWeight.normal,
-                                      color: Color.fromARGB(255, 190, 190, 190),
+                                  Flexible(
+                                    child: Text.rich(
+                                      TextSpan(
+                                        text: translation(context).gender,
+                                        style: TextStyle(
+                                          fontSize: screenWidth /
+                                              30, // Adjusted font size
+                                          fontWeight: FontWeight.normal,
+                                          color: Color.fromARGB(
+                                              255, 190, 190, 190),
+                                        ),
+                                        children: [
+                                          TextSpan(
+                                            text: " ${widget.selectedGender}",
+                                          ),
+                                        ],
+                                      ),
+                                      overflow: TextOverflow
+                                          .fade, // Adjust overflow behavior if needed
+                                      softWrap: true, // Enable soft wrapping
                                     ),
                                   ),
-                                  SizedBox(height: 20),
-                                  Text(
-                                    'Age:  ${widget.selectedAge} years old',
-                                    textAlign: TextAlign.start,
-                                    style: TextStyle(
-                                      fontSize: screenWidth / 25,
-                                      fontWeight: FontWeight.normal,
-                                      color: Color.fromARGB(255, 190, 190, 190),
+                                  Flexible(
+                                    child: Text.rich(
+                                      TextSpan(
+                                        text: translation(context).age,
+                                        style: TextStyle(
+                                          fontSize: screenWidth /
+                                              30, // Adjusted font size
+                                          fontWeight: FontWeight.normal,
+                                          color: Color.fromARGB(
+                                              255, 190, 190, 190),
+                                        ),
+                                        children: [
+                                          TextSpan(
+                                            text: " ${widget.selectedAge}",
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                translation(context).years_old,
+                                          ),
+                                        ],
+                                      ),
+                                      overflow: TextOverflow
+                                          .fade, // Adjust overflow behavior if needed
+                                      softWrap: true, // Enable soft wrapping
                                     ),
                                   ),
                                 ],
                               ),
+                              SizedBox(height: 10),
                             ],
                           ),
                         ),
@@ -293,7 +323,8 @@ class _ResultScreenState extends State<ResultScreen> {
                         50), // Set button width to fill available space
                   ),
                   child: Text(
-                    'Email Result',
+                    // 'Email Result',
+                    translation(context).share_result,
                     style: const TextStyle(fontWeight: FontWeight.bold),
                   )),
             ),

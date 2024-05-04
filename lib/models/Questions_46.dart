@@ -202,7 +202,7 @@ List question_46_data = [
       "en":
           "Point to each syllable and ask the child to pronounce. Then ask the child to pronounce the two syllables together:\n•	in to = into\n•	ba by = baby\n•	can dy = candy\n•	pen cil = pencil\n•	a pple = apple",
       "ms":
-          "TTunjuk pada setiap sukukata dan minta anak anda menyebutnya. Kemudian minta anak anda menyebut keseluruhan perkataan.\n•	sa ya = saya\n•	i bu = ibu\n•	bu ku = buku\n•	a dik = adik\n•	i tik = itik\n•	ja ri = jari",
+          "Tunjuk pada setiap sukukata dan minta anak anda menyebutnya. Kemudian minta anak anda menyebut keseluruhan perkataan.\n•	sa ya = saya\n•	i bu = ibu\n•	bu ku = buku\n•	a dik = adik\n•	i tik = itik\n•	ja ri = jari",
     },
     "question": {
       "en": "Does the child have confusion between the look-alike letters?",
@@ -250,7 +250,7 @@ List question_46_data = [
       "en":
           "Cover the first sound of the word and ask the child to pronounce the sound of the remaining word.\n•	cat (cover c)\n•	cup (cover c)\n•	book (cover b)\n•	duck (cover d)\n•	pot (cover p)",
       "ms":
-          "Tutup bunyi pertama dalam perkataan dan minta anak anda menyebut bunyi perkataan yang tinggal.•	beg (tutup b)\n•	padu (tutup pa)\n•	mak (tutup m)\n•	awan (tutup a)",
+          "Tutup bunyi pertama dalam perkataan dan minta anak anda menyebut bunyi perkataan yang tinggal.\n•	beg (tutup b)\n•	padu (tutup pa)\n•	mak (tutup m)\n•	awan (tutup a)",
     },
     "question": {
       "en":
@@ -415,7 +415,7 @@ List question_46_data = [
     },
     "instruction": {
       "en":
-          "Narrate a short and simple story to the child then ask them questions such as:\n•	Name of the characters in the story\n•	The hobby of the characters\n•	What the characters do or other relevant questions.",
+          "Narrate a short and simple story to the child then ask them questions such as:\b\n•	Name of the characters in the story\n•	The hobby of the characters\n\b•	What the characters do or other relevant questions.",
       "ms":
           "Ceritakan satu cerita pendek dan mudah kepada anak anda, kemudian tanyakan soalan seperti:\n•	Nama watak dalam cerita\n•	Hobi watak-watak\n•	Perkara yang dilakukan oleh watak atau soalan lain yang berkaitan.",
     },
