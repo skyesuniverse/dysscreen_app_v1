@@ -51,6 +51,46 @@
   "fact5": "Fakta: Disleksia bukanlah gangguan penglihatan, tetapi keadaan yang mempengaruhi keupayaan untuk menterjemahkan dan mengenali perkataan bertulis, menyebabkan kesulitan dalam kelancaran membaca, ketepatan, dan pemahaman, terutamanya disebabkan oleh pemprosesan fonologi dan kemahiran bahasa bukan persepsi visual.",
   "outroText": "Memadamkan mitos dan salah faham tentang disleksia adalah penting untuk membina pemahaman, empati, dan sokongan untuk individu dengan keadaan tersebut. Dengan menantang stereotaip dan mempromosikan maklumat yang tepat, kita dapat mencipta persekitaran yang lebih inklusif dan sokongan untuk individu dengan disleksia untuk berkembang dan mencapai potensi penuh mereka.",
   
+  "tips_for_dyslexia": "Tips untuk Disleksia: Menyokong Individu di Rumah, Prasekolah, dan Sekolah Rendah",
+  "dyslexia_symptoms_description": "Gejala disleksia mungkin sukar dikesan sebelum kanak-kanak mula sekolah, tetapi beberapa tanda awal mungkin menunjukkan masalah. Apabila kanak-kanak mencapai usia sekolah, guru mungkin menjadi orang pertama yang mengesan masalah. Keterukan masalah bervariasi, tetapi ia biasanya menjadi jelas apabila kanak-kanak mula belajar membaca.",
+  "tips_at_home": "Tips untuk Disleksia di Rumah:",
+  "home1": "1. Cipta Sekitar Pembelajaran Yang Mesra Disleksia:",
+  "home1_1": "Berikan ruang belajar yang tenang dan teratur.",
+  "home1_2": "Gunakan label dan pengatur warna kod.",
+  "home2": "2. Galakkan Pembelajaran Pelbagai Indra:",
+  "home2_1": "Gunakan aktiviti taktil untuk menguatkan pembelajaran.",
+  "home2_2": "Gabungkan pergerakan ke dalam tugas pembelajaran.",
+  "home3": "3. Galakkan Minda Pertumbuhan:",
+  "home3_1": "Tekankan usaha dan kemajuan.",
+  "home3_2": "Berikan maklum balas yang spesifik dan membina.",
+  "tips_at_preschool": "Tips untuk Disleksia di Prasekolah:",
+  "preschool1": "1. Bangunkan Kesedaran Fonologi:",
+  "preschool1_1": "Mainkan permainan berima dan nyanyikan lagu.",
+  "preschool1_2": "Amalkan penggabungan bunyi dan pengasingan.",
+  "preschool2": "2. Bacakan dan Baca Bersama:",
+  "preschool2_1": "Bacakan secara berkala dan libatkan diri dalam pembacaan bersama.",
+  "preschool2_2": "Galakkan penyertaan dan perbincangan.",
+  "preschool3": "3. Bangunkan Perkataan dan Kemahiran Bahasa:",
+  "preschool3_1": "Galakkan perbualan dan beritahikan cerita.",
+  "preschool3_2": "Gunakan bantuan visual untuk meningkatkan pemahaman.",
+  "tips_at_primary_school": "Tips untuk Disleksia di Sekolah Rendah:",
+  "primary1": "1. Berikan Pengajaran Literasi Berstruktur:",
+  "primary1_1": "Advokasi untuk pengajaran literasi eksplisit.",
+  "primary1_2": "Cari pendidik yang berkelayakan yang dilatih dalam program berasaskan bukti.",
+  "primary2": "2. Amalkan Teknologi Bantu:",
+  "primary2_1": "Kenalkan perisian teks-ke-pelbagai suara dan buku audio.",
+  "primary2_2": "Ajar penggunaan teknologi bantu yang berkesan.",
+  "primary3": "3. Advokasi untuk Penginapan dan Perkhidmatan Sokongan:",
+  "primary3_1": "Bina rancangan pendidikan individu.",
+  "primary3_2": "Advokasi untuk penginapan dan perkhidmatan yang sesuai.",
+
+  "frequently_Asked_Questions_About_Dyslexia":"Soalan Lazim Mengenai Disleksia",
+
+  "resources_and_Support": "Sumber dan Sokongan",
+  "list_of_Dyslexia_Organizations": "Senarai Komprehensif Organisasi Disleksia: Malaysia dan Antarabangsa",
+  "international": "Antarabangsa",
+  "website": "Laman Web: ",
+
   "dyslexia_assessment_screen_title": "Ujian Penilaian dan Penyaringan Disleksia",
   "assessment_description": "Ujian ini direka untuk memberikan pandangan berharga tentang kemahiran membaca dan menulis anak anda, membantu mengenal pasti tanda-tanda potensi disleksia pada peringkat awal.\n\nSepanjang ujian, arahan dan soalan akan diberikan, anak anda akan menghadapi aktiviti yang menarik yang menilai kemahiran penting seperti pemahaman membaca, kesedaran fonologi, dan kecekapan menulis. \n\nPenilaian ini biasanya mengambil masa 10-15 minit untuk dilengkapkan, memastikan penilaian menyeluruh tanpa menyebabkan keletihan kepada anak.",
   "enter_child_details_message": "**Sila masukkan butiran anak anda di bawah untuk memulakan penilaian.",
@@ -90,8 +130,7 @@
   "age": "Umur:",
   "years_old": " tahun",
   "share_result": "Kongsi Keputusan"
-
-
+  
 
   
 }

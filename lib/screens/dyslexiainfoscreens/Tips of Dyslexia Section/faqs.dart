@@ -1,4 +1,5 @@
 import 'package:dysscreen_app_v1/models/Faqs_QnA.dart';
+import 'package:dysscreen_app_v1/models/language_constants.dart';
 import 'package:flutter/material.dart';
 
 class FaQs extends StatefulWidget {
@@ -14,11 +15,19 @@ class _FaQsState extends State<FaQs> {
   Widget build(BuildContext context) {
     screenHeight = MediaQuery.of(context).size.height;
     screenWidth = MediaQuery.of(context).size.width;
+
+    // Get the current locale
+    Locale currentLocale = Localizations.localeOf(context);
+
+    // Determine which language to display based on the locale
+    String languageCode = currentLocale.languageCode;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         title: Text(
-          'About Dyslexia',
+          // 'About Dyslexia',
+          translation(context).about_Dyslexia,
           style: TextStyle(
             color: Colors.black, // 3
           ),
@@ -43,7 +52,9 @@ class _FaQsState extends State<FaQs> {
                       Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
-                          "Frequently Asked Questions About Dyslexia",
+                          // "Frequently Asked Questions About Dyslexia",
+                          translation(context)
+                              .frequently_Asked_Questions_About_Dyslexia,
                           style: TextStyle(
                             fontSize: screenWidth / 15,
                             // fontWeight: FontWeight.bold,
@@ -78,14 +89,16 @@ class _FaQsState extends State<FaQs> {
                                         const RoundedRectangleBorder(
                                             borderRadius: BorderRadius.all(
                                                 Radius.circular(50))),
-                                    title: Text(qna.question),
+                                    title: Text(
+                                      qna.question[languageCode] ?? '',
+                                    ),
                                     // subtitle: Text('Trailing expansion arrow icon'),
                                     children: <Widget>[
                                       Padding(
                                         padding:
                                             EdgeInsets.fromLTRB(16, 5, 16, 10),
                                         child: Text(
-                                          qna.answer,
+                                          qna.answer[languageCode] ?? '',
                                         ),
                                       ),
                                     ],

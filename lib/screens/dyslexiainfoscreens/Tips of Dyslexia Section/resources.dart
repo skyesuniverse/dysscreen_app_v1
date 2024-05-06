@@ -1,4 +1,5 @@
 import 'package:dysscreen_app_v1/models/ResourceAndSupport.dart';
+import 'package:dysscreen_app_v1/models/language_constants.dart';
 import 'package:dysscreen_app_v1/widgets/bullet_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -19,11 +20,18 @@ class _ResourcesAndSupportState extends State<ResourcesAndSupport> {
     screenHeight = MediaQuery.of(context).size.height;
     screenWidth = MediaQuery.of(context).size.width;
 
+    // Get the current locale
+    Locale currentLocale = Localizations.localeOf(context);
+
+    // Determine which language to display based on the locale
+    String languageCode = currentLocale.languageCode;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         title: Text(
-          'About Dyslexia',
+          // 'About Dyslexia',
+          translation(context).about_Dyslexia,
           style: TextStyle(
             color: Colors.black,
           ),
@@ -48,7 +56,8 @@ class _ResourcesAndSupportState extends State<ResourcesAndSupport> {
                       Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
-                          "Resources and Support",
+                          // "Resources and Support",
+                          translation(context).resources_and_Support,
                           style: TextStyle(
                             fontSize: screenWidth / 15,
                             // fontWeight: FontWeight.bold,
@@ -68,7 +77,8 @@ class _ResourcesAndSupportState extends State<ResourcesAndSupport> {
                       Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
-                          "Comprehensive List of Dyslexia Organizations: Malaysia and International",
+                          // "Comprehensive List of Dyslexia Organizations: Malaysia and International",
+                          translation(context).list_of_Dyslexia_Organizations,
                           style: TextStyle(
                             fontSize: screenWidth / 23,
                             // fontWeight: FontWeight.bold,
@@ -132,13 +142,14 @@ class _ResourcesAndSupportState extends State<ResourcesAndSupport> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text('Website: '),
+                                      Text(
+                                        translation(context).website,
+                                      ),
                                       Expanded(
                                         child: GestureDetector(
                                           onTap: () {
                                             launchUrl_MY(myorg.myOrg_WebLink);
                                             print(myorg.myOrg_WebLink);
-                         
                                           },
                                           child: Text(
                                             myorg.myOrg_WebLink,
@@ -165,7 +176,8 @@ class _ResourcesAndSupportState extends State<ResourcesAndSupport> {
                       Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
-                          "International: ",
+                          // "International: ",
+                          translation(context).international,
                           style: TextStyle(
                             fontSize: screenWidth / 23,
                             fontWeight: FontWeight.bold,
@@ -218,7 +230,9 @@ class _ResourcesAndSupportState extends State<ResourcesAndSupport> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text('Website: '),
+                                      Text(
+                                        translation(context).website,
+                                      ),
                                       Expanded(
                                         child: GestureDetector(
                                           onTap: () {

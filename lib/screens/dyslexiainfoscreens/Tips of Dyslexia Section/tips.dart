@@ -1,3 +1,4 @@
+import 'package:dysscreen_app_v1/models/language_constants.dart';
 import 'package:dysscreen_app_v1/widgets/bullet_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,8 @@ class _TipsForDyslexiaState extends State<TipsForDyslexia> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         title: Text(
-          'About Dyslexia',
+          // 'About Dyslexia',
+          translation(context).about_Dyslexia,
           style: TextStyle(
             color: Colors.black,
           ),
@@ -42,7 +44,8 @@ class _TipsForDyslexiaState extends State<TipsForDyslexia> {
                     Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
-                        "Tips for Dyslexia: Supporting Individuals at Home, Preschool, and Primary School",
+                        // "Tips for Dyslexia: Supporting Individuals at Home, Preschool, and Primary School",
+                        translation(context).tips_for_dyslexia,
                         style: TextStyle(
                           fontSize: screenWidth / 15,
                           // fontWeight: FontWeight.bold,
@@ -59,24 +62,26 @@ class _TipsForDyslexiaState extends State<TipsForDyslexia> {
                         fit: BoxFit.cover, // Adjust BoxFit as needed
                       ),
                     ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 9, 0, 24),
-                      child: Text(
-                        'Dyslexia symptoms might be difficult to detect before a child begins school, but several early warning signs might indicate a problem. When a child reaches school age, the teacher may be the first to detect an issue. The severity of the issue varies, but it usually becomes obvious when the child begins to learn to read.',
-                        style: TextStyle(
-                          fontSize: screenWidth / 25,
-                          fontWeight: FontWeight.normal,
-                          color: Color.fromARGB(255, 22, 22, 22),
-                        ),
-                        textAlign: TextAlign.justify,
-                      ),
-                    ),
+                    // Padding(
+                    //   padding: EdgeInsetsDirectional.fromSTEB(0, 9, 0, 24),
+                    //   child: Text(
+                    //     // 'Dyslexia symptoms might be difficult to detect before a child begins school, but several early warning signs might indicate a problem. When a child reaches school age, the teacher may be the first to detect an issue. The severity of the issue varies, but it usually becomes obvious when the child begins to learn to read.',
+                    //     translation(context).question,
+                    //     style: TextStyle(
+                    //       fontSize: screenWidth / 25,
+                    //       fontWeight: FontWeight.normal,
+                    //       color: Color.fromARGB(255, 22, 22, 22),
+                    //     ),
+                    //     textAlign: TextAlign.justify,
+                    //   ),
+                    // ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         //////////// Tips at Home section
                         Text(
-                          'Tips for Dyslexia at Home:',
+                          // 'Tips for Dyslexia at Home:',
+                          translation(context).tips_at_home,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 16,
@@ -88,24 +93,24 @@ class _TipsForDyslexiaState extends State<TipsForDyslexia> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               buildTip(
-                                  '1. Create a Dyslexia-Friendly Environment:',
+                                  translation(context).home1,
                                   [
-                                    'Provide a quiet, organized study space.',
-                                    'Use color-coded labels and organizers.'
+                                    translation(context).home1_1,
+                                    translation(context).home1_2,
                                   ],
                                   screenWidth),
                               buildTip(
-                                  '2. Encourage Multisensory Learning:',
+                                  translation(context).home2,
                                   [
-                                    'Use tactile activities to reinforce learning.',
-                                    'Incorporate movement into learning tasks.'
+                                    translation(context).home2_1,
+                                    translation(context).home2_1,
                                   ],
                                   screenWidth),
                               buildTip(
-                                  '3. Foster a Growth Mindset:',
+                                  translation(context).home3,
                                   [
-                                    'Emphasize effort and progress.',
-                                    'Provide specific, constructive feedback.'
+                                    translation(context).home3_1,
+                                    translation(context).home3_1,
                                   ],
                                   screenWidth),
                             ],
@@ -115,7 +120,8 @@ class _TipsForDyslexiaState extends State<TipsForDyslexia> {
 
                         //////////// Tips at Preschool section
                         Text(
-                          'Tips for Dyslexia at Preschool:',
+                          // 'Tips for Dyslexia at Preschool:',
+                          translation(context).tips_at_preschool,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 16,
@@ -127,24 +133,24 @@ class _TipsForDyslexiaState extends State<TipsForDyslexia> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               buildTip(
-                                  '1. Develop Phonological Awareness:',
+                                  translation(context).preschool1,
                                   [
-                                    'Play rhyming games and sing songs.',
-                                    'Practice sound blending and segmenting.'
+                                    translation(context).preschool1_1,
+                                    translation(context).preschool1_2,
                                   ],
                                   screenWidth),
                               buildTip(
-                                  '2. Read Aloud and Shared Reading:',
+                                  translation(context).preschool2,
                                   [
-                                    'Read regularly and engage in shared reading.',
-                                    'Encourage participation and discussion.'
+                                    translation(context).preschool2_1,
+                                    translation(context).preschool2_2,
                                   ],
                                   screenWidth),
                               buildTip(
-                                  '3. Build Vocabulary and Language Skills:',
+                                  translation(context).preschool3,
                                   [
-                                    'Encourage conversation and storytelling.',
-                                    'Use visual aids to enhance understanding.'
+                                    translation(context).preschool3_1,
+                                    translation(context).preschool3_2,
                                   ],
                                   screenWidth),
                             ],
@@ -154,7 +160,8 @@ class _TipsForDyslexiaState extends State<TipsForDyslexia> {
 
                         //////////// Tips at Primary School
                         Text(
-                          'Tips for Dyslexia at Primary School:',
+                          // 'Tips for Dyslexia at Primary School:',
+                          translation(context).tips_at_primary_school,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 16,
@@ -166,24 +173,24 @@ class _TipsForDyslexiaState extends State<TipsForDyslexia> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               buildTip(
-                                  '1. Provide Structured Literacy Instruction:',
+                                  translation(context).primary1,
                                   [
-                                    'Advocate for explicit literacy instruction.',
-                                    'Seek qualified educators trained in evidence-based programs.'
+                                    translation(context).primary1_1,
+                                    translation(context).primary1_2,
                                   ],
                                   screenWidth),
                               buildTip(
-                                  '2. Implement Assistive Technology:',
+                                  translation(context).primary2,
                                   [
-                                    'Introduce text-to-speech software and audiobooks.',
-                                    'Teach effective use of assistive technology.'
+                                    translation(context).primary2_1,
+                                    translation(context).primary2_2,
                                   ],
                                   screenWidth),
                               buildTip(
-                                  '3. Advocate for Accommodations and Support Services:',
+                                  translation(context).primary3,
                                   [
-                                    'Develop an individualized education plan.',
-                                    'Advocate for appropriate accommodations and services.'
+                                    translation(context).primary3_1,
+                                    translation(context).primary3_2,
                                   ],
                                   screenWidth),
                             ],
