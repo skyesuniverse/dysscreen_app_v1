@@ -1,3 +1,4 @@
+import 'package:dysscreen_app_v1/models/language_constants.dart';
 import 'package:dysscreen_app_v1/widgets/bullet_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,8 @@ class _SignAndSymtomsState extends State<SignAndSymtoms> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         title: Text(
-          'About Dyslexia',
+          // 'About Dyslexia',
+          translation(context).about_Dyslexia,
           style: TextStyle(
             color: Colors.black,
           ),
@@ -45,7 +47,8 @@ class _SignAndSymtomsState extends State<SignAndSymtoms> {
                       Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
-                          "Common Signs and Symptoms",
+                          // "Common Signs and Symptoms",
+                          translation(context).commonSignsAndSymptomsTitle,
                           style: TextStyle(
                             fontSize: screenWidth / 15,
                             color: Colors.black,
@@ -64,7 +67,8 @@ class _SignAndSymtomsState extends State<SignAndSymtoms> {
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 9, 0, 24),
                         child: Text(
-                          'Dyslexia symptoms might be difficult to detect before a child begins school, but several early warning signs might indicate a problem. When a child reaches school age, the teacher may be the first to detect an issue. The severity of the issue varies, but it usually becomes obvious when the child begins to learn to read.',
+                          // 'Dyslexia symptoms might be difficult to detect before a child begins school, but several early warning signs might indicate a problem. When a child reaches school age, the teacher may be the first to detect an issue. The severity of the issue varies, but it usually becomes obvious when the child begins to learn to read.',
+                          translation(context).openText,
                           style: TextStyle(
                             fontSize: screenWidth / 25,
                             fontWeight: FontWeight.normal,
@@ -74,44 +78,49 @@ class _SignAndSymtomsState extends State<SignAndSymtoms> {
                         ),
                       ),
                       SymptomCategory(
-                        category: 'Symptoms of dyslexia among preschoolers',
+                        category:
+                            translation(context).preschoolSymptomsCategory,
                         sentence:
-                            'Symptoms of dyslexia in a preschooler may include:',
+                            translation(context).preschoolSymptomsSentence,
                         symptoms: [
-                          'Speech delay',
-                          'Pronunciation issues',
-                          'Rhyming and rhyme difficulties',
-                          'Difficulty with learning shapes, colors, and writing one\'s name',
-                          'Difficulty with recounting a story in the correct order of events',
+                          translation(context).speechDelay,
+                          translation(context).pronunciationIssues,
+                          translation(context).rhymingAndRhymeDifficulties,
+                          translation(context)
+                              .difficultyWithLearningShapesColorsAndWritingName,
+                          translation(context).difficultyWithRecountingAStory,
                         ],
                         screenWidth: screenWidth,
                       ),
                       SizedBox(height: 20),
                       SymptomCategory(
                         category:
-                            'Symptoms of dyslexia among high school children',
+                            translation(context).primarySchoolSymptomsCategory,
                         sentence:
-                            'Symptoms of dyslexia in a primary school age child may include:',
+                            translation(context).primarySchoolSymptomsSentence,
                         symptoms: [
-                          'Difficulties with reading a single word',
-                          'Frequently confuses some letters when writing, such as \'d\' and \'b\' or \'m\' and \'w\'',
-                          'Frequently writes words backwards, such as writing \'pit\' when the word \'tip\' was intended',
-                          'Difficulty with grammar, such as learning prefixes or suffixes',
-                          'Prefers not to read aloud in class',
-                          'Avoiding activities that involve reading',
+                          translation(context)
+                              .difficultiesWithReadingASingleWord,
+                          translation(context)
+                              .frequentlyConfusesSomeLettersWhenWriting,
+                          translation(context).frequentlyWritesWordsBackwards,
+                          translation(context).difficultyWithGrammar,
+                          translation(context).avoidsReadingAloudInClass,
+                          translation(context)
+                              .avoidsActivitiesThatInvolveReading,
                         ],
                         screenWidth: screenWidth,
                       ),
                       SizedBox(height: 20),
                       SymptomCategory(
                         category:
-                            'Symptoms of dyslexia among high school children',
+                            translation(context).highSchoolSymptomsCategory,
                         sentence:
-                            'Symptoms of dyslexia in a high school student may include:',
+                            translation(context).highSchoolSymptomsSentence,
                         symptoms: [
-                          'Poor reading',
-                          'Poor spelling, especially many misspellings of the same term in a single writing assignment',
-                          'Facing problems with writing summaries',
+                          translation(context).poorReading,
+                          translation(context).poorSpelling,
+                          translation(context).problemsWithWritingSummaries,
                         ],
                         screenWidth: screenWidth,
                       ),

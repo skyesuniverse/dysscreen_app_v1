@@ -1,4 +1,6 @@
 {
+  "@@locale": "ms",
+  
   "homeLabel": "Laman Utama",
   "testLabel": "Ujian",
   "aboutLabel": "Tentang",
@@ -6,10 +8,12 @@
   "app_intro": "DysScreen, aplikasi mesra pengguna yang direka untuk membantu ibu bapa dan pendidik dalam tugas penting untuk menilai dan menapis disleksia dalam kalangan kanak-kanak",
   "about_Dyslexia": "Tentang Disleksia",
   "language": "Bahasa",
+
   "introTitle": "Pengenalan kepada Dyslexia",
   "introText1": "Disleksia adalah gangguan pembelajaran neurobiologi yang menyebabkan masalah dalam pengenalan perkataan yang tepat dan lancar, serta kesukaran dalam mengeja dan menerjemahkan perkataan. Disleksia, kadang-kadang dikenali sebagai ketidakupayaan membaca, disebabkan oleh perbezaan spesifik dalam kawasan otak yang bertanggungjawab untuk pemprosesan bahasa.",
   "introText2": "Disleksia tidak disebabkan oleh masalah dengan kecerdasan, pendengaran, atau penglihatan. Kebanyakan kanak-kanak disleksia boleh berjaya di sekolah dengan bimbingan tuisyen atau program pendidikan khas. Sokongan emosi juga sangat penting.",
   "introText3": "Walaupun tiada penawar untuk disleksia, ujian dan intervensi awal memberikan hasil terbaik. Disleksia boleh tidak dikenal pasti untuk tahun-tahun dan tidak dikenali sehingga dewasa, tetapi tidak pernah terlalu lewat untuk mencari bantuan.",
+  
   "commonSignsAndSymptomsTitle": "Tanda-Tanda dan Simptom-Simptom Umum",
   "openText": "Simptom disleksia mungkin sukar dikesan sebelum seorang kanak-kanak memulakan sekolah, tetapi beberapa tanda awal mungkin menunjukkan masalah. Apabila seorang kanak-kanak mencapai usia sekolah, guru mungkin yang pertama mendeteksi masalah. Keterukan masalah tersebut berbeza-beza, tetapi ia biasanya menjadi jelas apabila kanak-kanak itu mula belajar membaca.",
   "preschoolSymptomsCategory": "Simptom disleksia di kalangan kanak-kanak pra-sekolah",
@@ -32,6 +36,7 @@
   "poorReading": "Membaca yang lemah",
   "poorSpelling": "Mengeja yang lemah, terutamanya banyak kesilapan mengeja bagi satu tugasan penulisan tunggal",
   "problemsWithWritingSummaries": "Menghadapi masalah menulis ringkasan",
+  
   "mythsAndFactsTitle": "5 Mitos dan Fakta tentang Disleksia",
   "introText": "Disleksia adalah gangguan pembelajaran kompleks yang mempengaruhi pemprosesan bahasa, terutamanya dalam membaca dan menulis. Walaupun disleksia diiktiraf secara meluas, ia sering dikelilingi oleh mitos dan salah faham, menyebabkan salah faham dan stigma. Mari kita klarifikasi beberapa mitos biasa:",
   "myth1": "Mitos #1: Disleksia adalah tanda kecerdasan rendah",
@@ -45,6 +50,7 @@
   "myth5": "Mitos #5: Orang dengan disleksia melihat huruf dan kata-kata terbalik",
   "fact5": "Fakta: Disleksia bukanlah gangguan penglihatan, tetapi keadaan yang mempengaruhi keupayaan untuk menterjemahkan dan mengenali perkataan bertulis, menyebabkan kesulitan dalam kelancaran membaca, ketepatan, dan pemahaman, terutamanya disebabkan oleh pemprosesan fonologi dan kemahiran bahasa bukan persepsi visual.",
   "outroText": "Memadamkan mitos dan salah faham tentang disleksia adalah penting untuk membina pemahaman, empati, dan sokongan untuk individu dengan keadaan tersebut. Dengan menantang stereotaip dan mempromosikan maklumat yang tepat, kita dapat mencipta persekitaran yang lebih inklusif dan sokongan untuk individu dengan disleksia untuk berkembang dan mencapai potensi penuh mereka.",
+  
   "dyslexia_assessment_screen_title": "Ujian Penilaian dan Penyaringan Disleksia",
   "assessment_description": "Ujian ini direka untuk memberikan pandangan berharga tentang kemahiran membaca dan menulis anak anda, membantu mengenal pasti tanda-tanda potensi disleksia pada peringkat awal.\n\nSepanjang ujian, arahan dan soalan akan diberikan, anak anda akan menghadapi aktiviti yang menarik yang menilai kemahiran penting seperti pemahaman membaca, kesedaran fonologi, dan kecekapan menulis. \n\nPenilaian ini biasanya mengambil masa 10-15 minit untuk dilengkapkan, memastikan penilaian menyeluruh tanpa menyebabkan keletihan kepada anak.",
   "enter_child_details_message": "**Sila masukkan butiran anak anda di bawah untuk memulakan penilaian.",
@@ -84,6 +90,7 @@
   "age": "Umur:",
   "years_old": " tahun",
   "share_result": "Kongsi Keputusan"
+
 
 
   

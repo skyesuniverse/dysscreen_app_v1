@@ -1,3 +1,4 @@
+import 'package:dysscreen_app_v1/models/language_constants.dart';
 import 'package:flutter/material.dart';
 
 class MythsAndFactScreen extends StatefulWidget {
@@ -17,7 +18,8 @@ class _MythsAndFactScreenState extends State<MythsAndFactScreen> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         title: Text(
-          'About Dyslexia',
+          // 'About Dyslexia',
+          translation(context).about_Dyslexia,
           style: TextStyle(
             color: Colors.black, // 3
           ),
@@ -42,7 +44,8 @@ class _MythsAndFactScreenState extends State<MythsAndFactScreen> {
                       Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
-                          "5 Myths and Facts about Dyslexia",
+                          // "5 Myths and Facts about Dyslexia",
+                          translation(context).mythsAndFactsTitle,
                           style: TextStyle(
                             fontSize: screenWidth / 15,
                             // fontWeight: FontWeight.bold,
@@ -62,7 +65,8 @@ class _MythsAndFactScreenState extends State<MythsAndFactScreen> {
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 9, 0, 24),
                         child: Text(
-                          'Dyslexia is a complex learning disorder affecting language processing, especially in reading and writing. Despite its widespread recognition, it is often surrounded by myths and misconceptions, leading to misunderstanding and stigma. Let\'s clarify some common myths:',
+                          // 'Dyslexia is a complex learning disorder affecting language processing, especially in reading and writing. Despite its widespread recognition, it is often surrounded by myths and misconceptions, leading to misunderstanding and stigma. Let\'s clarify some common myths:',
+                          translation(context).introText,
                           style: TextStyle(
                             fontSize: screenWidth / 25,
                             fontWeight: FontWeight.normal,
@@ -72,46 +76,39 @@ class _MythsAndFactScreenState extends State<MythsAndFactScreen> {
                         ),
                       ),
                       MythFactCard(
-                        myth: 'Myth #1: Dyslexia is a sign of low intelligence',
-                        fact:
-                            'Fact: Dyslexia doesn\'t correlate with intelligence, as individuals with dyslexia often have average or above-average intelligence levels. They may have unique strengths in creativity, problem-solving, and visual-spatial reasoning.',
+                        myth: translation(context).myth1,
+                        fact: translation(context).fact1,
                         screenWidth: screenWidth,
                       ),
                       SizedBox(height: 20),
                       MythFactCard(
-                        myth: 'Myth #2: Dyslexia only affects reading',
-                        fact:
-                            'Fact: Dyslexia, a condition characterized by difficulties in reading, can affect other language skills like spelling, writing, and verbal communication. It can also affect phonological awareness, fluency, comprehension, and word retrieval, impacting daily life and academic and professional success.',
+                        myth: translation(context).myth2,
+                        fact: translation(context).fact2,
                         screenWidth: screenWidth,
                       ),
                       SizedBox(height: 20),
                       MythFactCard(
-                        myth:
-                            'Myth #3: Dyslexia can be outgrown or cured with time',
-                        fact:
-                            'Fact: Dyslexia is a lifelong condition that requires appropriate intervention and support to manage difficulties and develop coping strategies. Early identification and intervention are crucial for improving outcomes and minimizing its impact on academic and social functioning. Many individuals with dyslexia lead successful lives.',
+                        myth: translation(context).myth3,
+                        fact: translation(context).fact3,
                         screenWidth: screenWidth,
                       ),
                       SizedBox(height: 20),
                       MythFactCard(
-                        myth:
-                            'Myth #4: Dyslexia is caused by laziness or lack of effort',
-                        fact:
-                            'Fact: Dyslexia is a neurological condition caused by brain structure and function differences, not laziness or motivation. Despite significant effort, dyslexic individuals still face persistent challenges in reading and language processing. Blaming them perpetuates stigma and hinders their efforts to seek support and accommodations.',
+                        myth: translation(context).myth4,
+                        fact: translation(context).fact4,
                         screenWidth: screenWidth,
                       ),
                       SizedBox(height: 20),
                       MythFactCard(
-                        myth:
-                            'Myth #5: People with dyslexia see letters and words backward',
-                        fact:
-                            'Fact: Dyslexia is not a visual impairment, but rather a condition affecting the ability to decode and recognize written words, leading to difficulties in reading fluency, accuracy, and comprehension, primarily due to phonological processing and language skills rather than visual perception.',
+                        myth: translation(context).myth5,
+                        fact: translation(context).fact5,
                         screenWidth: screenWidth,
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 24),
                         child: Text(
-                          'Dispelling myths and misconceptions about dyslexia is essential for fostering understanding, empathy, and support for individuals with the condition. By challenging stereotypes and promoting accurate information, we can create a more inclusive and supportive environment for individuals with dyslexia to thrive and reach their full potential.',
+                          // 'Dispelling myths and misconceptions about dyslexia is essential for fostering understanding, empathy, and support for individuals with the condition. By challenging stereotypes and promoting accurate information, we can create a more inclusive and supportive environment for individuals with dyslexia to thrive and reach their full potential.',
+                          translation(context).outroText,
                           style: TextStyle(
                             fontSize: screenWidth / 25,
                             fontWeight: FontWeight.normal,
