@@ -1,3 +1,4 @@
+import 'package:dysscreen_app_v1/models/language_constants.dart';
 import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/About_Dyslexia_Section/intro.dart';
 import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/About_Dyslexia_Section/myths.dart';
 import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/About_Dyslexia_Section/sign.dart';
@@ -46,7 +47,8 @@ class _AboutScreenState extends State<AboutScreen> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(20, 60, 0, 15),
             child: Text(
-              "About Dyslexia",
+              // "About Dyslexia",
+              translation(context).about_Dyslexia,
               style: TextStyle(
                 fontSize: screenWidth / 19,
                 fontWeight: FontWeight.bold,
@@ -64,7 +66,7 @@ class _AboutScreenState extends State<AboutScreen> {
                   // color: Colors.white,
                   ),
 
-              ///"About Dyslexia"  List View item
+              // /"About Dyslexia"  List View item
               child: ListView(
                   padding: EdgeInsets.fromLTRB(
                     16,
@@ -86,9 +88,8 @@ class _AboutScreenState extends State<AboutScreen> {
                         child: AboutCard(
                           imageUrl:
                               'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRURjumQMmLb5ybNldAsJhRD_QdkETjksSVzw&usqp=CAU',
-                          title: 'Introduction of Dyslexia',
-                          description:
-                              'Dyslexia is a type of specific learning difficulty (SLD) in which the person has difficulties with language and words. The term dyslexia, although still used by some, is generally felt to be too narrow and SLD is often used to describe these learning difficulties.',
+                          title: translation(context).introTitle,
+                          description: translation(context).introText1,
                           screenWidth: screenWidth,
                           screenHeight: screenHeight,
                         )),
@@ -106,9 +107,9 @@ class _AboutScreenState extends State<AboutScreen> {
                         child: AboutCard(
                             imageUrl:
                                 'https://www.readabilitytutor.com/wp-content/uploads/2022/11/How-AI-can-Support-Students-with-Dyslexia.jpg',
-                            title: 'Common Signs and Symptoms',
-                            description:
-                                'Some of the symptoms of dyslexia or SLD in a preschooler could include...',
+                            title: translation(context)
+                                .commonSignsAndSymptomsTitle,
+                            description: translation(context).openText,
                             screenWidth: screenWidth,
                             screenHeight: screenHeight)),
 
@@ -125,9 +126,8 @@ class _AboutScreenState extends State<AboutScreen> {
                         child: AboutCard(
                             imageUrl:
                                 'https://upload.wikimedia.org/wikipedia/commons/3/3d/Dyslexia.jpg',
-                            title: 'Myths and Facts about Dyslexia',
-                            description:
-                                'Let\'s debunk seven common myths surrounding dyslexia and help pave the way for a more inclusive future.',
+                            title: translation(context).mythsAndFactsTitle,
+                            description: translation(context).introText,
                             screenWidth: screenWidth,
                             screenHeight: screenHeight)),
                   ]
@@ -135,12 +135,12 @@ class _AboutScreenState extends State<AboutScreen> {
                   ),
             ),
           ),
-
           //Tips on Dyslexia Section
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(20, 13, 0, 15),
             child: Text(
-              "Tips on Dyslexia",
+              // "Tips on Dyslexia",
+              translation(context).tips_on_Dyslexia,
               style: TextStyle(
                 fontSize: screenWidth / 19,
                 fontWeight: FontWeight.bold,
@@ -157,8 +157,10 @@ class _AboutScreenState extends State<AboutScreen> {
               //card 1 for Tips
               cardForTips(
                   context,
-                  'Tips for Dyslexia',
-                  'Supporting Individuals at Home, Preschool, and Primary School',
+                  // 'Tips for Dyslexia',
+                  // 'Supporting Individuals at Home, Preschool, and Primary School',
+                  translation(context).tips_on_Dyslexia,
+                  translation(context).tips_for_dyslexia,
                   'assets/images/tips.png',
                   screenWidth,
                   () => TipsForDyslexia(),
@@ -167,8 +169,10 @@ class _AboutScreenState extends State<AboutScreen> {
               //card 2 for Tips
               cardForTips(
                   context,
-                  'Diagnosis and Treatment',
-                  'Diagnosis and Treatment of Dyslexia: Understanding and Supporting Individuals',
+                  // 'Diagnosis and Treatment',
+                  // 'Diagnosis and Treatment of Dyslexia: Understanding and Supporting Individuals',
+                  translation(context).diagnosisAndTreatment,
+                  translation(context).diagnosis_and_Treatment_title,
                   'assets/images/diagnosisandtreatment.png',
                   screenWidth,
                   () => DiagnosisAndTreatment(),
@@ -178,7 +182,9 @@ class _AboutScreenState extends State<AboutScreen> {
               cardForTips(
                   context,
                   'FAQs',
-                  'Identifying Dyslexia Signs in Primary School...',
+                  // 'Identifying Dyslexia Signs in Primary School...',
+                  translation(context)
+                      .frequently_Asked_Questions_About_Dyslexia,
                   'assets/images/faqs.png',
                   screenWidth,
                   () => FaQs(),
@@ -187,8 +193,10 @@ class _AboutScreenState extends State<AboutScreen> {
               //card 4 for Tips
               cardForTips(
                   context,
-                  'Resources and Support',
-                  'Comprehensive List of Dyslexia Organizations: Malaysia and International',
+                  // 'Resources and Support',
+                  // 'Comprehensive List of Dyslexia Organizations: Malaysia and International',
+                  translation(context).resources_and_Support,
+                  translation(context).list_of_Dyslexia_Organizations,
                   'assets/images/resourcesandsupport.png',
                   screenWidth,
                   () => ResourcesAndSupport(),
@@ -255,7 +263,10 @@ Widget cardForTips(
                     children: [
                       Text(
                         title,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                         style: TextStyle(
+                          height: 1.10,
                           // fontSize: screenWidth / 33,
                           fontWeight: FontWeight.bold,
                           color: Colors.black,
@@ -268,6 +279,7 @@ Widget cardForTips(
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
+                            height: 1.25,
                             fontSize: screenWidth / 30,
                             color: Colors.black54,
                           ),

@@ -1,5 +1,6 @@
 {
   "zh": [
+    "tips_on_Dyslexia",
     "tips_for_dyslexia",
     "dyslexia_symptoms_description",
     "tips_at_home",
@@ -37,6 +38,12 @@
     "list_of_Dyslexia_Organizations",
     "international",
     "website",
+    "diagnosisAndTreatment",
+    "diagnosis_and_Treatment_title",
+    "diagnosis_of_Dyslexia",
+    "diagnosis_intro",
+    "treatment_of_Dyslexia",
+    "treatment_intro",
     "question",
     "instruction",
     "quit_the_test",

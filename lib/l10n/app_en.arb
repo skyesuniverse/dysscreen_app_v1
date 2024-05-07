@@ -51,6 +51,7 @@
   "fact5": "Fact: Dyslexia is not a visual impairment, but rather a condition affecting the ability to decode and recognize written words, leading to difficulties in reading fluency, accuracy, and comprehension, primarily due to phonological processing and language skills rather than visual perception.",
   "outroText": "Dispelling myths and misconceptions about dyslexia is essential for fostering understanding, empathy, and support for individuals with the condition. By challenging stereotypes and promoting accurate information, we can create a more inclusive and supportive environment for individuals with dyslexia to thrive and reach their full potential.",
   
+  "tips_on_Dyslexia": "Tips on Dyslexia",
   "tips_for_dyslexia": "Tips for Dyslexia: Supporting Individuals at Home, Preschool, and Primary School",
   "dyslexia_symptoms_description": "Dyslexia symptoms might be difficult to detect before a child begins school, but several early warning signs might indicate a problem. When a child reaches school age, the teacher may be the first to detect an issue. The severity of the issue varies, but it usually becomes obvious when the child begins to learn to read.",
   
@@ -93,7 +94,14 @@
   "list_of_Dyslexia_Organizations": "Comprehensive List of Dyslexia Organizations: Malaysia and International",
   "international": "International",
   "website": "Website: ",
-    
+
+  "diagnosisAndTreatment": "Diagnosis And Treatment",
+  "diagnosis_and_Treatment_title": "Diagnosis and Treatment of Dyslexia: Understanding and Supporting Individuals",
+  "diagnosis_of_Dyslexia": "Diagnosis of Dyslexia: ",
+  "diagnosis_intro": "Diagnosing dyslexia involves a comprehensive assessment by qualified professionals, such as educational psychologists, speech-language pathologists, or specialized educators. The assessment typically includes the following components:",
+  "treatment_of_Dyslexia": "Treatment of Dyslexia: ",
+  "treatment_intro": "While dyslexia is a lifelong condition, appropriate intervention and support can help individuals manage their difficulties and achieve academic success. Treatment for dyslexia typically involves the following components:",
+
   
 
   "dyslexia_assessment_screen_title": "Dyslexia Assessment and Screening Test",

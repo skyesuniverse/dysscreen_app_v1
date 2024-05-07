@@ -1,4 +1,5 @@
 import 'package:dysscreen_app_v1/models/DiagnosisAndTreatment.dart';
+import 'package:dysscreen_app_v1/models/language_constants.dart';
 import 'package:flutter/material.dart';
 
 class DiagnosisAndTreatment extends StatefulWidget {
@@ -14,11 +15,19 @@ class _DiagnosisAndTreatmentState extends State<DiagnosisAndTreatment> {
   Widget build(BuildContext context) {
     screenHeight = MediaQuery.of(context).size.height;
     screenWidth = MediaQuery.of(context).size.width;
+
+    // Get the current locale
+    Locale currentLocale = Localizations.localeOf(context);
+
+    // Determine which language to display based on the locale
+    String languageCode = currentLocale.languageCode;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         title: Text(
-          'About Dyslexia',
+          // 'About Dyslexia',
+          translation(context).about_Dyslexia,
           style: TextStyle(
             color: Colors.black,
           ),
@@ -43,7 +52,8 @@ class _DiagnosisAndTreatmentState extends State<DiagnosisAndTreatment> {
                       Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
-                          "Diagnosis and Treatment of Dyslexia: Understanding and Supporting Individuals",
+                          // "Diagnosis and Treatment of Dyslexia: Understanding and Supporting Individuals",
+                          translation(context).diagnosis_and_Treatment_title,
                           style: TextStyle(
                             fontSize: screenWidth / 15,
                             // fontWeight: FontWeight.bold,
@@ -65,7 +75,8 @@ class _DiagnosisAndTreatmentState extends State<DiagnosisAndTreatment> {
                         child: Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(0, 9, 0, 0),
                             child: Text(
-                              'Diagnosis of Dyslexia:',
+                              // 'Diagnosis of Dyslexia:',
+                              translation(context).diagnosis_of_Dyslexia,
                               style: TextStyle(
                                 fontSize: screenWidth / 21,
                                 fontWeight: FontWeight.bold,
@@ -75,7 +86,8 @@ class _DiagnosisAndTreatmentState extends State<DiagnosisAndTreatment> {
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 9, 0, 24),
                         child: Text(
-                          'Diagnosing dyslexia involves a comprehensive assessment by qualified professionals, such as educational psychologists, speech-language pathologists, or specialized educators. The assessment typically includes the following components:',
+                          // 'Diagnosing dyslexia involves a comprehensive assessment by qualified professionals, such as educational psychologists, speech-language pathologists, or specialized educators. The assessment typically includes the following components:',
+                          translation(context).diagnosis_intro,
                           style: TextStyle(
                             fontSize: screenWidth / 25,
                             fontWeight: FontWeight.normal,
@@ -93,14 +105,16 @@ class _DiagnosisAndTreatmentState extends State<DiagnosisAndTreatment> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  '\u{1FA7A} ${criteria.title}',
+                                  '\u{1FA7A} ${criteria.title[languageCode] ?? ''}',
                                   style: TextStyle(
                                     fontSize: 16,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
                                 SizedBox(height: 8),
-                                Text(criteria.description),
+                                Text(
+                                  criteria.description[languageCode] ?? '',
+                                ),
                               ],
                             ),
                           );
@@ -114,7 +128,8 @@ class _DiagnosisAndTreatmentState extends State<DiagnosisAndTreatment> {
                         child: Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(0, 9, 0, 0),
                             child: Text(
-                              'Treatment of Dyslexia:',
+                              // 'Treatment of Dyslexia:',
+                              translation(context).treatment_of_Dyslexia,
                               style: TextStyle(
                                 fontSize: screenWidth / 21,
                                 fontWeight: FontWeight.bold,
@@ -124,7 +139,8 @@ class _DiagnosisAndTreatmentState extends State<DiagnosisAndTreatment> {
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 9, 0, 24),
                         child: Text(
-                          'While dyslexia is a lifelong condition, appropriate intervention and support can help individuals manage their difficulties and achieve academic success. Treatment for dyslexia typically involves the following components:',
+                          // 'While dyslexia is a lifelong condition, appropriate intervention and support can help individuals manage their difficulties and achieve academic success. Treatment for dyslexia typically involves the following components:',
+                          translation(context).treatment_intro,
                           style: TextStyle(
                             fontSize: screenWidth / 25,
                             fontWeight: FontWeight.normal,
@@ -142,7 +158,7 @@ class _DiagnosisAndTreatmentState extends State<DiagnosisAndTreatment> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  '\u{1F9EA} ${treatment.title}',
+                                  '\u{1F9EA} ${treatment.title[languageCode] ?? ''}',
                                   style: TextStyle(
                                     fontSize: 16,
                                     fontWeight: FontWeight.bold,
@@ -150,7 +166,8 @@ class _DiagnosisAndTreatmentState extends State<DiagnosisAndTreatment> {
                                 ),
                                 SizedBox(height: 8),
                                 Text(
-                                  treatment.description,
+                                  treatment.description[languageCode] ?? '',
+
                                   // textAlign: TextAlign.justify,
                                 ),
                               ],

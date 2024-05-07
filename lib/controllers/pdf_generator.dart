@@ -15,6 +15,29 @@ class PdfGenerator {
   }) async {
     final pdf = pdfLib.Document();
 
+    // Get current locale
+    Locale locale = Localizations.localeOf(context);
+
+    // Define translations
+    String title = (locale.languageCode == 'ms')
+        ? 'Penilaian dan Ujian Saringan Disleksia'
+        : 'Dyslexia Assessment and Screening Test';
+    String date = (locale.languageCode == 'ms') ? 'Tarikh: ' : 'Date: ';
+    String child_Name =
+        (locale.languageCode == 'ms') ? 'Nama Anak: ' : 'Child Name';
+    String gender = (locale.languageCode == 'ms') ? 'Jantina: ' : 'Gender: ';
+    String age = (locale.languageCode == 'ms') ? 'Umur:' : 'Age: ';
+    String years_old = (locale.languageCode == 'ms') ? 'Tahun' : 'Years Old';
+    String testResultsLabel =
+        (locale.languageCode == 'ms') ? 'Keputusan Ujian:' : 'Test Results:';
+    String categoryNameLabel =
+        (locale.languageCode == 'ms') ? 'Kategori:' : 'Category:';
+    String scoreLabel = (locale.languageCode == 'ms') ? 'Markah:' : 'Score:';
+    String totalQuestionsLabel =
+        (locale.languageCode == 'ms') ? 'Jumlah Soalan:' : 'Total Questions:';
+    String conclusionLabel =
+        (locale.languageCode == 'ms') ? 'Kesimpulan:' : 'Conclusion:';
+
     // Add header section
     pdf.addPage(
       pdfLib.Page(
@@ -23,19 +46,24 @@ class PdfGenerator {
             crossAxisAlignment: pdfLib.CrossAxisAlignment.start,
             children: [
               pdfLib.Text(
-                'Dyslexia Assessment and Screening Test',
+                title,
                 style: pdfLib.TextStyle(
                     fontSize: 20, fontWeight: pdfLib.FontWeight.bold),
               ),
               pdfLib.SizedBox(height: 10),
-              pdfLib.Text('Date: ${DateTime.now().toString()}'),
-              pdfLib.Text('Child Name: $childName'),
-              pdfLib.Text('Gender: $selectedGender'),
-              pdfLib.Text('Age: $selectedAge years old'),
+              pdfLib.Text('$date${DateTime.now().toString()}'),
+              pdfLib.Text('$child_Name $childName'),
+              pdfLib.Text('$gender $selectedGender'),
+              pdfLib.Text('$age $selectedAge $years_old'),
               pdfLib.SizedBox(height: 20),
-              pdfLib.Text('Test Results:',
-                  style: pdfLib.TextStyle(
-                      fontWeight: pdfLib.FontWeight.bold)), // Change here
+              pdfLib.Text(
+                testResultsLabel,
+                style: pdfLib.TextStyle(
+                  fontWeight: pdfLib.FontWeight.bold,
+                  decoration: pdfLib.TextDecoration.underline,
+                ),
+              ),
+
               pdfLib.SizedBox(height: 10),
               // Add body section
               for (var result in testResults)
@@ -43,23 +71,25 @@ class PdfGenerator {
                   crossAxisAlignment: pdfLib.CrossAxisAlignment.start,
                   children: [
                     pdfLib.Text(
-                      'Category: ${result['categoryName']}',
+                      '$categoryNameLabel ${result['categoryName']}',
                       style:
                           pdfLib.TextStyle(fontWeight: pdfLib.FontWeight.bold),
                     ),
                     pdfLib.Text(
-                      'Score: ${result['score']} / Total Questions: ${result['totalQuestions']}',
+                      '$scoreLabel ${result['score']} / $totalQuestionsLabel ${result['totalQuestions']}',
                     ),
                     pdfLib.SizedBox(height: 5),
                   ],
                 ),
               pdfLib.SizedBox(height: 20),
-
-              pdfLib.Text('Conclusion:',
-                  style: pdfLib.TextStyle(
-                      fontWeight: pdfLib.FontWeight.bold)), // Change here
               pdfLib.Text(
-                'Based on the test results, further evaluation by a qualified professional is recommended.',
+                conclusionLabel,
+                style: pdfLib.TextStyle(fontWeight: pdfLib.FontWeight.bold),
+              ),
+              pdfLib.Text(
+                (locale.languageCode == 'ms')
+                    ? 'Berdasarkan keputusan ujian, disarankan untuk melakukan penilaian lanjut oleh seorang profesional yang berkelayakan.'
+                    : 'Based on the test results, further evaluation by a qualified professional is recommended.',
               ),
             ],
           );
@@ -73,6 +103,8 @@ class PdfGenerator {
     await file.writeAsBytes(bytes.toList());
 
     Share.shareFiles([file.path],
-        text: 'Dyslexia Assessment and Screening Test Result ');
+        text: (locale.languageCode == 'ms')
+            ? 'Keputusan Ujian Penilaian dan Skrin Disleksia'
+            : 'Dyslexia Assessment and Screening Test Result');
   }
 }

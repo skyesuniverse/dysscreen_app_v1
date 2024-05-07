@@ -43,7 +43,7 @@ class AboutCard extends StatelessWidget {
                 child: Text(
                   title,
                   style: TextStyle(
-                    fontSize: screenWidth / 24,
+                    fontSize: screenWidth / 26,
                     fontWeight: FontWeight.w600,
                     color: Colors.black,
                   ),
@@ -59,11 +59,8 @@ class AboutCard extends StatelessWidget {
                 style: Theme.of(context).textTheme.bodySmall!.copyWith(
                     fontSize: screenWidth / 32,
                     color: Color.fromARGB(255, 0, 0, 0)),
-                maxLines: 2,
+                maxLines: 1,
                 overflow: TextOverflow.ellipsis,
-              ),
-              SizedBox(
-                height: screenHeight * 0.003,
               ),
             ],
           ),
