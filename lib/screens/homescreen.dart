@@ -107,17 +107,20 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
                     // mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        // AppLocalizations.of(context)!.welcome,
+                      FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          // AppLocalizations.of(context)!.welcome,
 
-                        translation(context).welcome,
-                        style: TextStyle(
-                          fontSize: screenWidth / 14,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                          translation(context).welcome,
+                          style: TextStyle(
+                            fontSize: screenWidth > 600 ? 32 : 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                          overflow: TextOverflow
+                              .fade, // Or TextOverflow.ellipsis as per your preference
                         ),
-                        overflow: TextOverflow
-                            .fade, // Or TextOverflow.ellipsis as per your preference
                       ),
                       SizedBox(
                           height: MediaQuery.of(context).size.height * 0.02),
@@ -135,8 +138,7 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
                             overflow: TextOverflow.fade,
                             softWrap: true, // Enable soft wrapping
 
-                            // Or TextOverflow.ellipsis as per your preference
-                            // maxLines: 2, // Limit to two lines
+
                           ),
                         ),
                       ),
@@ -203,8 +205,7 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
                                               IntroOfDyslexiaScreen()));
                                 },
                                 child: AboutCard(
-                                  imageUrl:
-                                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRURjumQMmLb5ybNldAsJhRD_QdkETjksSVzw&usqp=CAU',
+                                  imageUrl: 'assets/images/about1.jpeg',
                                   title: translation(context).introTitle,
                                   description: translation(context).introText1,
                                   screenWidth: screenWidth,
@@ -223,8 +224,7 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
                                               SignAndSymtoms()));
                                 },
                                 child: AboutCard(
-                                    imageUrl:
-                                        'https://www.readabilitytutor.com/wp-content/uploads/2022/11/How-AI-can-Support-Students-with-Dyslexia.jpg',
+                                    imageUrl: 'assets/images/about2.jpg',
                                     title: translation(context)
                                         .commonSignsAndSymptomsTitle,
                                     description: translation(context).openText,
@@ -243,8 +243,7 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
                                               MythsAndFactScreen()));
                                 },
                                 child: AboutCard(
-                                    imageUrl:
-                                        'https://upload.wikimedia.org/wikipedia/commons/3/3d/Dyslexia.jpg',
+                                    imageUrl: 'assets/images/about3.jpg',
                                     title:
                                         translation(context).mythsAndFactsTitle,
                                     description: translation(context).introText,

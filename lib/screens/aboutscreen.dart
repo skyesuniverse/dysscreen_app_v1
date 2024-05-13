@@ -86,8 +86,7 @@ class _AboutScreenState extends State<AboutScreen> {
                                       IntroOfDyslexiaScreen()));
                         },
                         child: AboutCard(
-                          imageUrl:
-                              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRURjumQMmLb5ybNldAsJhRD_QdkETjksSVzw&usqp=CAU',
+                          imageUrl: 'assets/images/about1.jpeg',
                           title: translation(context).introTitle,
                           description: translation(context).introText1,
                           screenWidth: screenWidth,
@@ -105,8 +104,7 @@ class _AboutScreenState extends State<AboutScreen> {
                                   builder: (context) => SignAndSymtoms()));
                         },
                         child: AboutCard(
-                            imageUrl:
-                                'https://www.readabilitytutor.com/wp-content/uploads/2022/11/How-AI-can-Support-Students-with-Dyslexia.jpg',
+                            imageUrl: 'assets/images/about2.jpg',
                             title: translation(context)
                                 .commonSignsAndSymptomsTitle,
                             description: translation(context).openText,
@@ -124,8 +122,7 @@ class _AboutScreenState extends State<AboutScreen> {
                                   builder: (context) => MythsAndFactScreen()));
                         },
                         child: AboutCard(
-                            imageUrl:
-                                'https://upload.wikimedia.org/wikipedia/commons/3/3d/Dyslexia.jpg',
+                            imageUrl: 'assets/images/about3.jpg',
                             title: translation(context).mythsAndFactsTitle,
                             description: translation(context).introText,
                             screenWidth: screenWidth,

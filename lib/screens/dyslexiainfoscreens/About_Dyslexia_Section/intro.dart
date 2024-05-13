@@ -48,8 +48,8 @@ class _IntroOfDyslexiaScreenState extends State<IntroOfDyslexiaScreen> {
                           // "Introduction to Dyslexia",
                           translation(context).introTitle,
                           style: TextStyle(
-                            fontSize: screenWidth / 15,
-                            // fontWeight: FontWeight.bold,
+                            fontSize: screenWidth / 16,
+                            fontWeight: FontWeight.bold,
                             color: Colors.black,
                           ),
                         ),
@@ -69,7 +69,7 @@ class _IntroOfDyslexiaScreenState extends State<IntroOfDyslexiaScreen> {
                           // 'Dyslexia is a neurobiological learning disorder that causes problems in both accurate and fluent word recognition, as well as difficulty spelling and decoding words. Dyslexia, sometimes known as reading disability, is caused by specific differences in brain areas that responsible for language processing.',
                           translation(context).introText1,
                           style: TextStyle(
-                            fontSize: screenWidth / 32,
+                            fontSize: screenWidth / 25,
                             fontWeight: FontWeight.normal,
                             color: Color.fromARGB(255, 22, 22, 22),
                           ),
@@ -82,7 +82,7 @@ class _IntroOfDyslexiaScreenState extends State<IntroOfDyslexiaScreen> {
                           // 'Dyslexia is not caused by issues with intelligence, hearing, or vision. Most dyslexic children can do well in school with tutoring or a specialised education programme. Emotional support is also very crucial.',
                           translation(context).introText2,
                           style: TextStyle(
-                            fontSize: screenWidth / 32,
+                            fontSize: screenWidth / 25,
                             fontWeight: FontWeight.normal,
                             color: Color.fromARGB(255, 22, 22, 22),
                           ),
@@ -95,7 +95,7 @@ class _IntroOfDyslexiaScreenState extends State<IntroOfDyslexiaScreen> {
                           // 'Although there is no cure for dyslexia, early testing and intervention bring the best results. Dyslexia can go undiagnosed for years and not be recognised until adulthood, but it is never too late to seek help.',
                           translation(context).introText3,
                           style: TextStyle(
-                            fontSize: screenWidth / 32,
+                            fontSize: screenWidth / 25,
                             fontWeight: FontWeight.normal,
                             color: Color.fromARGB(255, 22, 22, 22),
                           ),

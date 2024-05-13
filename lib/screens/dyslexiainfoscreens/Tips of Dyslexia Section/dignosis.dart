@@ -55,7 +55,7 @@ class _DiagnosisAndTreatmentState extends State<DiagnosisAndTreatment> {
                           // "Diagnosis and Treatment of Dyslexia: Understanding and Supporting Individuals",
                           translation(context).diagnosis_and_Treatment_title,
                           style: TextStyle(
-                            fontSize: screenWidth / 15,
+                            fontSize: screenWidth / 16,
                             // fontWeight: FontWeight.bold,
                             color: Colors.black,
                           ),
@@ -78,7 +78,7 @@ class _DiagnosisAndTreatmentState extends State<DiagnosisAndTreatment> {
                               // 'Diagnosis of Dyslexia:',
                               translation(context).diagnosis_of_Dyslexia,
                               style: TextStyle(
-                                fontSize: screenWidth / 21,
+                                fontSize: screenWidth / 23,
                                 fontWeight: FontWeight.bold,
                               ),
                             )),
@@ -107,13 +107,16 @@ class _DiagnosisAndTreatmentState extends State<DiagnosisAndTreatment> {
                                 Text(
                                   '\u{1FA7A} ${criteria.title[languageCode] ?? ''}',
                                   style: TextStyle(
-                                    fontSize: 16,
+                                    fontSize: screenWidth / 23,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
                                 SizedBox(height: 8),
                                 Text(
                                   criteria.description[languageCode] ?? '',
+                                  style: TextStyle(
+                                    fontSize: screenWidth / 25,
+                                  ),
                                 ),
                               ],
                             ),
@@ -131,7 +134,7 @@ class _DiagnosisAndTreatmentState extends State<DiagnosisAndTreatment> {
                               // 'Treatment of Dyslexia:',
                               translation(context).treatment_of_Dyslexia,
                               style: TextStyle(
-                                fontSize: screenWidth / 21,
+                                fontSize: screenWidth / 23,
                                 fontWeight: FontWeight.bold,
                               ),
                             )),
@@ -160,14 +163,16 @@ class _DiagnosisAndTreatmentState extends State<DiagnosisAndTreatment> {
                                 Text(
                                   '\u{1F9EA} ${treatment.title[languageCode] ?? ''}',
                                   style: TextStyle(
-                                    fontSize: 16,
+                                    fontSize: screenWidth / 23,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
                                 SizedBox(height: 8),
                                 Text(
                                   treatment.description[languageCode] ?? '',
-
+                                  style: TextStyle(
+                                    fontSize: screenWidth / 25,
+                                  ),
                                   // textAlign: TextAlign.justify,
                                 ),
                               ],

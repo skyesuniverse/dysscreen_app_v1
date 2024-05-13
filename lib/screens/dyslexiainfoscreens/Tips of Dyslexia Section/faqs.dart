@@ -56,7 +56,7 @@ class _FaQsState extends State<FaQs> {
                           translation(context)
                               .frequently_Asked_Questions_About_Dyslexia,
                           style: TextStyle(
-                            fontSize: screenWidth / 15,
+                            fontSize: screenWidth / 16,
                             // fontWeight: FontWeight.bold,
                             color: Colors.black,
                           ),

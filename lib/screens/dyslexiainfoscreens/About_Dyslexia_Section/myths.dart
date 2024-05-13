@@ -47,8 +47,8 @@ class _MythsAndFactScreenState extends State<MythsAndFactScreen> {
                           // "5 Myths and Facts about Dyslexia",
                           translation(context).mythsAndFactsTitle,
                           style: TextStyle(
-                            fontSize: screenWidth / 15,
-                            // fontWeight: FontWeight.bold,
+                            fontSize: screenWidth / 16,
+                            fontWeight: FontWeight.bold,
                             color: Colors.black,
                           ),
                         ),

@@ -47,7 +47,7 @@ class _TipsForDyslexiaState extends State<TipsForDyslexia> {
                         // "Tips for Dyslexia: Supporting Individuals at Home, Preschool, and Primary School",
                         translation(context).tips_for_dyslexia,
                         style: TextStyle(
-                          fontSize: screenWidth / 15,
+                          fontSize: screenWidth / 16,
                           // fontWeight: FontWeight.bold,
                           color: Colors.black,
                         ),
@@ -62,19 +62,6 @@ class _TipsForDyslexiaState extends State<TipsForDyslexia> {
                         fit: BoxFit.cover, // Adjust BoxFit as needed
                       ),
                     ),
-                    // Padding(
-                    //   padding: EdgeInsetsDirectional.fromSTEB(0, 9, 0, 24),
-                    //   child: Text(
-                    //     // 'Dyslexia symptoms might be difficult to detect before a child begins school, but several early warning signs might indicate a problem. When a child reaches school age, the teacher may be the first to detect an issue. The severity of the issue varies, but it usually becomes obvious when the child begins to learn to read.',
-                    //     translation(context).question,
-                    //     style: TextStyle(
-                    //       fontSize: screenWidth / 25,
-                    //       fontWeight: FontWeight.normal,
-                    //       color: Color.fromARGB(255, 22, 22, 22),
-                    //     ),
-                    //     textAlign: TextAlign.justify,
-                    //   ),
-                    // ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -84,7 +71,7 @@ class _TipsForDyslexiaState extends State<TipsForDyslexia> {
                           translation(context).tips_at_home,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 16,
+                            fontSize: screenWidth / 23,
                           ),
                         ),
                         Padding(
@@ -124,7 +111,7 @@ class _TipsForDyslexiaState extends State<TipsForDyslexia> {
                           translation(context).tips_at_preschool,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 16,
+                            fontSize: screenWidth / 23,
                           ),
                         ),
                         Padding(
@@ -164,7 +151,7 @@ class _TipsForDyslexiaState extends State<TipsForDyslexia> {
                           translation(context).tips_at_primary_school,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 16,
+                            fontSize: screenWidth / 23,
                           ),
                         ),
                         Padding(
@@ -217,6 +204,7 @@ Widget buildTip(String title, List<String> tips, double screenWidth) {
         title,
         style: TextStyle(
           fontWeight: FontWeight.bold,
+          fontSize: screenWidth / 23,
         ),
       ),
       SizedBox(height: 1),

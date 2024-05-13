@@ -65,6 +65,7 @@ class _ResultScreenState extends State<ResultScreen> {
       // If there are "Yes" answers in any category
       adviceMessage =
           "Based on assessment, your child shows signs of dyslexia.";
+          
     } else {
       // If there are no "Yes" answers in any category
       adviceMessage =

@@ -30,8 +30,9 @@ class AboutCard extends StatelessWidget {
             children: [
               AspectRatio(
                 aspectRatio: 16 / 10,
-                child: Image(
-                  image: NetworkImage(imageUrl),
+                child: Image.asset(
+                  // Use Image.asset instead of Image.network
+                  imageUrl, // Use imagePath variable
                   fit: BoxFit.cover,
                 ),
               ),

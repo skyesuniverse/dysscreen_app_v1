@@ -21,7 +21,7 @@ class BulletList extends StatelessWidget {
                 '\u2022',
                 style: TextStyle(
                   fontSize: screenWidth / 25,
-                  height: 1.55,
+                  // height: 1.55,
                 ),
               ),
               SizedBox(
@@ -36,7 +36,7 @@ class BulletList extends StatelessWidget {
                     style: TextStyle(
                       fontSize: screenWidth / 25,
                       color: Colors.black.withOpacity(0.8),
-                      height: 1.50,
+                      // height: 1.50,
                     ),
                   ),
                 ),

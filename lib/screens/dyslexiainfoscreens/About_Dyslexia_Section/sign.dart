@@ -50,8 +50,9 @@ class _SignAndSymtomsState extends State<SignAndSymtoms> {
                           // "Common Signs and Symptoms",
                           translation(context).commonSignsAndSymptomsTitle,
                           style: TextStyle(
-                            fontSize: screenWidth / 15,
+                            fontSize: screenWidth / 16,
                             color: Colors.black,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
                       ),
