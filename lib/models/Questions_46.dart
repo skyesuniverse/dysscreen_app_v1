@@ -44,7 +44,7 @@ List question_46_data = [
       "en": "Point to the alphabet and ask the child to read out.",
       "ms": "Tunjuk pada abjad dan minta anak membacanya.",
     },
-    "imagePath": "assets/images/lowercase.png",
+    "imagePath": "assets/images/uppercase.png",
     "question": {
       "en": "Does the child have difficulties to name the uppercase letters?",
       "ms": "Adakah anak mengalami kesukaran untuk menyebut huruf besar?",

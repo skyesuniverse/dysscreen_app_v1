@@ -66,21 +66,32 @@ class Question_Card extends StatelessWidget {
                   showDialog(
                     context: context,
                     builder: (BuildContext context) {
-                      return Dialog(
-                        insetPadding: EdgeInsets.zero, // Remove default padding
-
-                        child: InteractiveViewer(
-                          scaleEnabled:
-                              true, // Optional: Allow scaling (zooming)
-                          panEnabled:
-                              true, // Optional: Allow panning (dragging)
-                          boundaryMargin: EdgeInsets.all(0.0),
-                          minScale: 0.5,
-                          maxScale: 3.0,
-                          child: Image.asset(
-                            question.imagePath!,
-                            fit: BoxFit.contain, // Adjust as needed
-                          ),
+                      return GestureDetector(
+                        // Wrap with GestureDetector to handle taps outside the image
+                        onTap: () {
+                          Navigator.of(context)
+                              .pop(); // Close the dialog when tapped outside the image
+                        },
+                        child: Dialog(
+                          insetPadding:
+                              EdgeInsets.zero, // Remove default padding
+                          backgroundColor: Color.fromARGB(
+                              147, 0, 0, 0), // Make background transparent,
+                          child: Stack(fit: StackFit.expand, children: [
+                            InteractiveViewer(
+                              scaleEnabled:
+                                  true, // Optional: Allow scaling (zooming)
+                              panEnabled:
+                                  true, // Optional: Allow panning (dragging)
+                              boundaryMargin: EdgeInsets.all(0.0),
+                              minScale: 0.5,
+                              maxScale: 3.0,
+                              child: Image.asset(
+                                question.imagePath!,
+                                fit: BoxFit.contain, // Adjust as needed
+                              ),
+                            ),
+                          ]),
                         ),
                       );
                     },

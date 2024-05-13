@@ -1,8 +1,10 @@
 import 'package:dysscreen_app_v1/controllers/question_controller.dart';
 import 'package:dysscreen_app_v1/models/language_constants.dart';
+import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/Tips%20of%20Dyslexia%20Section/resources.dart';
 import 'package:dysscreen_app_v1/screens/homescreen.dart';
 import 'package:dysscreen_app_v1/screens/mainscreen.dart';
 import 'package:dysscreen_app_v1/widgets/mainButton.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:dysscreen_app_v1/controllers/pdf_generator.dart';
@@ -54,6 +56,20 @@ class _ResultScreenState extends State<ResultScreen> {
   Widget build(BuildContext context) {
     screenHeight = MediaQuery.of(context).size.height;
     screenWidth = MediaQuery.of(context).size.width;
+    // Calculate the total count of "Yes" answers across all categories
+    int totalYesCount = questionController.getTotalCategoryCount('Yes');
+
+    // Determine the advice message based on the total "Yes" count
+    String adviceMessage;
+    if (totalYesCount > 0) {
+      // If there are "Yes" answers in any category
+      adviceMessage =
+          "Based on assessment, your child shows signs of dyslexia.";
+    } else {
+      // If there are no "Yes" answers in any category
+      adviceMessage =
+          "Based on assessment, your child did not shows any signs of dyslexia.";
+    }
 
     return Scaffold(
 
@@ -64,21 +80,6 @@ class _ResultScreenState extends State<ResultScreen> {
           automaticallyImplyLeading: false,
           backgroundColor: Colors.transparent,
           elevation: 0,
-          // leading:
-          // IconButton(
-          //     icon: Icon(Icons.home_outlined, color: Colors.white),
-
-          //     // Close the current screen and navigate to the home screen
-          //     // Navigate to the desired screen
-          //     onPressed: () {
-          //       Get.deleteAll();
-
-          //       Navigator.of(context, rootNavigator: true).pushAndRemoveUntil(
-          //         MaterialPageRoute(builder: (context) => MainScreen()),
-          //         (route) => false,
-          //       );
-          //     }
-          //     ),
           actions: [
             IconButton(
               color: Colors.white,
@@ -265,6 +266,8 @@ class _ResultScreenState extends State<ResultScreen> {
                                 color: Color.fromARGB(79, 194, 192, 187)
                                 // color: CustomColor.kmoneycont,
                                 ),
+
+                            ///advice section
                             child: Padding(
                               padding: const EdgeInsets.all(15.0),
                               child: Column(
@@ -273,23 +276,36 @@ class _ResultScreenState extends State<ResultScreen> {
                                   const SizedBox(
                                     height: 8,
                                   ),
-                                  Text(
-                                    "We would like to advide that....",
-                                    style: TextStyle(
-                                      // color: CustomColor.kblack,
-                                      fontSize: 14,
-                                      // fontWeight: kBoldFontWeight,
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    height: 8,
-                                  ),
-                                  Text(
-                                    "The more you save the more you make money The more you save the more you make money The more you save the more you make money The more you save the more you make money The more you save the more you make money ",
-                                    style: TextStyle(
-                                      // color: CustomColor.kgrey,
-                                      fontSize: 12,
-                                      // fontWeight: kBoldFontWeight,
+                                  Text.rich(
+                                    TextSpan(
+                                      text: adviceMessage + " ",
+                                      style: TextStyle(
+                                        fontSize: 14,
+                                        // Add more styles as needed
+                                      ),
+                                      children: [
+                                        TextSpan(
+                                          text:
+                                              "Learn More About Dyslexia", // Text for the text button
+                                          style: TextStyle(
+                                            color: Colors.blue,
+                                            fontSize: 14,
+                                            // fontWeight: FontWeight.bold,
+                                          ),
+                                          // Handle button tap event
+                                          recognizer: TapGestureRecognizer()
+                                            ..onTap = () {
+                                              // Navigate to the specified route
+                                              Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                  builder: (content) =>
+                                                      const ResourcesAndSupport(),
+                                                ),
+                                              );
+                                            },
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ],
