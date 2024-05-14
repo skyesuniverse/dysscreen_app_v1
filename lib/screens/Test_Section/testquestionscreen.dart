@@ -149,6 +149,7 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
                           'question_${index + 1}_key'), // Add this line
                       question: questionsList[index],
                       screenHeight: screenHeight,
+                      screenWidth: screenWidth,
                       questionNumber: index + 1,
                     ),
                   ),
@@ -341,7 +342,7 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
               instruction:
                   data['instruction'] as Map<String, dynamic>, // Cast to Map
 
-              imagePath: data['imagePath'],
+              imagePath: data['imagePath'] as Map<String, dynamic>?,
 
               question: data['question'] as Map<String, dynamic>, // Cast to Map
 

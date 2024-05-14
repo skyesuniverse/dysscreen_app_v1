@@ -132,8 +132,8 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                   Text(
                     // '**Please enter your child\'s details below to begin the assessment.',
                     translation(context).enter_child_details_message,
-                    style: const TextStyle(
-                      // fontSize: screenWidth / 30,
+                    style: TextStyle(
+                      fontSize: screenWidth / 28,
                       fontWeight: FontWeight.normal,
                       fontStyle: FontStyle.italic, // Set text to italic
 
@@ -160,7 +160,10 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                             // labelText: 'Child Name *',
                             labelText: translation(context).child_name_label,
                             alignLabelWithHint: true,
-                            labelStyle: const TextStyle(color: Colors.white),
+                            labelStyle: TextStyle(
+                              color: Colors.white,
+                              // fontSize: screenWidth / 30,
+                            ),
                             enabledBorder: const UnderlineInputBorder(
                               borderSide: BorderSide(
                                 color: Colors
@@ -177,8 +180,11 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                                 iconEnabledColor: Colors.white,
                                 dropdownColor:
                                     const Color.fromARGB(255, 29, 64, 97),
-                                hint: const Text(
+                                hint: Text(
                                   'Select',
+                                  style: TextStyle(
+                                      // fontSize: screenWidth / 30,
+                                      ),
                                 ),
                                 itemHeight: 60,
                                 value: selectedGender,
@@ -201,7 +207,7 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                                     value: selectedGender,
                                     child: Text(
                                       selectedGender,
-                                      style: const TextStyle(
+                                      style: TextStyle(
                                         // fontSize: screenWidth / 32,
                                         fontWeight: FontWeight.normal,
                                         color: Colors.white,
@@ -209,9 +215,10 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                                     ),
                                   );
                                 }).toList(),
-                                decoration: const InputDecoration(
+                                decoration: InputDecoration(
                                   //labelText: 'Gender', // Set label text
                                   labelStyle: TextStyle(
+                                    // fontSize: screenWidth / 30,
                                     color: Colors
                                         .white, // Set label text color to white
                                   ),
@@ -254,8 +261,8 @@ class _TakeTestScreenState extends State<TakeTestScreen> {
                                     value: selectedAge,
                                     child: Text(
                                       selectedAge,
-                                      style: const TextStyle(
-                                        // fontSize: screenWidth / 32,
+                                      style: TextStyle(
+                                        // fontSize: screenWidth / 30,
                                         fontWeight: FontWeight.normal,
                                         color: Colors.white,
                                       ),

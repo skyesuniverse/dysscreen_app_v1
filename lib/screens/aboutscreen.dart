@@ -223,7 +223,7 @@ Widget cardForTips(
       padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 8),
       child: Container(
         width: double.infinity,
-        height: 100,
+        // height: 100,
         decoration: BoxDecoration(
           color: Colors.white,
           boxShadow: [
@@ -263,8 +263,8 @@ Widget cardForTips(
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
-                          height: 1.10,
-                          // fontSize: screenWidth / 33,
+                          // height: 1.10,
+                          fontSize: screenWidth / 25,
                           fontWeight: FontWeight.bold,
                           color: Colors.black,
                         ),
@@ -276,8 +276,8 @@ Widget cardForTips(
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
-                            height: 1.25,
-                            fontSize: screenWidth / 30,
+                            // height: 1.25,
+                            fontSize: screenWidth / 28,
                             color: Colors.black54,
                           ),
                         ),

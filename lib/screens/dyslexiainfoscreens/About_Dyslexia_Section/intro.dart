@@ -58,11 +58,10 @@ class _IntroOfDyslexiaScreenState extends State<IntroOfDyslexiaScreen> {
                         padding: EdgeInsetsDirectional.fromSTEB(0, 9, 0, 24),
                         child: AspectRatio(
                           aspectRatio: 16 / 10,
-                          child: Image.network(
-                            'https://media.licdn.com/dms/image/D4D12AQHnU6qlUfRg6g/article-cover_image-shrink_600_2000/0/1696751614672?e=2147483647&v=beta&t=2SoHLBFcE46uUarkIeF4mRJHI8L64MqkWsxnr_kvAls', // Replace with your image URL
-                            width: screenWidth, // Adjust width as needed
-                            height: 200, // Adjust height as needed
-                            fit: BoxFit.cover, // Adjust BoxFit as needed
+                          child: Image.asset(
+                            // Use Image.asset instead of Image.network
+                            "assets/images/about1.jpeg", // Use imagePath variable
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ),

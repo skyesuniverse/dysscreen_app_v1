@@ -69,11 +69,10 @@ class _ResourcesAndSupportState extends State<ResourcesAndSupport> {
                         padding: EdgeInsetsDirectional.fromSTEB(0, 9, 0, 24),
                         child: AspectRatio(
                           aspectRatio: 16 / 10,
-                          child: Image.network(
-                            'https://st4.depositphotos.com/1001201/22004/i/450/depositphotos_220043644-stock-photo-business-people-putting-their-hands.jpg', // Replace with your image URL
-                            width: screenWidth, // Adjust width as needed
-                            height: 200, // Adjust height as needed
-                            fit: BoxFit.cover, // Adjust BoxFit as needed
+                          child: Image.asset(
+                            // Use Image.asset instead of Image.network
+                            "assets/images/resources.jpg", // Use imagePath variable
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ),

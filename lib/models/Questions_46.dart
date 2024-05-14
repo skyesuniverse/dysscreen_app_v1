@@ -4,7 +4,7 @@ class Question_46 {
   int id, answer;
   Map<String, dynamic> instruction, question, category;
   Map<String, List<String>> options; // Updated to support multiple languages
-  String? imagePath; // New attribute to store image path
+  Map<String, dynamic>? imagePath; // New attribute to store image path
 
   Question_46(
       {required this.id,
@@ -44,7 +44,11 @@ List question_46_data = [
       "en": "Point to the alphabet and ask the child to read out.",
       "ms": "Tunjuk pada abjad dan minta anak membacanya.",
     },
-    "imagePath": "assets/images/uppercase.png",
+    // "imagePath": "assets/images/uppercase.png",
+    "imagePath": {
+      "en": "assets/images/uppercase.png",
+      "ms": "assets/images/uppercase.png",
+    },
     "question": {
       "en": "Does the child have difficulties to name the uppercase letters?",
       "ms": "Adakah anak mengalami kesukaran untuk menyebut huruf besar?",
@@ -65,7 +69,11 @@ List question_46_data = [
       "en": "Point to the alphabet and ask the child to read out.",
       "ms": "Tunjuk pada abjad dan minta anak membacanya.",
     },
-    "imagePath": "assets/images/lowercase.png",
+    // "imagePath": "assets/images/lowercase.png",
+    "imagePath": {
+      "en": "assets/images/lowercase.png",
+      "ms": "assets/images/lowercase.png",
+    },
     "question": {
       "en": "Does the child have difficulties to name the lowercase letters?",
       "ms": "Adakah anak mengalami kesukaran untuk menyebut huruf kecil?",
@@ -88,7 +96,11 @@ List question_46_data = [
       "en": "Point to the pictures and ask the child to name it.",
       "ms": "Tunjuk pada gambar dan minta anak anda menamakannya.",
     },
-    "imagePath": "assets/images/basic_object.png",
+    // "imagePath": "assets/images/basic_object.png",
+    "imagePath": {
+      "en": "assets/images/basic_object.png",
+      "ms": "assets/images/basic_object.png",
+    },
     "question": {
       "en": "Does the child have difficulties in rapidly naming the pictures?",
       "ms":
@@ -110,7 +122,11 @@ List question_46_data = [
       "en": "Point to the sequence of digits and ask the child to name it.",
       "ms": "Tunjuk pada nombor dan minta anak anda menamakannya.",
     },
-    "imagePath": "assets/images/numbers.png",
+    // "imagePath": "assets/images/numbers.png",
+    "imagePath": {
+      "en": "assets/images/numbers.png",
+      "ms": "assets/images/numbers.png",
+    },
     "question": {
       "en": "Does the child have difficulties in rapidly naming the digits?",
       "ms":
@@ -132,7 +148,11 @@ List question_46_data = [
       "en": "Point to the colours and ask the child to name it.",
       "ms": "Tunjuk pada warna dan minta anak anda menamakannya.",
     },
-    "imagePath": "assets/images/colors.png",
+    // "imagePath": "assets/images/colors.png",
+    "imagePath": {
+      "en": "assets/images/colors.png",
+      "ms": "assets/images/colors.png",
+    },
     "question": {
       "en": "Does the child have difficulties in rapidly naming the colours?",
       "ms":
@@ -156,7 +176,11 @@ List question_46_data = [
       "en": "Point to the alphabet and ask your child to read out.",
       "ms": "Tunjuk pada huruf dan minta anak anda menyebutnya.",
     },
-    "imagePath": "assets/images/miror_words.png",
+    // "imagePath": "assets/images/miror_words.png",
+    "imagePath": {
+      "en": "assets/images/miror_words.png",
+      "ms": "assets/images/miror_words.png",
+    },
     "question": {
       "en": "Does the child have confusion between the look-alike letters?",
       "ms": "Adakah anak anda keliru dengan huruf yang hampir serupa?",
@@ -176,10 +200,12 @@ List question_46_data = [
       "ms": "Bahasa",
     },
     "instruction": {
-      "en":
-          "Point to each word and ask the child to read:\n•	Cat\n•	Cup\n•	Pen\n•	Book\n•	Duck\n•	Pot",
-      "ms":
-          "Tunjuk pada setiap perkataan dan minta anak anda membacanya:\n•	Bas\n•	Beg\n•	Cat\n•	Mak\n•	Nak\n•Kak",
+      "en": "Point to each word and ask the child to read.",
+      "ms": "Tunjuk pada setiap perkataan dan minta anak anda membacanya.",
+    },
+    "imagePath": {
+      "en": "assets/images/7a.png",
+      "ms": "assets/images/7b.png",
     },
     "question": {
       "en": "Does the child read 1 syllable slow, laboured and inaccurate? ",
@@ -200,9 +226,13 @@ List question_46_data = [
     },
     "instruction": {
       "en":
-          "Point to each syllable and ask the child to pronounce. Then ask the child to pronounce the two syllables together:\n•	in to = into\n•	ba by = baby\n•	can dy = candy\n•	pen cil = pencil\n•	a pple = apple",
+          "Point to each syllable and ask the child to pronounce. Then ask the child to pronounce the two syllables together.",
       "ms":
-          "Tunjuk pada setiap sukukata dan minta anak anda menyebutnya. Kemudian minta anak anda menyebut keseluruhan perkataan.\n•	sa ya = saya\n•	i bu = ibu\n•	bu ku = buku\n•	a dik = adik\n•	i tik = itik\n•	ja ri = jari",
+          "Tunjuk pada setiap sukukata dan minta anak anda menyebutnya. Kemudian minta anak anda menyebut keseluruhan perkataan.",
+    },
+    "imagePath": {
+      "en": "assets/images/8a.png",
+      "ms": "assets/images/8b.png",
     },
     "question": {
       "en": "Does the child have confusion between the look-alike letters?",
@@ -224,9 +254,13 @@ List question_46_data = [
     },
     "instruction": {
       "en":
-          "Point to each pair of word and ask the child to read one after another:\n•	but - big \n•	dad - do\n•	me - mum\n•	not - now\n•	put - pen\n•	up - uncle",
+          "Point to each pair of word and ask the child to read one after another.",
       "ms":
-          "Tunjuk pada pasangan perkataan dan minta anak anda membaca satu demi satu:\n•	buku – bola\n•	dadu – dada\n•	paku – papa\n•	mama – mana\n•	awan - ayam",
+          "Tunjuk pada pasangan perkataan dan minta anak anda membaca satu demi satu.",
+    },
+    "imagePath": {
+      "en": "assets/images/9a.png",
+      "ms": "assets/images/9b.png",
     },
     "question": {
       "en": "Does the child have confusion between the look-alike letters?",
@@ -248,9 +282,13 @@ List question_46_data = [
     },
     "instruction": {
       "en":
-          "Cover the first sound of the word and ask the child to pronounce the sound of the remaining word.\n•	cat (cover c)\n•	cup (cover c)\n•	book (cover b)\n•	duck (cover d)\n•	pot (cover p)",
+          "Cover the first sound of the word and ask the child to pronounce the sound of the remaining word.",
       "ms":
-          "Tutup bunyi pertama dalam perkataan dan minta anak anda menyebut bunyi perkataan yang tinggal.\n•	beg (tutup b)\n•	padu (tutup pa)\n•	mak (tutup m)\n•	awan (tutup a)",
+          "Tutup bunyi pertama dalam perkataan dan minta anak anda menyebut bunyi perkataan yang tinggal.",
+    },
+    "imagePath": {
+      "en": "assets/images/10a.png",
+      "ms": "assets/images/10b.png",
     },
     "question": {
       "en":
@@ -271,10 +309,13 @@ List question_46_data = [
       "ms": "Bahasa",
     },
     "instruction": {
-      "en":
-          "Pronounce the word and ask the child to point to the right word:\n•	book\n•	hook\n•	cook\n•	cab\n•	cap\n•	cat",
+      "en": "Pronounce the word and ask the child to point to the right word.",
       "ms":
-          "Sebut perkataan berikut dan minta anak anda tunjuk perkataan yang disebut:\n•	baju \n•	laju\n•	kopi\n•	topi\n•	cawan\n•	lawan",
+          "Sebut perkataan berikut dan minta anak anda tunjuk perkataan yang disebut.",
+    },
+    "imagePath": {
+      "en": "assets/images/11a.png",
+      "ms": "assets/images/11b.png",
     },
     "question": {
       "en":
@@ -297,9 +338,12 @@ List question_46_data = [
       "ms": "Bahasa",
     },
     "instruction": {
-      "en":
-          "Say the word and ask the child to point to it:\n•	elbow\n•	bellow\n•	298\n•	829",
-      "ms": "Sebut perkataan di bawah dan minta anak anda menunjukkannya:\n•",
+      "en": "Say the word and ask the child to point to it.",
+      "ms": "Sebut perkataan di bawah dan minta anak anda menunjukkannya.",
+    },
+    "imagePath": {
+      "en": "assets/images/12a.png",
+      "ms": "assets/images/12b.png",
     },
     "question": {
       "en":

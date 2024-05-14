@@ -23,7 +23,7 @@ class AboutCard extends StatelessWidget {
       color: Color.fromARGB(255, 255, 255, 255),
       child: SizedBox(
         width: screenWidth * 0.65,
-        height: 800,
+        // height: 800,
         child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Column(
@@ -60,7 +60,7 @@ class AboutCard extends StatelessWidget {
                 style: TextStyle(
                     fontSize: screenWidth / 26,
                     color: Color.fromARGB(255, 0, 0, 0)),
-                maxLines: 2,
+                maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 // softWrap: true,
               ),

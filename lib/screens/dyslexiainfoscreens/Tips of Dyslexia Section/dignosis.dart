@@ -65,11 +65,10 @@ class _DiagnosisAndTreatmentState extends State<DiagnosisAndTreatment> {
                         padding: EdgeInsetsDirectional.fromSTEB(0, 9, 0, 24),
                         child: AspectRatio(
                           aspectRatio: 16 / 10,
-                          child: Image.network(
-                            'https://www.rhodescollege.ca/wp-content/uploads/2019/07/counselling-skills.jpg', // Replace with your image URL
-                            width: screenWidth, // Adjust width as needed
-                            height: 200, // Adjust height as needed
-                            fit: BoxFit.cover, // Adjust BoxFit as needed
+                          child: Image.asset(
+                            // Use Image.asset instead of Image.network
+                            "assets/images/diagnosis.jpg", // Use imagePath variable
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ),

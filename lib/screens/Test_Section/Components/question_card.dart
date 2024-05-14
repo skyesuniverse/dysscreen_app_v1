@@ -13,10 +13,11 @@ class Question_Card extends StatelessWidget {
     // it means we have to pass this
     required this.question,
     required this.screenHeight,
+    required this.screenWidth,
     required this.questionNumber,
   }) : super(key: key);
 
-  final double screenHeight;
+  final double screenHeight, screenWidth;
   final dynamic question; // Accepting dynamic type for the question
   final int questionNumber;
 
@@ -51,11 +52,18 @@ class Question_Card extends StatelessWidget {
             SizedBox(height: screenHeight * 0.04),
             Text(
               translation(context).instruction,
-              style: TextStyle(
-                  fontStyle: FontStyle.italic, fontWeight: FontWeight.bold),
+              style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                    fontWeight: FontWeight.bold,
+                    fontStyle: FontStyle.italic,
+                  ),
+              // style: TextStyle(
+              //     fontStyle: FontStyle.italic, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: screenHeight * 0.009),
-            Text(question.getContentByLocale(context, question.instruction)),
+            Text(
+              question.getContentByLocale(context, question.instruction),
+              style: Theme.of(context).textTheme.titleLarge!.copyWith(),
+            ),
 
             SizedBox(height: screenHeight * 0.02),
             // Display   image if imagePath is provided
@@ -87,7 +95,9 @@ class Question_Card extends StatelessWidget {
                               minScale: 0.5,
                               maxScale: 3.0,
                               child: Image.asset(
-                                question.imagePath!,
+                                // question.imagePath!,
+                                question.getContentByLocale(
+                                    context, question.imagePath!),
                                 fit: BoxFit.contain, // Adjust as needed
                               ),
                             ),
@@ -100,7 +110,7 @@ class Question_Card extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0, 9, 0, 9),
                   child: Image.asset(
-                    question.imagePath!,
+                    question.getContentByLocale(context, question.imagePath!),
                     fit: BoxFit.cover, // Adjust BoxFit as needed
                   ),
                 ),
@@ -109,11 +119,20 @@ class Question_Card extends StatelessWidget {
             SizedBox(height: screenHeight * 0.045),
             Text(
               translation(context).question,
-              style: TextStyle(
-                  fontStyle: FontStyle.italic, fontWeight: FontWeight.bold),
+              style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                    fontWeight: FontWeight.bold,
+                    fontStyle: FontStyle.italic,
+                  ),
+              // style: TextStyle(
+              //     fontStyle: FontStyle.italic,
+              //     fontWeight: FontWeight.bold,
+              //     fontSize: screenWidth / 25),
             ),
             SizedBox(height: screenHeight * 0.009),
-            Text(question.getContentByLocale(context, question.question)),
+            Text(
+              question.getContentByLocale(context, question.question),
+              style: Theme.of(context).textTheme.titleLarge!.copyWith(),
+            ),
             SizedBox(height: screenHeight * 0.06),
             //option section
             ...List.generate(

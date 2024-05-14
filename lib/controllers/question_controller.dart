@@ -34,7 +34,7 @@ class QuestionController extends GetxController {
 
         instruction: data['instruction'] as Map<String, dynamic>, // Cast to Map
 
-        imagePath: data['imagePath'],
+        imagePath: data['imagePath'] as Map<String, dynamic>?, // Cast to Map
 
         question: data['question'] as Map<String, dynamic>, // Cast to Map
 

@@ -114,7 +114,7 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
 
                           translation(context).welcome,
                           style: TextStyle(
-                            fontSize: screenWidth > 600 ? 32 : 20,
+                            fontSize: screenWidth / 12,
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
                           ),
@@ -131,7 +131,7 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
                             translation(context).app_intro,
                             textAlign: TextAlign.start,
                             style: TextStyle(
-                              fontSize: screenWidth / 30,
+                              fontSize: screenWidth / 25,
                               fontWeight: FontWeight.normal,
                               color: Color.fromARGB(255, 190, 190, 190),
                             ),
@@ -168,7 +168,7 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
 
                         style: Theme.of(context).textTheme.titleLarge!.copyWith(
                             fontWeight: FontWeight.bold,
-                            // height: 1.25,
+                            height: 1.25,
                             color: Color.fromARGB(255, 0, 0, 0)),
                       ),
                     ),
@@ -359,7 +359,7 @@ Widget buildCard(
                     style: TextStyle(
                       color: Colors.black54,
                     ),
-                    maxLines: 2,
+                    maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
                 ],
