@@ -137,8 +137,6 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
                             ),
                             overflow: TextOverflow.fade,
                             softWrap: true, // Enable soft wrapping
-
-
                           ),
                         ),
                       ),

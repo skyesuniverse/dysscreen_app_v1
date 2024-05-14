@@ -58,11 +58,14 @@ class _SignAndSymtomsState extends State<SignAndSymtoms> {
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 9, 0, 24),
-                        child: Image.network(
-                          'https://www.readabilitytutor.com/wp-content/uploads/2022/11/How-AI-can-Support-Students-with-Dyslexia.jpg', // Replace with your image URL
-                          width: screenWidth, // Adjust width as needed
-                          height: 200, // Adjust height as needed
-                          fit: BoxFit.cover, // Adjust BoxFit as needed
+                        child: AspectRatio(
+                          aspectRatio: 16 / 10,
+                          child: Image.network(
+                            'https://www.readabilitytutor.com/wp-content/uploads/2022/11/How-AI-can-Support-Students-with-Dyslexia.jpg', // Replace with your image URL
+                            width: screenWidth, // Adjust width as needed
+                            height: 200, // Adjust height as needed
+                            fit: BoxFit.cover, // Adjust BoxFit as needed
+                          ),
                         ),
                       ),
                       Padding(

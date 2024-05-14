@@ -48,18 +48,21 @@ class _TipsForDyslexiaState extends State<TipsForDyslexia> {
                         translation(context).tips_for_dyslexia,
                         style: TextStyle(
                           fontSize: screenWidth / 16,
-                          // fontWeight: FontWeight.bold,
+                          fontWeight: FontWeight.bold,
                           color: Colors.black,
                         ),
                       ),
                     ),
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(0, 9, 0, 24),
-                      child: Image.network(
-                        'https://images.squarespace-cdn.com/content/v1/51a615dbe4b0643b1caad822/1529683231868-WE53BI8MPYTCGRE13HFS/helpful+tips.jpg', // Replace with your image URL
-                        width: screenWidth, // Adjust width as needed
-                        height: 200, // Adjust height as needed
-                        fit: BoxFit.cover, // Adjust BoxFit as needed
+                      child: AspectRatio(
+                        aspectRatio: 16 / 10,
+                        child: Image.network(
+                          'https://images.squarespace-cdn.com/content/v1/51a615dbe4b0643b1caad822/1529683231868-WE53BI8MPYTCGRE13HFS/helpful+tips.jpg', // Replace with your image URL
+                          width: screenWidth, // Adjust width as needed
+                          height: 200, // Adjust height as needed
+                          fit: BoxFit.cover, // Adjust BoxFit as needed
+                        ),
                       ),
                     ),
                     Column(

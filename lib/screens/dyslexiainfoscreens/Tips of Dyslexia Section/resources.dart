@@ -59,19 +59,22 @@ class _ResourcesAndSupportState extends State<ResourcesAndSupport> {
                           // "Resources and Support",
                           translation(context).resources_and_Support,
                           style: TextStyle(
-                            fontSize: screenWidth / 15,
-                            // fontWeight: FontWeight.bold,
+                            fontSize: screenWidth / 16,
+                            fontWeight: FontWeight.bold,
                             color: Colors.black,
                           ),
                         ),
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 9, 0, 24),
-                        child: Image.network(
-                          'https://st4.depositphotos.com/1001201/22004/i/450/depositphotos_220043644-stock-photo-business-people-putting-their-hands.jpg', // Replace with your image URL
-                          width: screenWidth, // Adjust width as needed
-                          height: 200, // Adjust height as needed
-                          fit: BoxFit.cover, // Adjust BoxFit as needed
+                        child: AspectRatio(
+                          aspectRatio: 16 / 10,
+                          child: Image.network(
+                            'https://st4.depositphotos.com/1001201/22004/i/450/depositphotos_220043644-stock-photo-business-people-putting-their-hands.jpg', // Replace with your image URL
+                            width: screenWidth, // Adjust width as needed
+                            height: 200, // Adjust height as needed
+                            fit: BoxFit.cover, // Adjust BoxFit as needed
+                          ),
                         ),
                       ),
                       Align(
@@ -144,6 +147,9 @@ class _ResourcesAndSupportState extends State<ResourcesAndSupport> {
                                     children: [
                                       Text(
                                         translation(context).website,
+                                        style: TextStyle(
+                                          fontSize: screenWidth / 25,
+                                        ),
                                       ),
                                       Expanded(
                                         child: GestureDetector(
@@ -232,6 +238,9 @@ class _ResourcesAndSupportState extends State<ResourcesAndSupport> {
                                     children: [
                                       Text(
                                         translation(context).website,
+                                        style: TextStyle(
+                                          fontSize: screenWidth / 25,
+                                        ),
                                       ),
                                       Expanded(
                                         child: GestureDetector(

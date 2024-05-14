@@ -57,18 +57,21 @@ class _FaQsState extends State<FaQs> {
                               .frequently_Asked_Questions_About_Dyslexia,
                           style: TextStyle(
                             fontSize: screenWidth / 16,
-                            // fontWeight: FontWeight.bold,
+                            fontWeight: FontWeight.bold,
                             color: Colors.black,
                           ),
                         ),
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 9, 0, 24),
-                        child: Image.network(
-                          'https://simplyamazingtraining.co.uk/wp-content/uploads/2019/11/FAQs.jpg', // Replace with your image URL
-                          width: screenWidth, // Adjust width as needed
-                          height: 200, // Adjust height as needed
-                          fit: BoxFit.cover, // Adjust BoxFit as needed
+                        child: AspectRatio(
+                          aspectRatio: 16 / 10,
+                          child: Image.network(
+                            'https://simplyamazingtraining.co.uk/wp-content/uploads/2019/11/FAQs.jpg', // Replace with your image URL
+                            width: screenWidth, // Adjust width as needed
+                            height: 200, // Adjust height as needed
+                            fit: BoxFit.cover, // Adjust BoxFit as needed
+                          ),
                         ),
                       ),
                       Column(
@@ -91,6 +94,10 @@ class _FaQsState extends State<FaQs> {
                                                 Radius.circular(50))),
                                     title: Text(
                                       qna.question[languageCode] ?? '',
+                                      style: TextStyle(
+                                        fontSize: screenWidth / 23,
+                                        fontWeight: FontWeight.w500,
+                                      ),
                                     ),
                                     // subtitle: Text('Trailing expansion arrow icon'),
                                     children: <Widget>[
@@ -99,6 +106,9 @@ class _FaQsState extends State<FaQs> {
                                             EdgeInsets.fromLTRB(16, 5, 16, 10),
                                         child: Text(
                                           qna.answer[languageCode] ?? '',
+                                          style: TextStyle(
+                                            fontSize: screenWidth / 25,
+                                          ),
                                         ),
                                       ),
                                     ],
