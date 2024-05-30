@@ -284,7 +284,9 @@ class _ResultScreenState extends State<ResultScreen> {
                                       children: [
                                         TextSpan(
                                           text:
-                                              "Learn More About Dyslexia", // Text for the text button
+                                              // "Learn More About Dyslexia", // Text for the text button
+                                              translation(context)
+                                                  .learn_More_About_Dyslexia,
                                           style: TextStyle(
                                             color: Colors.blue,
                                             fontSize: 14,
