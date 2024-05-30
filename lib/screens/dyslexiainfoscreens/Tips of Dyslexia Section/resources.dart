@@ -1,6 +1,6 @@
-import 'package:dysscreen_app_v1/models/ResourceAndSupport.dart';
-import 'package:dysscreen_app_v1/models/language_constants.dart';
-import 'package:dysscreen_app_v1/widgets/bullet_widget.dart';
+import 'package:DysScreen/models/ResourceAndSupport.dart';
+import 'package:DysScreen/models/language_constants.dart';
+import 'package:DysScreen/widgets/bullet_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 

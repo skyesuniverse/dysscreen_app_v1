@@ -1,5 +1,5 @@
-import 'package:dysscreen_app_v1/models/language_constants.dart';
-import 'package:dysscreen_app_v1/screens/Test_Section/testquestionscreen.dart';
+import 'package:DysScreen/models/language_constants.dart';
+import 'package:DysScreen/screens/Test_Section/testquestionscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';

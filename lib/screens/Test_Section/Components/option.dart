@@ -1,4 +1,4 @@
-import 'package:dysscreen_app_v1/controllers/question_controller.dart';
+import 'package:DysScreen/controllers/question_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
@@ -38,7 +38,7 @@ class Option extends StatelessWidget {
         },
         child: Container(
           margin: EdgeInsets.only(top: 10),
-          padding: EdgeInsets.all(15),
+          padding: EdgeInsets.all(10),
           decoration: BoxDecoration(
             border:
                 Border.all(color: isSelected ? Colors.blue : Colors.black45),

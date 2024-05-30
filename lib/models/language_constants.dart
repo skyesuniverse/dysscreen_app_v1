@@ -1,4 +1,4 @@
-import 'package:dysscreen_app_v1/models/Questions_46.dart';
+import 'package:DysScreen/models/Questions_46.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';

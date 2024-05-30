@@ -1,5 +1,5 @@
-import 'package:dysscreen_app_v1/models/language_constants.dart';
-import 'package:dysscreen_app_v1/widgets/bullet_widget.dart';
+import 'package:DysScreen/models/language_constants.dart';
+import 'package:DysScreen/widgets/bullet_widget.dart';
 import 'package:flutter/material.dart';
 
 class TipsForDyslexia extends StatefulWidget {

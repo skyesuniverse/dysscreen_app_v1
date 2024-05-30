@@ -1,7 +1,7 @@
-import 'package:dysscreen_app_v1/models/language_constants.dart';
-import 'package:dysscreen_app_v1/screens/aboutscreen.dart';
-import 'package:dysscreen_app_v1/screens/homescreen.dart';
-import 'package:dysscreen_app_v1/screens/taketestscreen.dart';
+import 'package:DysScreen/models/language_constants.dart';
+import 'package:DysScreen/screens/aboutscreen.dart';
+import 'package:DysScreen/screens/homescreen.dart';
+import 'package:DysScreen/screens/taketestscreen.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatefulWidget {
@@ -57,7 +57,7 @@ class _MainScreenState extends State<MainScreen> {
                 icon: Icon(
                   Icons.explore_outlined,
                 ),
-                label: "About")
+                label: translation(context).aboutLabel)
           ]),
     );
   }

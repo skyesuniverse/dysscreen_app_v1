@@ -1,6 +1,6 @@
-import 'package:dysscreen_app_v1/main.dart';
-import 'package:dysscreen_app_v1/models/language.dart';
-import 'package:dysscreen_app_v1/models/language_constants.dart';
+import 'package:DysScreen/main.dart';
+import 'package:DysScreen/models/language.dart';
+import 'package:DysScreen/models/language_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

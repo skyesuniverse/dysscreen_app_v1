@@ -1,6 +1,7 @@
-import 'package:dysscreen_app_v1/models/language_constants.dart';
-import 'package:dysscreen_app_v1/screens/Test_Section/testquestionscreen.dart';
-import 'package:dysscreen_app_v1/splashscreen.dart';
+import 'package:DysScreen/models/language_constants.dart';
+import 'package:DysScreen/splashscreen.dart';
+import 'package:DysScreen/screens/Test_Section/testquestionscreen.dart';
+import 'package:DysScreen/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
@@ -50,7 +51,7 @@ class _MyAppState extends State<MyApp> {
         colorSchemeSeed: const Color(0xFF03A9F4),
         useMaterial3: true,
       ),
-      home: const SplashScreen(),
+      home: SplashScreen(),
       debugShowCheckedModeBanner: false,
     );
   }

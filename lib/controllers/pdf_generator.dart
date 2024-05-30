@@ -35,8 +35,8 @@ class PdfGenerator {
     String scoreLabel = (locale.languageCode == 'ms') ? 'Markah:' : 'Score:';
     String totalQuestionsLabel =
         (locale.languageCode == 'ms') ? 'Jumlah Soalan:' : 'Total Questions:';
-    String conclusionLabel =
-        (locale.languageCode == 'ms') ? 'Kesimpulan:' : 'Conclusion:';
+    // String conclusionLabel =
+    //     (locale.languageCode == 'ms') ? 'Kesimpulan:' : 'Conclusion:';
 
     // Add header section
     pdf.addPage(
@@ -82,15 +82,15 @@ class PdfGenerator {
                   ],
                 ),
               pdfLib.SizedBox(height: 20),
-              pdfLib.Text(
-                conclusionLabel,
-                style: pdfLib.TextStyle(fontWeight: pdfLib.FontWeight.bold),
-              ),
-              pdfLib.Text(
-                (locale.languageCode == 'ms')
-                    ? 'Berdasarkan keputusan ujian, disarankan untuk melakukan penilaian lanjut oleh seorang profesional yang berkelayakan.'
-                    : 'Based on the test results, further evaluation by a qualified professional is recommended.',
-              ),
+              // pdfLib.Text(
+              //   conclusionLabel,
+              //   style: pdfLib.TextStyle(fontWeight: pdfLib.FontWeight.bold),
+              // ),
+              // pdfLib.Text(
+              //   (locale.languageCode == 'ms')
+              //       ? 'Berdasarkan keputusan ujian, disarankan untuk melakukan penilaian lanjut oleh seorang profesional yang berkelayakan.'
+              //       : 'Based on the test results, further evaluation by a qualified professional is recommended.',
+              // ),
             ],
           );
         },

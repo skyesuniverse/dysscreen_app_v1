@@ -1,6 +1,6 @@
-import 'package:dysscreen_app_v1/models/Questions_46.dart';
-import 'package:dysscreen_app_v1/models/Questions_79.dart';
-import 'package:dysscreen_app_v1/screens/result.dart';
+import 'package:DysScreen/models/Questions_46.dart';
+import 'package:DysScreen/models/Questions_79.dart';
+import 'package:DysScreen/screens/result.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
@@ -31,13 +31,9 @@ class QuestionController extends GetxController {
       return Question_46(
         id: data['id'],
         category: data['category'] as Map<String, dynamic>,
-
         instruction: data['instruction'] as Map<String, dynamic>, // Cast to Map
-
         imagePath: data['imagePath'] as Map<String, dynamic>?, // Cast to Map
-
         question: data['question'] as Map<String, dynamic>, // Cast to Map
-
         options: Map<String, List<String>>.from(data['options']),
         answer: data['answer_index'],
       );
@@ -48,11 +44,11 @@ class QuestionController extends GetxController {
     return question_79_data.map((data) {
       return Question_79(
         id: data['id'],
-        category: data['category'][currentLocale] ?? '',
-        instruction: data['instruction'][currentLocale] ?? '',
-        imagePath: data['imagePath'],
-        question: data['question'][currentLocale] ?? '',
-        options: List<String>.from(data['options'][currentLocale] ?? []),
+        category: data['category'] as Map<String, dynamic>,
+        instruction: data['instruction'] as Map<String, dynamic>, // Cast to Map
+        imagePath: data['imagePath'] as Map<String, dynamic>?, // Cast to Map
+        question: data['question'] as Map<String, dynamic>, // Cast to Map
+        options: Map<String, List<String>>.from(data['options']),
         answer: data['answer_index'],
       );
     }).toList();

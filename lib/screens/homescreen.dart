@@ -1,10 +1,10 @@
-import 'package:dysscreen_app_v1/models/language_constants.dart';
-import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/About_Dyslexia_Section/intro.dart';
-import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/About_Dyslexia_Section/myths.dart';
-import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/About_Dyslexia_Section/sign.dart';
-import 'package:dysscreen_app_v1/screens/taketestscreen.dart';
-import 'package:dysscreen_app_v1/widgets/aboutCard_Widget.dart';
-import 'package:dysscreen_app_v1/widgets/language_Widget.dart';
+import 'package:DysScreen/models/language_constants.dart';
+import 'package:DysScreen/screens/dyslexiainfoscreens/About_Dyslexia_Section/intro.dart';
+import 'package:DysScreen/screens/dyslexiainfoscreens/About_Dyslexia_Section/myths.dart';
+import 'package:DysScreen/screens/dyslexiainfoscreens/About_Dyslexia_Section/sign.dart';
+import 'package:DysScreen/screens/taketestscreen.dart';
+import 'package:DysScreen/widgets/aboutCard_Widget.dart';
+import 'package:DysScreen/widgets/language_Widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';

@@ -1,12 +1,12 @@
-import 'package:dysscreen_app_v1/controllers/question_controller.dart';
-import 'package:dysscreen_app_v1/models/Questions_46.dart';
-import 'package:dysscreen_app_v1/models/Questions_79.dart';
-import 'package:dysscreen_app_v1/models/language_constants.dart';
-import 'package:dysscreen_app_v1/screens/Test_Section/Components/question_card.dart';
-import 'package:dysscreen_app_v1/screens/homescreen.dart';
-import 'package:dysscreen_app_v1/screens/mainscreen.dart';
-import 'package:dysscreen_app_v1/screens/result.dart';
-import 'package:dysscreen_app_v1/widgets/mainButton.dart';
+import 'package:DysScreen/controllers/question_controller.dart';
+import 'package:DysScreen/models/Questions_46.dart';
+import 'package:DysScreen/models/Questions_79.dart';
+import 'package:DysScreen/models/language_constants.dart';
+import 'package:DysScreen/screens/Test_Section/Components/question_card.dart';
+import 'package:DysScreen/screens/homescreen.dart';
+import 'package:DysScreen/screens/mainscreen.dart';
+import 'package:DysScreen/screens/result.dart';
+import 'package:DysScreen/widgets/mainButton.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -355,11 +355,17 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
       return question_79_data
           .map(
             (data) => Question_79(
-              id: data['id'],
-              category: data['category'][currentLocale] ?? '',
-              instruction: data['instruction'][currentLocale] ?? '',
-              question: data['question'][currentLocale] ?? '',
-              options: List<String>.from(data['options'][currentLocale] ?? []),
+               id: data['id'],
+              category: data['category'] as Map<String, dynamic>,
+
+              instruction:
+                  data['instruction'] as Map<String, dynamic>, // Cast to Map
+
+              imagePath: data['imagePath'] as Map<String, dynamic>?,
+
+              question: data['question'] as Map<String, dynamic>, // Cast to Map
+
+              options: Map<String, List<String>>.from(data['options']),
               answer: data['answer_index'],
             ),
           )

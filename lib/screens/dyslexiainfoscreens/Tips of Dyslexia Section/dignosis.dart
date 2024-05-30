@@ -1,5 +1,5 @@
-import 'package:dysscreen_app_v1/models/DiagnosisAndTreatment.dart';
-import 'package:dysscreen_app_v1/models/language_constants.dart';
+import 'package:DysScreen/models/DiagnosisAndTreatment.dart';
+import 'package:DysScreen/models/language_constants.dart';
 import 'package:flutter/material.dart';
 
 class DiagnosisAndTreatment extends StatefulWidget {

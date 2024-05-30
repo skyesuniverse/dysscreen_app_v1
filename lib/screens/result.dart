@@ -1,13 +1,13 @@
-import 'package:dysscreen_app_v1/controllers/question_controller.dart';
-import 'package:dysscreen_app_v1/models/language_constants.dart';
-import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/Tips%20of%20Dyslexia%20Section/resources.dart';
-import 'package:dysscreen_app_v1/screens/homescreen.dart';
-import 'package:dysscreen_app_v1/screens/mainscreen.dart';
-import 'package:dysscreen_app_v1/widgets/mainButton.dart';
+import 'package:DysScreen/controllers/question_controller.dart';
+import 'package:DysScreen/models/language_constants.dart';
+import 'package:DysScreen/screens/dyslexiainfoscreens/Tips%20of%20Dyslexia%20Section/resources.dart';
+import 'package:DysScreen/screens/homescreen.dart';
+import 'package:DysScreen/screens/mainscreen.dart';
+import 'package:DysScreen/widgets/mainButton.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:dysscreen_app_v1/controllers/pdf_generator.dart';
+import 'package:DysScreen/controllers/pdf_generator.dart';
 
 class ResultScreen extends StatefulWidget {
   final String childName;
@@ -63,13 +63,10 @@ class _ResultScreenState extends State<ResultScreen> {
     String adviceMessage;
     if (totalYesCount > 0) {
       // If there are "Yes" answers in any category
-      adviceMessage =
-          "Based on assessment, your child shows signs of dyslexia.";
-          
+      adviceMessage = translation(context).advice_message_yes;
     } else {
       // If there are no "Yes" answers in any category
-      adviceMessage =
-          "Based on assessment, your child did not shows any signs of dyslexia.";
+      adviceMessage = translation(context).advice_message_no_yes;
     }
 
     return Scaffold(

@@ -1,13 +1,13 @@
-import 'package:dysscreen_app_v1/models/language_constants.dart';
-import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/About_Dyslexia_Section/intro.dart';
-import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/About_Dyslexia_Section/myths.dart';
-import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/About_Dyslexia_Section/sign.dart';
-import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/Tips%20of%20Dyslexia%20Section/dignosis.dart';
-import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/Tips%20of%20Dyslexia%20Section/faqs.dart';
-import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/Tips%20of%20Dyslexia%20Section/resources.dart';
-import 'package:dysscreen_app_v1/screens/dyslexiainfoscreens/Tips%20of%20Dyslexia%20Section/tips.dart';
+import 'package:DysScreen/models/language_constants.dart';
+import 'package:DysScreen/screens/dyslexiainfoscreens/About_Dyslexia_Section/intro.dart';
+import 'package:DysScreen/screens/dyslexiainfoscreens/About_Dyslexia_Section/myths.dart';
+import 'package:DysScreen/screens/dyslexiainfoscreens/About_Dyslexia_Section/sign.dart';
+import 'package:DysScreen/screens/dyslexiainfoscreens/Tips%20of%20Dyslexia%20Section/dignosis.dart';
+import 'package:DysScreen/screens/dyslexiainfoscreens/Tips%20of%20Dyslexia%20Section/faqs.dart';
+import 'package:DysScreen/screens/dyslexiainfoscreens/Tips%20of%20Dyslexia%20Section/resources.dart';
+import 'package:DysScreen/screens/dyslexiainfoscreens/Tips%20of%20Dyslexia%20Section/tips.dart';
 import 'package:flutter/material.dart';
-import 'package:dysscreen_app_v1/widgets/aboutCard_Widget.dart';
+import 'package:DysScreen/widgets/aboutCard_Widget.dart';
 
 void main() => runApp(const AboutScreen());
 

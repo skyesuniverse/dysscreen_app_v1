@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:dysscreen_app_v1/screens/homescreen.dart';
-import 'package:dysscreen_app_v1/screens/mainscreen.dart';
-import 'package:dysscreen_app_v1/screens/result.dart';
+import 'package:DysScreen/screens/homescreen.dart';
+import 'package:DysScreen/screens/mainscreen.dart';
+import 'package:DysScreen/screens/result.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const SplashScreen());

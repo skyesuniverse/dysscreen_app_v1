@@ -4,10 +4,12 @@
   "homeLabel": "Home",
   "testLabel": "Test",
   "aboutLabel": "About",
-  "welcome": "Welcome to DysScreenDysScreen",
+  "welcome": "Welcome to DysScreen",
   "app_intro": "DysScreen, a user-friendly app crafted to assist parents and educators in the crucial task of assessing and screening for dyslexia in children.",
   "about_Dyslexia": "About Dyslexia",
   "language": "Language",
+  "advice_message_yes": "Based on your answers, your child shows early signs of dyslexia. Kindly refer to the Resource page for further information on possible assessment for your child.",
+  "advice_message_no_yes": "Based on your answers, you child does not show any early signs of dyslexia.",
 
   "introTitle": "Introduction to Dyslexia",
   "introText1": "Dyslexia is a neurobiological learning disorder that causes problems in both accurate and fluent word recognition, as well as difficulty spelling and decoding words. Dyslexia, sometimes known as reading disability, is caused by specific differences in brain areas responsible for language processing.",

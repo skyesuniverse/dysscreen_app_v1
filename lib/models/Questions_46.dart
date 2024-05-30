@@ -42,7 +42,7 @@ List question_46_data = [
     },
     "instruction": {
       "en": "Point to the alphabet and ask the child to read out.",
-      "ms": "Tunjuk pada abjad dan minta anak membacanya.",
+      "ms": "Tunjuk pada huruf dan minta anak anda menyebutnya.",
     },
     // "imagePath": "assets/images/uppercase.png",
     "imagePath": {
@@ -67,7 +67,7 @@ List question_46_data = [
     },
     "instruction": {
       "en": "Point to the alphabet and ask the child to read out.",
-      "ms": "Tunjuk pada abjad dan minta anak membacanya.",
+      "ms": "Tunjuk pada huruf dan minta anak anda menyebutnys.",
     },
     // "imagePath": "assets/images/lowercase.png",
     "imagePath": {
@@ -76,7 +76,7 @@ List question_46_data = [
     },
     "question": {
       "en": "Does the child have difficulties to name the lowercase letters?",
-      "ms": "Adakah anak mengalami kesukaran untuk menyebut huruf kecil?",
+      "ms": "Adakah anak anda mengalami kesukaran untuk menyebut huruf kecil?",
     },
     "options": {
       "en": ['Yes', 'No'],
@@ -218,149 +218,10 @@ List question_46_data = [
     },
     "answer_index": 1,
   },
+
+  //Rote memory Q12-14 in word
   {
     "id": 8,
-    "category": {
-      "en": "Language",
-      "ms": "Bahasa",
-    },
-    "instruction": {
-      "en":
-          "Point to each syllable and ask the child to pronounce. Then ask the child to pronounce the two syllables together.",
-      "ms":
-          "Tunjuk pada setiap sukukata dan minta anak anda menyebutnya. Kemudian minta anak anda menyebut keseluruhan perkataan.",
-    },
-    "imagePath": {
-      "en": "assets/images/8a.png",
-      "ms": "assets/images/8b.png",
-    },
-    "question": {
-      "en": "Does the child have confusion between the look-alike letters?",
-      "ms": "Adakah anak anda keliru dengan huruf yang hampir serupa?",
-    },
-    "options": {
-      "en": ['Yes', 'No'],
-      "ms": ['Ya', 'Tidak'],
-    },
-    "answer_index": 1,
-  },
-
-  //Letter-sound association Q9
-  {
-    "id": 9,
-    "category": {
-      "en": "Language",
-      "ms": "Bahasa",
-    },
-    "instruction": {
-      "en":
-          "Point to each pair of word and ask the child to read one after another.",
-      "ms":
-          "Tunjuk pada pasangan perkataan dan minta anak anda membaca satu demi satu.",
-    },
-    "imagePath": {
-      "en": "assets/images/9a.png",
-      "ms": "assets/images/9b.png",
-    },
-    "question": {
-      "en": "Does the child have confusion between the look-alike letters?",
-      "ms": "Adakah anak anda keliru dengan huruf yang hampir serupa?",
-    },
-    "options": {
-      "en": ['Yes', 'No'],
-      "ms": ['Ya', 'Tidak'],
-    },
-    "answer_index": 1,
-  },
-
-  //Segmentation Q10 -11
-  {
-    "id": 10,
-    "category": {
-      "en": "Language",
-      "ms": "Bahasa",
-    },
-    "instruction": {
-      "en":
-          "Cover the first sound of the word and ask the child to pronounce the sound of the remaining word.",
-      "ms":
-          "Tutup bunyi pertama dalam perkataan dan minta anak anda menyebut bunyi perkataan yang tinggal.",
-    },
-    "imagePath": {
-      "en": "assets/images/10a.png",
-      "ms": "assets/images/10b.png",
-    },
-    "question": {
-      "en":
-          "Does the child have difficulties pronouncing words that remain if a particular sound were removed?",
-      "ms":
-          "Adakah anak anda mengalami kesukaran menyebut perkataan yang kekal jika bunyi tertentu dikeluarkan?",
-    },
-    "options": {
-      "en": ['Yes', 'No'],
-      "ms": ['Ya', 'Tidak'],
-    },
-    "answer_index": 1,
-  },
-  {
-    "id": 11,
-    "category": {
-      "en": "Language",
-      "ms": "Bahasa",
-    },
-    "instruction": {
-      "en": "Pronounce the word and ask the child to point to the right word.",
-      "ms":
-          "Sebut perkataan berikut dan minta anak anda tunjuk perkataan yang disebut.",
-    },
-    "imagePath": {
-      "en": "assets/images/11a.png",
-      "ms": "assets/images/11b.png",
-    },
-    "question": {
-      "en":
-          "Does the child have difficulties identifying words with almost similar sounds?",
-      "ms":
-          "Adakah anak anda sukar mengenal perkataan yang bunyinya hampir sama?",
-    },
-    "options": {
-      "en": ['Yes', 'No'],
-      "ms": ['Ya', 'Tidak'],
-    },
-    "answer_index": 1,
-  },
-
-  //Auditory sequencing Q12
-  {
-    "id": 12,
-    "category": {
-      "en": "Language",
-      "ms": "Bahasa",
-    },
-    "instruction": {
-      "en": "Say the word and ask the child to point to it.",
-      "ms": "Sebut perkataan di bawah dan minta anak anda menunjukkannya.",
-    },
-    "imagePath": {
-      "en": "assets/images/12a.png",
-      "ms": "assets/images/12b.png",
-    },
-    "question": {
-      "en":
-          "Does the child have difficulties understanding and recalling the order of sounds and words?",
-      "ms":
-          "Adakah anak anda mengalami kesukaran untuk memahami dan mengingat susunan bunyi dan perkataan?",
-    },
-    "options": {
-      "en": ['Yes', 'No'],
-      "ms": ['Ya', 'Tidak'],
-    },
-    "answer_index": 1,
-  },
-
-  //Rote memory Q13-16
-  {
-    "id": 13,
     "category": {
       "en": "Memory",
       "ms": "Ingatan",
@@ -382,7 +243,7 @@ List question_46_data = [
     "answer_index": 1,
   },
   {
-    "id": 14,
+    "id": 9,
     "category": {
       "en": "Memory",
       "ms": "Ingatan",
@@ -395,7 +256,7 @@ List question_46_data = [
     },
     "question": {
       "en": "Does the child have difficulties in sequencing the numbers?",
-      "ms": "AdakAdakah anak anda mengalami kesukaran dalam urutan nombor?",
+      "ms": "Adakah anak anda mengalami kesukaran dalam urutan nombor?",
     },
     "options": {
       "en": ['Yes', 'No'],
@@ -404,7 +265,7 @@ List question_46_data = [
     "answer_index": 1,
   },
   {
-    "id": 15,
+    "id": 10,
     "category": {
       "en": "Memory",
       "ms": "Ingatan",
@@ -426,33 +287,10 @@ List question_46_data = [
     },
     "answer_index": 1,
   },
-  {
-    "id": 16,
-    "category": {
-      "en": "Memory",
-      "ms": "Ingatan",
-    },
-    "instruction": {
-      "en":
-          "Ask the child two or three question about multiplication between numbers, e.g. 4 x 6. ",
-      "ms": "Tanya anak anda beberapa soalan operasi darab, contohnya 4 x 6.",
-    },
-    "question": {
-      "en":
-          "Does the child have to recall the multiplication table from the beginning in order answer?",
-      "ms":
-          "Adakah anak anda perlu mengingati jadual perkalian dari awal untuk menjawab?",
-    },
-    "options": {
-      "en": ['Yes', 'No'],
-      "ms": ['Ya', 'Tidak'],
-    },
-    "answer_index": 1,
-  },
 
-  //Rote memory Q17
+  //Short term verbal memory Q16 in word
   {
-    "id": 17,
+    "id": 11,
     "category": {
       "en": "Memory",
       "ms": "Ingatan",
@@ -476,9 +314,9 @@ List question_46_data = [
     "answer_index": 1,
   },
 
-  //Fine motor skills Q18-19
+  //Fine motor skills  Q17-18 in word
   {
-    "id": 18,
+    "id": 12,
     "category": {
       "en": "Fine motor skills",
       "ms": "Kemahiran motor halus",
@@ -498,7 +336,7 @@ List question_46_data = [
     "answer_index": 1,
   },
   {
-    "id": 19,
+    "id": 13,
     "category": {
       "en": "Fine motor skills",
       "ms": "Kemahiran motor halus",

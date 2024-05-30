@@ -1,9 +1,9 @@
-import 'package:dysscreen_app_v1/controllers/question_controller.dart';
-import 'package:dysscreen_app_v1/models/Questions_46.dart';
-import 'package:dysscreen_app_v1/models/Questions_79.dart';
-import 'package:dysscreen_app_v1/models/language_constants.dart';
-import 'package:dysscreen_app_v1/screens/Test_Section/Components/option.dart';
-import 'package:dysscreen_app_v1/screens/Test_Section/testquestionscreen.dart';
+import 'package:DysScreen/controllers/question_controller.dart';
+import 'package:DysScreen/models/Questions_46.dart';
+import 'package:DysScreen/models/Questions_79.dart';
+import 'package:DysScreen/models/language_constants.dart';
+import 'package:DysScreen/screens/Test_Section/Components/option.dart';
+import 'package:DysScreen/screens/Test_Section/testquestionscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -52,7 +52,7 @@ class Question_Card extends StatelessWidget {
             SizedBox(height: screenHeight * 0.04),
             Text(
               translation(context).instruction,
-              style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+              style: Theme.of(context).textTheme.titleMedium!.copyWith(
                     fontWeight: FontWeight.bold,
                     fontStyle: FontStyle.italic,
                   ),
@@ -62,7 +62,7 @@ class Question_Card extends StatelessWidget {
             SizedBox(height: screenHeight * 0.009),
             Text(
               question.getContentByLocale(context, question.instruction),
-              style: Theme.of(context).textTheme.titleLarge!.copyWith(),
+              // style: Theme.of(context).textTheme.titleLarge!.copyWith(),
             ),
 
             SizedBox(height: screenHeight * 0.02),
@@ -119,7 +119,7 @@ class Question_Card extends StatelessWidget {
             SizedBox(height: screenHeight * 0.045),
             Text(
               translation(context).question,
-              style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+              style: Theme.of(context).textTheme.titleMedium!.copyWith(
                     fontWeight: FontWeight.bold,
                     fontStyle: FontStyle.italic,
                   ),
@@ -131,7 +131,7 @@ class Question_Card extends StatelessWidget {
             SizedBox(height: screenHeight * 0.009),
             Text(
               question.getContentByLocale(context, question.question),
-              style: Theme.of(context).textTheme.titleLarge!.copyWith(),
+              // style: Theme.of(context).textTheme.titleLarge!.copyWith(),
             ),
             SizedBox(height: screenHeight * 0.06),
             //option section
