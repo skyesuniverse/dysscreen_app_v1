@@ -52,7 +52,7 @@ class _MainScreenState extends State<MainScreen> {
                 icon: Icon(
                   Icons.content_paste_search_sharp,
                 ),
-                label: "Test"),
+                label: translation(context).testLabel),
             BottomNavigationBarItem(
                 icon: Icon(
                   Icons.explore_outlined,

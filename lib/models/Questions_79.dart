@@ -525,7 +525,7 @@ const List question_79_data = [
     "id": 20,
     "category": {
       "en": "Visual",
-      "ms": "Kemahiran motor halus",
+      "ms": "Visual",
     },
     "instruction": {
       "en":
@@ -552,8 +552,8 @@ const List question_79_data = [
   {
     "id": 21,
     "category": {
-      "en": "Fine motor skills",
-      "ms": "Kemahiran motor halus",
+      "en": "Visual",
+      "ms": "Visual",
     },
     "instruction": {
       "en": "Ask your child to write a short sentence on a lined page.",
@@ -574,8 +574,8 @@ const List question_79_data = [
   {
     "id": 22,
     "category": {
-      "en": "Fine motor skills",
-      "ms": "Kemahiran motor halus",
+      "en": "Visual",
+      "ms": "Visual",
     },
     "instruction": {
       "en": "Ask your child to write a short sentence on a lined page.",
@@ -594,8 +594,8 @@ const List question_79_data = [
   {
     "id": 23,
     "category": {
-      "en": "Fine motor skills",
-      "ms": "Kemahiran motor halus",
+      "en": "Visual",
+      "ms": "Visual",
     },
     "instruction": {
       "en": "Ask your child to write a short sentence on a lined page.",
@@ -614,8 +614,8 @@ const List question_79_data = [
   {
     "id": 24,
     "category": {
-      "en": "Fine motor skills",
-      "ms": "Kemahiran motor halus",
+      "en": "Visual",
+      "ms": "Visual",
     },
     "instruction": {
       "en":
@@ -636,8 +636,8 @@ const List question_79_data = [
   {
     "id": 25,
     "category": {
-      "en": "Fine motor skills",
-      "ms": "Kemahiran motor halus",
+      "en": "Visual",
+      "ms": "Visual",
     },
     "instruction": {
       "en": "Ask your child to organize his/her belongings.",
