@@ -207,7 +207,7 @@ const List question_79_data = [
     "question": {
       "en": "Does the child read 1 syllable slow, laboured and inaccurate? ",
       "ms":
-          "Adakah anak anda membaca perkataan 1 sukukata dengan perlahan, penuh kesukaran dan tidak tepat?",
+          "Adakah anak anda membaca perkataan 1 suku kata dengan perlahan, penuh kesukaran dan tidak tepat?",
     },
     "options": {
       "en": ['Yes', 'No'],
@@ -225,7 +225,7 @@ const List question_79_data = [
       "en":
           "Point to each syllable and ask the child to pronounce. Then ask the child to pronounce the two syllables together.",
       "ms":
-          "Tunjuk pada setiap sukukata dan minta anak anda menyebutnya. Kemudian minta anak anda menyebut keseluruhan perkataan.",
+          "Tunjuk pada setiap suku kata dan minta anak anda menyebutnya. Kemudian minta anak anda menyebut keseluruhan perkataan.",
     },
     "imagePath": {
       "en": "assets/images/8a.png",
@@ -235,7 +235,7 @@ const List question_79_data = [
       "en":
           "Does the child read 2 syllbles word slow, laboured and inaccurate?",
       "ms":
-          "Adakah anak anda membaca perkataan 2 sukukata dengan perlahan, penuh kesukaran dan tidak tepat?",
+          "Adakah anak anda membaca perkataan 2 suku kata dengan perlahan, penuh kesukaran dan tidak tepat?",
     },
     "options": {
       "en": ['Yes', 'No'],
@@ -263,7 +263,7 @@ const List question_79_data = [
     },
     "question": {
       "en":
-          "Does the child have difficulties identifying words beginning with the same letter",
+          "Does the child have difficulties identifying words beginning with the same letter?",
       "ms":
           "Adakah anak anda mengalami kesukaran mengenal pasti perkataan yang bermula dengan huruf yang sama?",
     },
@@ -460,7 +460,7 @@ const List question_79_data = [
     },
     "instruction": {
       "en":
-          "Narrate a short and simple story to the child then ask them questions such as:\b\n•	Name of the characters in the story\n•	The hobby of the characters\n\b•	What the characters do or other relevant questions.",
+          "Narrate a short and simple story to the child then ask them questions such as:\b\n•	Name of the characters in the story\n•	The hobby of the characters\b\n•	What the characters do or other relevant questions.",
       "ms":
           "Ceritakan satu cerita pendek dan mudah kepada anak anda, kemudian tanyakan soalan seperti:\n•	Nama watak dalam cerita\n•	Hobi watak-watak\n•	Perkara yang dilakukan oleh watak atau soalan lain yang berkaitan.",
     },
@@ -531,7 +531,7 @@ const List question_79_data = [
       "en":
           "Ask your child to line up the digits for addition, subtraction or multiplication operation according to their place value columns.",
       "ms":
-          "Minta anak anda menyusun digit untuk operasi tambah, tolak atau kali mengikut lajur nilai masing2.",
+          "Minta anak anda menyusun digit untuk operasi tambah, tolak atau kali mengikut lajur nilai masing-masing.",
     },
     "imagePath": {
       "en": "assets/images/20.png",
@@ -541,7 +541,7 @@ const List question_79_data = [
       "en":
           "Does the child have difficulties in lining up the digits correctly?",
       "ms":
-          "Adakah anak anda menghadapi kesukaran menyusun digit mengikut lajur yang betul??",
+          "Adakah anak anda menghadapi kesukaran menyusun digit mengikut lajur yang betul?",
     },
     "options": {
       "en": ['Yes', 'No'],

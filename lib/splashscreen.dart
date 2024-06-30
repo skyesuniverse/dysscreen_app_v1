@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(
-        const Duration(seconds: 1),
+        const Duration(seconds: 3),
         () => Navigator.pushReplacement(
             context, MaterialPageRoute(builder: (content) => MainScreen())));
   }
@@ -35,10 +35,17 @@ class _SplashScreenState extends State<SplashScreen> {
         alignment: Alignment.center,
         children: [
           Container(
+            decoration: const BoxDecoration(
+                color: Colors.black,
+                image: DecorationImage(
+                    image: AssetImage('assets/images/splashscreen.png'),
+                    fit: BoxFit.cover)),
+            child: Container(
               decoration: const BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('assets/images/splashscreen.png'),
-                      fit: BoxFit.cover))),
+                color: Color(0x9A1D2428),
+              ),
+            ),
+          ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,

@@ -90,10 +90,17 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
       ),
       body: Stack(children: [
         Container(
+          decoration: const BoxDecoration(
+              color: Colors.black,
+              image: DecorationImage(
+                  image: AssetImage('assets/images/splashscreen.png'),
+                  fit: BoxFit.cover)),
+          child: Container(
             decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/images/splashscreen.png'),
-                    fit: BoxFit.cover))),
+              color: Color.fromARGB(154, 43, 55, 61),
+            ),
+          ),
+        ),
         SafeArea(
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -189,8 +196,8 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
                                     : _questionController.nextQuestion();
                               },
                               title: _questionController.isLastQuestion
-                                  ? 'Complete'
-                                  : 'Next',
+                                  ? translation(context).complete
+                                  : translation(context).next,
                             )),
                           ),
                         )
@@ -355,7 +362,7 @@ class _TestQuestionScreenState extends State<TestQuestionScreen> {
       return question_79_data
           .map(
             (data) => Question_79(
-               id: data['id'],
+              id: data['id'],
               category: data['category'] as Map<String, dynamic>,
 
               instruction:

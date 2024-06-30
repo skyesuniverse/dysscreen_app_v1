@@ -145,5 +145,7 @@
   "gender": "Gender: ",
   "age": "Age: ",
   "years_old": " years old",
-  "share_result": "Share Result"
+  "share_result": "Share Result",
+  "next": "Next",
+  "complete": "Complete"
 }

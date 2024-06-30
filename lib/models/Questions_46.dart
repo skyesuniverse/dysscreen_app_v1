@@ -67,7 +67,7 @@ List question_46_data = [
     },
     "instruction": {
       "en": "Point to the alphabet and ask the child to read out.",
-      "ms": "Tunjuk pada huruf dan minta anak anda menyebutnys.",
+      "ms": "Tunjuk pada huruf dan minta anak anda menyebutnya.",
     },
     // "imagePath": "assets/images/lowercase.png",
     "imagePath": {
@@ -210,7 +210,7 @@ List question_46_data = [
     "question": {
       "en": "Does the child read 1 syllable slow, laboured and inaccurate? ",
       "ms":
-          "Adakah anak anda membaca perkataan 1 sukukata dengan perlahan, penuh kesukaran dan tidak tepat?",
+          "Adakah anak anda membaca perkataan 1 suku kata dengan perlahan, penuh kesukaran dan tidak tepat?",
     },
     "options": {
       "en": ['Yes', 'No'],
@@ -274,7 +274,7 @@ List question_46_data = [
       "en":
           "Ask the child to recite the days of the week and the month of the year in order.",
       "ms":
-          "Minta anak anda manyatakan hari dalam seminggu dan bulan dalam setahun mengikut urutan.",
+          "Minta anak anda menyatakan hari dalam seminggu dan bulan dalam setahun mengikut urutan.",
     },
     "question": {
       "en":
@@ -297,7 +297,7 @@ List question_46_data = [
     },
     "instruction": {
       "en":
-          "Narrate a short and simple story to the child then ask them questions such as:\b\n•	Name of the characters in the story\n•	The hobby of the characters\n\b•	What the characters do or other relevant questions.",
+          "Narrate a short and simple story to the child then ask them questions such as:\b\n•	Name of the characters in the story\n•	The hobby of the characters\n• What the characters do or other relevant questions.",
       "ms":
           "Ceritakan satu cerita pendek dan mudah kepada anak anda, kemudian tanyakan soalan seperti:\n•	Nama watak dalam cerita\n•	Hobi watak-watak\n•	Perkara yang dilakukan oleh watak atau soalan lain yang berkaitan.",
     },

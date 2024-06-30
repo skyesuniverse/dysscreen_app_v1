@@ -329,8 +329,8 @@ class _ResultScreenState extends State<ResultScreen> {
                   },
                   style: ElevatedButton.styleFrom(
                     foregroundColor: Color.fromARGB(255, 255, 255, 255),
-                    backgroundColor: Color.fromARGB(255, 30, 52,
-                        117), // Set text color to black (you can adjust as needed)
+                    backgroundColor: Theme.of(context)
+                        .primaryColor, // Set text color to black (you can adjust as needed)
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(
                           20.0), // Set border radius to a circular value
